@@ -14,6 +14,10 @@ Version: 1.0
     }
 }
 
+.search_bar {
+    display: none;
+}
+
 @font-face {
     font-family: 'metropolissemi_bold';
     src: url('./fonts/metropolis-semibold-webfont.woff2') format('woff2'),
@@ -181,10 +185,18 @@ html {
 body {
     overflow-x: hidden!important;
     font-family: "Nunito Sans", sans-serif;
-}
 
+
+}
+.container-fluid {
+    padding: 0;
+}
 #content {
     min-height: 90vh;
+
+    .container-fluid {
+        padding: 0;
+    }
 }
 
 article.page {
@@ -306,56 +318,43 @@ ul {
     // }
 
     #content {
-        min-height: 98vh;
+        padding: 0;
 
         .entry-content {
+            margin: 0;
 
-            h1 {
-                font-family: 'metropolissemi_bold', 'Nunito Sans', sans-serif;
-                color: blue;
-                font-size: 100px;
-                letter-spacing: 6px;
-            }
-    
-            a {
-                font-family: 'metropolissemi_bold', 'Nunito Sans', sans-serif;
-                color: #fff;
-                font-size: 60px;
-                letter-spacing: 2px;
+            #homepage {
+                padding: 0;
 
-                &:hover {
-                    text-decoration: none;
-                    color: #F00;
-                }
-            }
+                .row {
+                    .col-6 {
+                        padding: 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
 
-            .bottom-home {
-                display: inline-flex;
-                margin-top: 90px;
+                        .section-image {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
 
-                p.lang-home {
-                    color: #fff;
-                    font-family: 'metropolissemi_bold', 'Nunito Sans', sans-serif;
-                    font-size: 22px;
-
-                    a {
-                        color: #fff;
-                        font-family: 'metropolissemi_bold', 'Nunito Sans', sans-serif;
-                        font-size: 22px;
-
-                        &:hover {
-                            text-decoration: underline;
+                            img {
+                                height: 500px;
+                            }
                         }
-                    }
-                }
 
-                button.btn {
-                    transform: translate3d(90px, -12px, 0);
-
-
-                    .fas {
-                        color: #FFF;
-                        font-size: 32px;
+                        .owl-carousel {
+                            .item {
+                                display: flex;
+                                justify-content: center;
+                                img {
+                                    height: 400px;
+                                    width: auto;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -364,8 +363,47 @@ ul {
 
     }
 
-    #owlRefs {
-        display: none;
+    // #owlRefs {
+    //     display: none;
+    // }
+}
+
+@media screen and (max-width: 425px) {
+    .home {
+
+        #content {
+    
+            .entry-content {
+    
+                #homepage {
+    
+                    .row {
+                        .col-6 {
+    
+                            .section-image {
+                                height: 100%;
+
+                                img {
+                                    height: max-content;
+                                    width: 100%;
+                                }
+                            }
+    
+                            .owl-carousel {
+                                .item {
+                                    img {
+                                        height: 40vw; 
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+    
+            }
+    
+        }
+
     }
 }
 
@@ -385,13 +423,30 @@ header#masthead {
                 background-color: blue;
                 border-bottom: 1px solid #000;
                 height: 25px;
+
+                .item {
+                    &::after {
+                        content: '-';  
+                        right: 0;
+                        top: 0;
+                        position: absolute;
+                        transform: translateX(100%);
+                    }
+
+                    p {
+                        margin: 0;
+                        text-align: center;
+                    }
+                }
             }
+
             .logo-container {
                 background-color: #000;
                 height: 100px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                padding: 0;
 
                 img {
                     filter: invert(1);
@@ -401,10 +456,17 @@ header#masthead {
             .nav-container {
                 padding: 0;
                 height: 50px;
+                display: grid;
+                grid-template-columns: 70% 30%;
+                grid-template-rows: 50px 50px;
+                grid-template-areas: 'navbar btns'
+                                    'blackb blackb';
 
                 .navbar {
                     padding: 0;
                     height: 100%;
+                    // width: 66%;
+                    grid-area: navbar;
 
                     .navbar-nav {
                         display: flex;
@@ -421,11 +483,45 @@ header#masthead {
                         }
                     }
                 }
-            }
-            .black-banner {
-                background-color: #000;
-                color: #FFF;
-                height: 50px;
+
+                .buttons {
+                    // width: 34%;
+                    grid-area: btns;
+                    display: flex;
+                    justify-content: space-evenly;
+
+                    #yith-wcwl-form {
+                        display: none;
+                    }
+
+                    button {
+                        height: 100%;
+                    }
+                }
+
+                .black-banner {
+                    background-color: #000;
+                    color: #FFF;
+                    height: 50px;
+                    grid-area: blackb;
+                    overflow: hidden;
+
+                    .owl-item {
+                        height: 50px;
+                    }
+
+                    .item {
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+
+                        p {
+                            text-align: center;
+                            margin: 0;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
             }
         }
     }
@@ -695,6 +791,7 @@ header#masthead {
 }
 
 #owlRefs {
+    border-top: 1px solid #000;
     // z-index: -1;
     .owl-item {
         display: flex;
@@ -826,6 +923,11 @@ h1 {
 
 #main .entry-content {
     min-height: 90vh;
+    margin-top: 0;
+
+    &>p {
+        display: none;
+    }
 
     video#myVideoClothing {
         width: 100%;
@@ -835,95 +937,95 @@ h1 {
         display: none;
     }
 
-    .woof {
-        margin-left: -15px;
-        position: sticky;
-        top: 140px;
+    // .woof {
+    //     margin-left: -15px;
+    //     position: sticky;
+    //     top: 140px;
 
-        .woof_redraw_zone {
-            display: flex;
-            flex-direction: column;
+    //     .woof_redraw_zone {
+    //         display: flex;
+    //         flex-direction: column;
 
-            .woof_container {
-                order: 2;
-            }
+    //         .woof_container {
+    //             order: 2;
+    //         }
 
-            .woof_submit_search_form_container {
-                order: 1;
-                display: none;
+    //         .woof_submit_search_form_container {
+    //             order: 1;
+    //             display: none;
 
-                button.button {
-                    background-color: transparent;
-                    border: 0px;
-                    padding: 0px;
-                    margin-left: 0px;
-                    color: #000;
-                    font-size: 18px;
-                    font-weight: 600;
-                    font-family: "metropolissemi_bold", "Nunito Sans", sans-serif;
-                }
-            }
-        }
+    //             button.button {
+    //                 background-color: transparent;
+    //                 border: 0px;
+    //                 padding: 0px;
+    //                 margin-left: 0px;
+    //                 color: #000;
+    //                 font-size: 18px;
+    //                 font-weight: 600;
+    //                 font-family: "metropolissemi_bold", "Nunito Sans", sans-serif;
+    //             }
+    //         }
+    //     }
 
-        .woof_list {
-            display: inline-grid;
-            li {
-                margin-left: 0px!important;
-                order: 3;
+    //     .woof_list {
+    //         display: inline-grid;
+    //         li {
+    //             margin-left: 0px!important;
+    //             order: 3;
 
-                &.all {
-                    order: 2;
-                    margin-bottom: 25px!important;
+    //             &.all {
+    //                 order: 2;
+    //                 margin-bottom: 25px!important;
 
-                    a {
-                        color: #000;
-                        font-size: 25px;
-                        font-weight: 700;
-                        font-family: "Nunito Sans", sans-serif;
+    //                 a {
+    //                     color: #000;
+    //                     font-size: 25px;
+    //                     font-weight: 700;
+    //                     font-family: "Nunito Sans", sans-serif;
 
-                        &:hover {
-                            text-decoration: none;
-                            color: #F00;
-                        }
-                    }
+    //                     &:hover {
+    //                         text-decoration: none;
+    //                         color: #F00;
+    //                     }
+    //                 }
 
-                    &.red-txt {
-                        a{
-                            color: #F00;
-                        } 
-                    }
-                }
+    //                 &.red-txt {
+    //                     a{
+    //                         color: #F00;
+    //                     } 
+    //                 }
+    //             }
 
-                &.woof_term_33 {
-                    order: 1;
-                }
+    //             &.woof_term_33 {
+    //                 order: 1;
+    //             }
 
-                input {
-                    display: none;
-                }
+    //             input {
+    //                 display: none;
+    //             }
 
-                label.woof_radio_label {
-                    margin-left: 0px;
-                    color: #000;
-                    font-size: 25px;
-                    font-weight: 700;
-                    font-family: "Nunito Sans", sans-serif;
+    //             label.woof_radio_label {
+    //                 margin-left: 0px;
+    //                 color: #000;
+    //                 font-size: 25px;
+    //                 font-weight: 700;
+    //                 font-family: "Nunito Sans", sans-serif;
 
-                    &:hover {
-                        color: #F00;
-                    }
+    //                 &:hover {
+    //                     color: #F00;
+    //                 }
 
-                    &.woof_radio_label_selected {
-                        color: #F00;
-                    }
-                }
+    //                 &.woof_radio_label_selected {
+    //                     color: #F00;
+    //                 }
+    //             }
 
-                .woof_radio_term_reset_visible {
-                    display: none !important;
-                }
-            }
-        }
-    }
+    //             .woof_radio_term_reset_visible {
+    //                 display: none !important;
+    //             }
+    //         }
+    //     }
+    // }
 
     .woocommerce {
         padding-bottom: 90px;
@@ -959,7 +1061,8 @@ h1 {
         margin-top: 30px;
 
         li.product {
-            margin-bottom: 20px;
+            margin: 0 0 20px;
+            width: 33%;
             &.outofstock {
                 //pointer-events: none;
                 opacity: .5;
@@ -978,6 +1081,7 @@ h1 {
 
             a {
                 text-align: center;
+                // position: relative;
 
                 &.button.product_type_simple {
                     display: none;
@@ -990,22 +1094,23 @@ h1 {
 
                     &:last-of-type {
                         position: absolute;
-                        // top: 0;
-                        bottom: 90px;
+                        top: 0;
+                        right: 50px;
                         opacity: 0;
                     }
                 }
 
-                &:hover {
-                    img:first-of-type {
-                        opacity: 0;
-                        transition: opacity 200ms ease 200ms;
-                    }
-                    img:last-of-type {
-                        opacity: 1;
-                        transition: opacity 200ms ease 200ms;
-                    }
-                }
+                // &:hover {
+                //     img:first-of-type {
+                //         opacity: 0;
+                //         transition: opacity 200ms ease 200ms;
+                //     }
+                //     img:last-of-type {
+                //         opacity: 1;
+                //         // position: absolute;
+                //         transition: opacity 200ms ease 200ms;
+                //     }
+                // }
 
                 h2.woocommerce-loop-product__title {
                     text-align: center;
@@ -1024,6 +1129,31 @@ h1 {
 
             a.product_type_variable, a.add_to_cart_button {
                 display: none;
+            }
+        }
+    }
+
+    .miror-container {
+        border-left: 1px solid #000;  
+
+        #miror {
+            height: 100%;
+            width: 100%;
+            // background-color: pink;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-height: calc(100vh - 125px);
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+    
+            img {
+                height: 60vh;
+                width: auto;
+                max-width: inherit;
+                @extend .fadeIn-1s;
             }
         }
     }
@@ -3955,48 +4085,6 @@ body.single-product {
             grid-template-columns: inherit;
             display: block;
             max-height: 600px;
-        }
-    }
-
-    // Home page
-
-    .home {
-        background-image: url('https://encre-atelier.com/wp-content/uploads/2021/06/HOMEPAGE-MOBILE-3-scaled-e1622670339151.jpg');
-
-        #myBtn {
-            display: block;
-            position: fixed;
-            z-index: 99999;
-            width: 100vw;
-            height: 100vh;
-            background-color: transparent;
-            border-color: transparent;
-            top: 0;
-            left: 0;
-        }
-
-        #content {
-            .entry-content {
-                transform: translateY(80px);
-                h1 {
-                    font-size: 64px;
-                    margin-bottom: 64px;
-                }
-
-                a {
-                    font-size: 46px;
-                }
-
-                .bottom-home {
-                    p.lang-home {
-                        font-size: 18px;
-                    }
-
-                    button.btn {
-                        transform: translate3d(40px, -12px, 0);
-                    }
-                }
-            }
         }
     }
 

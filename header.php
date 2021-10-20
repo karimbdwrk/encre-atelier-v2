@@ -47,8 +47,19 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <div class="blue-banner">
-                        <p>FREE SHIPPING FOR DELIVERY OVER 250€ - FREE SHIPPING FOR DELIVERY OVER 250€ - FREE SHIPPING FOR DELIVERY OVER 250€ - FREE SHIPPING FOR DELIVERY OVER 250€</p>
+                    <div class="blue-banner owl-carousel owl-theme">
+                        <div class="item">
+                            <p>FREE SHIPPING FOR DELIVERY OVER 250€</p>
+                        </div>
+                        <div class="item">
+                            <p>FREE SHIPPING FOR DELIVERY OVER 250€</p>
+                        </div>
+                        <div class="item">
+                            <p>FREE SHIPPING FOR DELIVERY OVER 250€</p>
+                        </div>
+                        <div class="item">
+                            <p>FREE SHIPPING FOR DELIVERY OVER 250€</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-2 logo-container">
@@ -72,8 +83,25 @@
                         ?>
 
                     </nav>
-                    <div class="black-banner">
-                    <p>FREE SHIPPING FOR DELIVERY OVER 250€ - FREE SHIPPING FOR DELIVERY OVER 250€ - FREE SHIPPING FOR DELIVERY OVER 250€ - FREE SHIPPING FOR DELIVERY OVER 250€</p>
+                    <div class="buttons">
+                    <?php echo do_shortcode( '[yith_wcwl_wishlist]' ); ?>
+                        <button type="button" class="btn btn-wishlist">
+                            <img src="https://encre-atelier.com/wp-content/uploads/2021/03/eye-close.svg" class="wishlist-svg"/>
+                        </button>
+                        <button type="button" class="btn btn-recherche" data-toggle="modal" data-target="#searchModal">
+                            <img src="https://encre-atelier.com/wp-content/uploads/2021/03/eye-close.svg" class="search-svg"/>
+                        </button>
+                        <button type="button" class="btn btn-panier">
+                            <img src="https://encre-atelier.com/wp-content/uploads/2021/03/eye-close.svg" class="panier-svg"/>
+                        </button>
+                    </div>
+                    <div class="black-banner owl-carousel owl-theme">
+                        <div class="item">
+                            <p>After a childhood spent in the United States, being a teenager in Lyon, shortened higher education, and a growing passion for tattoos, I decided to jump into a project combining textile and tattoos.</p>
+                        </div>
+                        <div class="item">
+                            <p>I wanted the thread to replace the ink, the textile to become the skin and the needle to follow the hand movement just as the tattooist would sting the drawing line.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -243,6 +271,6 @@
         </div>
     <?php endif; ?>
 	<div id="content" class="site-content">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
                 <?php endif; ?>

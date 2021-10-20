@@ -246,63 +246,94 @@ ready(function() {
   })
 
 
+  function imageMiror() {
+    let productList = document.querySelector('.products')
+    let product = document.querySelector('.product')
+    const cible = document.getElementById('miror')
+
+    // for (product of products) {
+      // product.querySelector('.woocommerce-loop-product__link').addEventListener('mouseover', (event) => {
+      //   console.log('hover product')
+      //   this.style.border = '1px solid pink'
+      //   // let img = this.querySelector('img:last-of-type').bind(product)
+      //   // let imgSrc = img.getAttribute('data-src')
+      //   // console.log(imgSrc)
+      //   // let newImg = document.createElement('img')
+      //   // newImg.setAttribute('src', imgSrc)
+      //   // cible.append(newImg)
+      // }, false)
+    // }
+
+    document.querySelectorAll('.product').forEach(item => {
+        item.addEventListener('mouseenter', event => {
+            // item.style.border = '1px solid pink'
+            let imgSrc = item.querySelector('img:last-of-type').getAttribute('src')
+            let newImg = document.createElement('img')
+            newImg.setAttribute('src', imgSrc)
+            cible.innerHTML = ''
+            cible.append(newImg)
+        })
+    })
+  }
+  imageMiror()
+
     //PAGE CATEGORIE CLOTHING 
 
-    function addAllTag() {
-      const woofList = document.querySelector('.woof_list')
-      let allLink = document.createElement('li')
-      allLink.classList.add('all')
-      allLink.innerHTML = '<a href="/clothing"><span class="lang_fr">Tout</span><span class="lang_en">All</span></a>'
+    // function addAllTag() {
+    //   const woofList = document.querySelector('.woof_list')
+    //   let allLink = document.createElement('li')
+    //   allLink.classList.add('all')
+    //   allLink.innerHTML = '<a href="/clothing"><span class="lang_fr">Tout</span><span class="lang_en">All</span></a>'
 
-      let reset = document.querySelector('.woof_submit_search_form_container')
-      if (reset.innerHTML.trim() == '') {
-        allLink.classList.add('red-txt')
-      }
-      woofList.append(allLink)
-    }
+    //   let reset = document.querySelector('.woof_submit_search_form_container')
+    //   if (reset.innerHTML.trim() == '') {
+    //     allLink.classList.add('red-txt')
+    //   }
+    //   woofList.append(allLink)
+    // }
 
-    function addAllTagHome() {
-      const woofList = document.querySelector('.woof_list')
-      let allLink = document.createElement('li')
-      allLink.classList.add('all')
-      allLink.innerHTML = '<a href="/home"><span class="lang_fr">Tout</span><span class="lang_en">All</span></a>'
+    // function addAllTagHome() {
+    //   const woofList = document.querySelector('.woof_list')
+    //   let allLink = document.createElement('li')
+    //   allLink.classList.add('all')
+    //   allLink.innerHTML = '<a href="/home"><span class="lang_fr">Tout</span><span class="lang_en">All</span></a>'
 
-      let reset = document.querySelector('.woof_submit_search_form_container')
-      if (reset.innerHTML.trim() == '') {
-        allLink.classList.add('red-txt')
-      }
-      woofList.append(allLink)
-    }
+    //   let reset = document.querySelector('.woof_submit_search_form_container')
+    //   if (reset.innerHTML.trim() == '') {
+    //     allLink.classList.add('red-txt')
+    //   }
+    //   woofList.append(allLink)
+    // }
 
-    const isClothingPage = document.querySelector('.page-id-49')
-    const isHomeCatPage = document.querySelector('.page-id-196')
-    const isLabPage = document.querySelector('.page-id-302')
-    const isAboutPage = document.querySelector('.page-id-310')
-    if (isClothingPage) {
-      addAllTag()
-      if (window.innerWidth <= 425) {
-        document.getElementById('clothingDot').style.fill = '#F00'
-        document.getElementById('subheader-logo').innerHTML = 'Clothing.'
-      }
-    }
+    // const isClothingPage = document.querySelector('.page-id-49')
+    // const isHomeCatPage = document.querySelector('.page-id-196')
+    // const isLabPage = document.querySelector('.page-id-302')
+    // const isAboutPage = document.querySelector('.page-id-310')
+    // if (isClothingPage) {
+    //   addAllTag()
+    //   if (window.innerWidth <= 425) {
+    //     document.getElementById('clothingDot').style.fill = '#F00'
+    //     document.getElementById('subheader-logo').innerHTML = 'Clothing.'
+    //   }
+    // }
 
-    if (isHomeCatPage) {
-      addAllTagHome()
-      if (window.innerWidth <= 425) {
-        document.getElementById('homeDot').style.fill = '#F00'
-        document.getElementById('subheader-logo').innerHTML = 'Home.'
-      }
-    }
+    // if (isHomeCatPage) {
+    //   addAllTagHome()
+    //   if (window.innerWidth <= 425) {
+    //     document.getElementById('homeDot').style.fill = '#F00'
+    //     document.getElementById('subheader-logo').innerHTML = 'Home.'
+    //   }
+    // }
 
-    if (isLabPage && window.innerWidth <= 425) {
-      document.getElementById('labDot').style.fill = '#F00'
-      document.getElementById('subheader-logo').innerHTML = 'Lab.'
-    }
+    // if (isLabPage && window.innerWidth <= 425) {
+    //   document.getElementById('labDot').style.fill = '#F00'
+    //   document.getElementById('subheader-logo').innerHTML = 'Lab.'
+    // }
 
-    if (isAboutPage && window.innerWidth <= 425) {
-      document.getElementById('aboutDot').style.fill = '#F00'
-      document.getElementById('subheader-logo').innerHTML = 'About.'
-    }
+    // if (isAboutPage && window.innerWidth <= 425) {
+    //   document.getElementById('aboutDot').style.fill = '#F00'
+    //   document.getElementById('subheader-logo').innerHTML = 'About.'
+    // }
 
    
 

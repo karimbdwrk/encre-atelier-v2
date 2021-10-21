@@ -117,8 +117,7 @@ jQuery(document).ready(function() {
         dots:false,
         autoplayHoverPause: false,
         autoplayTimeout: 15000,
-        autoplaySpeed: 15000,
-        smartSpeed: false
+        autoplaySpeed: 15000
     })
 
     jQuery('#homepage .owl-carousel').owlCarousel({
@@ -282,82 +281,82 @@ jQuery(document).ready(function() {
 
     // Modal send to a lover
 
-    if(jQuery('body.single-product').html()) {
-        jQuery('input#form_1_1-element-12').val(window.location.href)
+    // if(jQuery('body.single-product').html()) {
+    //     jQuery('input#form_1_1-element-12').val(window.location.href)
 
-        jQuery('#customNextBtn').on('click', function() {
-            console.log('#customNextBtn')
-            // jQuery('#owlRefs .owl-carousel').owlCarousel();
-            jQuery('#owlSlider .owl-carousel').trigger('next.owl.carousel');
-        })
+    //     jQuery('#customNextBtn').on('click', function() {
+    //         console.log('#customNextBtn')
+    //         // jQuery('#owlRefs .owl-carousel').owlCarousel();
+    //         jQuery('#owlSlider .owl-carousel').trigger('next.owl.carousel');
+    //     })
 
-        // if(jQuery('#size').html() == undefined) { 
-        //     jQuery('.size-guide').hide() 
-        // }
-    }
+    //     // if(jQuery('#size').html() == undefined) { 
+    //     //     jQuery('.size-guide').hide() 
+    //     // }
+    // }
 
-    if (jQuery('#loverModal .modal-body > .rm-post-sub-msg').html()) {
-        console.log('message deja envoyé')
-        jQuery('#content.site-content > .container').prepend('<div class="alert alert-success alert-dismissible fade show text-center" role="alert">Votre message à bien été envoyé<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>')
-    }
+    // if (jQuery('#loverModal .modal-body > .rm-post-sub-msg').html()) {
+    //     console.log('message deja envoyé')
+    //     jQuery('#content.site-content > .container').prepend('<div class="alert alert-success alert-dismissible fade show text-center" role="alert">Votre message à bien été envoyé<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>')
+    // }
 
-    jQuery('#submitCustom').on('click',function() {
-        console.log('send to a lover submit')
+    // jQuery('#submitCustom').on('click',function() {
+    //     console.log('send to a lover submit')
 
 
 
-        const timeline = anime.timeline({
-            easing: 'easeOutQuart'
-        })
+    //     const timeline = anime.timeline({
+    //         easing: 'easeOutQuart'
+    //     })
 
-        timeline
-        .add({
-            targets:'.kiss-div',
-            opacity: '1',
-            duration: '200'
-        })
-        .add({
-            targets:'#submitCustom',
-            scale: '0',
-            opacity: '0',
-            duration: '300'
-        }, '-=200')
-        .add({
-            targets:'#leftFace',
-            translateX: '52', 
-            duration: '500'
-        }, '-=200')
-        .add({
-            targets:'#rightFace',
-            translateX: '-52', 
-            duration: '500'
-        }, '-=500')
-        .add({
-            targets:'#leftFace',
-            translateX: '0', 
-            duration: '500'
-        }, '+=2000')
-        .add({
-            targets:'#rightFace',
-            translateX: '0', 
-            duration: '500'
-        }, '-=500')
-        .add({
-            targets:'#submitCustom',
-            scale: '1',
-            opacity: '1',
-            duration: '500'
-        }, '-=500')
-        .add({
-            targets:'.kiss-div',
-            opacity: '0',
-            duration: '200'
-        }, '-=500')
+    //     timeline
+    //     .add({
+    //         targets:'.kiss-div',
+    //         opacity: '1',
+    //         duration: '200'
+    //     })
+    //     .add({
+    //         targets:'#submitCustom',
+    //         scale: '0',
+    //         opacity: '0',
+    //         duration: '300'
+    //     }, '-=200')
+    //     .add({
+    //         targets:'#leftFace',
+    //         translateX: '52', 
+    //         duration: '500'
+    //     }, '-=200')
+    //     .add({
+    //         targets:'#rightFace',
+    //         translateX: '-52', 
+    //         duration: '500'
+    //     }, '-=500')
+    //     .add({
+    //         targets:'#leftFace',
+    //         translateX: '0', 
+    //         duration: '500'
+    //     }, '+=2000')
+    //     .add({
+    //         targets:'#rightFace',
+    //         translateX: '0', 
+    //         duration: '500'
+    //     }, '-=500')
+    //     .add({
+    //         targets:'#submitCustom',
+    //         scale: '1',
+    //         opacity: '1',
+    //         duration: '500'
+    //     }, '-=500')
+    //     .add({
+    //         targets:'.kiss-div',
+    //         opacity: '0',
+    //         duration: '200'
+    //     }, '-=500')
 
-        setTimeout(() => {
-            jQuery('#rm_next_form_page_button_1_1').trigger('click')
-        }, 500)
-    })
+    //     setTimeout(() => {
+    //         jQuery('#rm_next_form_page_button_1_1').trigger('click')
+    //     }, 500)
+    // })
 
     const contactPage = jQuery('.page-id-150').html()
 
@@ -634,8 +633,6 @@ jQuery(document).ready(function() {
 
     jQuery('#owlSlider .owl-carousel').owlCarousel({
         loop:true,
-        //autoplay: true,
-
         nav:false,
         dots:true,
         dotsEach: true,
@@ -651,13 +648,10 @@ jQuery(document).ready(function() {
                 margin:60
             },
             1280:{
-                items:2,
-                center:false
-            },
-            1400:{
-                margin:60,
-                autoWidth:true,
                 items:2
+            },
+            2000:{
+                items:3
             }
         }
     })

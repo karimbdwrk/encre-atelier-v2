@@ -33,7 +33,7 @@ if ( post_password_required() ) {
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'fadeIn-1s', $product ); ?>>
 
-	<div class="summary entry-summary">
+	<div class="summary entry-summary col-md-3">
 		<?php
 		/**
 		 * Hook: woocommerce_single_product_summary.
@@ -144,30 +144,43 @@ if ( post_password_required() ) {
 			</div>
 		</div>
 	</div>
-	<div id="owlSlider">
-		<button id="customNextBtn" class="btn btn-primary"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 407.436 407.436" style="enable-background:new 0 0 407.436 407.436;" xml:space="preserve"><polygon points="112.814,0 91.566,21.178 273.512,203.718 91.566,386.258 112.814,407.436 315.869,203.718 "/></svg></button>
+	<div class="col-md-9">
+	<?php echo do_shortcode( '[yith_wcwl_add_to_wishlist]' ); ?>
+		<div id="owlSlider">
+			<button id="customNextBtn" class="btn btn-primary"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 407.436 407.436" style="enable-background:new 0 0 407.436 407.436;" xml:space="preserve"><polygon points="112.814,0 91.566,21.178 273.512,203.718 91.566,386.258 112.814,407.436 315.869,203.718 "/></svg></button>
+		</div>
 	</div>
 
 	<?php
-	/**
-	 * Hook: woocommerce_before_single_product_summary.
-	 *
-	 * @hooked woocommerce_show_product_sale_flash - 10
-	 * @hooked woocommerce_show_product_images - 20
-	 */
-	do_action( 'woocommerce_before_single_product_summary' );
+		/**
+		 * Hook: woocommerce_before_single_product_summary.
+		 *
+		 * @hooked woocommerce_show_product_sale_flash - 10
+		 * @hooked woocommerce_show_product_images - 20
+		 */
+		do_action( 'woocommerce_before_single_product_summary' );
 	?>
 
-	<?php
-	/**
-	 * Hook: woocommerce_after_single_product_summary.
-	 *
-	 * @hooked woocommerce_output_product_data_tabs - 10
-	 * @hooked woocommerce_upsell_display - 15
-	 * @hooked woocommerce_output_related_products - 20
-	 */
-	do_action( 'woocommerce_after_single_product_summary' );
-	?>
+
+</div>
+<div class="container-fluid related-container">
+	<div class="row">
+		<div class="col-12">
+			<h3 class="title">ARTICLES SIMILAIRES</h3>
+
+			<?php
+				/**
+				 * Hook: woocommerce_after_single_product_summary.
+				 *
+				 * @hooked woocommerce_output_product_data_tabs - 10
+				 * @hooked woocommerce_upsell_display - 15
+				 * @hooked woocommerce_output_related_products - 20
+				 */
+				do_action( 'woocommerce_after_single_product_summary' );
+			?>
+
+		</div>
+	</div>
 </div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>

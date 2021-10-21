@@ -107,8 +107,11 @@ if (singleProductPage) {
     let imgLink = gallery[i].querySelector('a').getAttribute('href')
     console.log(i, ' - ', imgLink)
     const owlSlide = document.createElement('div')
-    owlSlide.style.backgroundImage = "url('" + imgLink + "')";
+    const owlImg = document.createElement('img')
+    // owlSlide.style.backgroundImage = "url('" + imgLink + "')";
+    owlImg.setAttribute('src', imgLink)
     owlSlide.classList.add('item')
+    owlSlide.append(owlImg)
     // owlSlide.setAttribute('onClick', console.log('click img item'))
     let zoomBtn = document.createElement('button')
     zoomBtn.className = 'btn btn-warning zoom-btn'
@@ -251,19 +254,6 @@ ready(function() {
     let product = document.querySelector('.product')
     const cible = document.getElementById('miror')
 
-    // for (product of products) {
-      // product.querySelector('.woocommerce-loop-product__link').addEventListener('mouseover', (event) => {
-      //   console.log('hover product')
-      //   this.style.border = '1px solid pink'
-      //   // let img = this.querySelector('img:last-of-type').bind(product)
-      //   // let imgSrc = img.getAttribute('data-src')
-      //   // console.log(imgSrc)
-      //   // let newImg = document.createElement('img')
-      //   // newImg.setAttribute('src', imgSrc)
-      //   // cible.append(newImg)
-      // }, false)
-    // }
-
     document.querySelectorAll('.product').forEach(item => {
         item.addEventListener('mouseenter', event => {
             // item.style.border = '1px solid pink'
@@ -275,7 +265,10 @@ ready(function() {
         })
     })
   }
-  imageMiror()
+
+  if (document.querySelector('.page-id-49')) {
+    imageMiror()
+  }
 
     //PAGE CATEGORIE CLOTHING 
 
@@ -340,9 +333,9 @@ ready(function() {
     // PRODUCT PAGE 
 
     if (singleProductPage) {
-      productCat()
+      // productCat()
       customSelect()
-      flyToCart()
+      // flyToCart()
 
 
 
@@ -356,30 +349,30 @@ ready(function() {
 
     // MAIN CATEGORY OF PRODUCT
 
-    function productCat() {
-      const meta = document.querySelector('.product_meta')
-      const productTag = meta.querySelector('.posted_in a')
-      const tagNameLower = productTag.innerHTML.toLowerCase()
-      // console.log(tagNameLower)
+    // function productCat() {
+    //   const meta = document.querySelector('.product_meta')
+    //   const productTag = meta.querySelector('.posted_in a')
+    //   const tagNameLower = productTag.innerHTML.toLowerCase()
+    //   // console.log(tagNameLower)
 
-      const nav = document.getElementById('menu-menu-principal').children
-      // console.log(nav)
+    //   const nav = document.getElementById('menu-menu-principal').children
+    //   // console.log(nav)
 
-      for (child of nav) {
-        // console.log(child)
-        let childLower = child.innerText.toLowerCase()
-        let childRegex = childLower.replace('.', '')
-        // 
-        // console.log(childRegex)
+    //   for (child of nav) {
+    //     // console.log(child)
+    //     let childLower = child.innerText.toLowerCase()
+    //     let childRegex = childLower.replace('.', '')
+    //     // 
+    //     // console.log(childRegex)
 
-        if ( childRegex == tagNameLower ) {
-          console.log(tagNameLower)
-          console.log(child)
-          child.querySelector('.nav-link').style.color = '#F00'
-          document.getElementById(tagNameLower + 'Dot').style.fill = '#F00'
-        }
-      }
-    }
+    //     if ( childRegex == tagNameLower ) {
+    //       console.log(tagNameLower)
+    //       console.log(child)
+    //       child.querySelector('.nav-link').style.color = '#F00'
+    //       document.getElementById(tagNameLower + 'Dot').style.fill = '#F00'
+    //     }
+    //   }
+    // }
     // productCat()
 
     // CUSTOM SELECT PRODUCT PAGE
@@ -1153,14 +1146,14 @@ ready(function() {
   
           arrowDown.addEventListener('click', () => {
 
-            let cartLength = document.querySelector('.woocommerce .shop-scroll').children.length
+            let cartLength = document.querySelector('.cart-container .woocommerce .shop-scroll').children.length
 
             if (clickCount < cartLength - 1 ) {
 
               anime({
-                targets: '.cart_item',
+                targets: '.cart-container .cart_item',
                 easing: 'easeOutQuart',
-                translateY: - 175 * (clickCount + 1)
+                translateY: - 160 * (clickCount + 1)
               })
 
               clickCount += 1
@@ -1173,9 +1166,9 @@ ready(function() {
 
             if (clickCount > 0 ) {
               anime({
-                targets: '.cart_item',
+                targets: '.cart-container .cart_item',
                 easing: 'easeOutQuart',
-                translateY: (- 175 * (clickCount)) + 175
+                translateY: (- 160 * (clickCount)) + 160
               })
 
               clickCount += -1
@@ -1240,39 +1233,37 @@ ready(function() {
           }
         }, 1000)
       } else {
-        let timeline = anime.timeline({
-          duration: 1000,
-          easing: 'easeOutQuart'
-        })
+        // let timeline = anime.timeline({
+        //   duration: 1000,
+        //   easing: 'easeOutQuart'
+        // })
 
-        timeline
-        .add({
-          targets: '.woocommerce',
-          opacity: 0, 
-          duration: 500
-        })
-        .add({
-          targets: 'h1.text-center',
-          opacity: 0, 
-          duration: 500
-        }, '-=500')
-        .add({
-          targets: leftFace,
-          translateX: 225,
-          duration: 500
-        }, '-=250')
-        .add({
-          targets: rightFace,
-          translateX: -225,
-          duration: 500
-        }, '-=500')
+        // timeline
+        // .add({
+        //   targets: '.woocommerce',
+        //   opacity: 0, 
+        //   duration: 500
+        // })
+        // .add({
+        //   targets: 'h1.text-center',
+        //   opacity: 0, 
+        //   duration: 500
+        // }, '-=500')
+        // .add({
+        //   targets: leftFace,
+        //   translateX: 225,
+        //   duration: 500
+        // }, '-=250')
+        // .add({
+        //   targets: rightFace,
+        //   translateX: -225,
+        //   duration: 500
+        // }, '-=500')
+
 
         setTimeout(function() {
-          if (lang == 'en-US') {
-            window.location.href = '/en/checkout'
-          } else {
-            window.location.href = '/checkout'
-          }
+          document.querySelector('.cart-container').classList.add('d-none')
+          document.querySelector('.checkout-container').classList.remove('d-none')
         }, 1000)
       }
       
@@ -1338,11 +1329,11 @@ ready(function() {
       document.getElementById('billing_state').setAttribute('placeholder', 'Région')
       document.getElementById('billing_phone').setAttribute('placeholder', 'Téléphone')
       document.getElementById('billing_email').setAttribute('placeholder', 'Email')
-      document.getElementById('shipping_first_name').setAttribute('placeholder', 'Prénom')
-      document.getElementById('shipping_last_name').setAttribute('placeholder', 'Nom')
-      document.getElementById('shipping_company').setAttribute('placeholder', 'Entreprise')
-      document.getElementById('shipping_postcode').setAttribute('placeholder', 'Code Postal')
-      document.getElementById('shipping_city').setAttribute('placeholder', 'Ville')
+      // document.getElementById('shipping_first_name').setAttribute('placeholder', 'Prénom')
+      // document.getElementById('shipping_last_name').setAttribute('placeholder', 'Nom')
+      // document.getElementById('shipping_company').setAttribute('placeholder', 'Entreprise')
+      // document.getElementById('shipping_postcode').setAttribute('placeholder', 'Code Postal')
+      // document.getElementById('shipping_city').setAttribute('placeholder', 'Ville')
     }
     // getPlaceholder()
     function getPlaceholderEnglish() {
@@ -1355,11 +1346,11 @@ ready(function() {
       document.getElementById('billing_state').setAttribute('placeholder', 'Area')
       document.getElementById('billing_phone').setAttribute('placeholder', 'Phone')
       document.getElementById('billing_email').setAttribute('placeholder', 'Email')
-      document.getElementById('shipping_first_name').setAttribute('placeholder', 'First Name')
-      document.getElementById('shipping_last_name').setAttribute('placeholder', 'Last Name')
-      document.getElementById('shipping_company').setAttribute('placeholder', 'Company')
-      document.getElementById('shipping_postcode').setAttribute('placeholder', 'Zip Code')
-      document.getElementById('shipping_city').setAttribute('placeholder', 'City')
+      // document.getElementById('shipping_first_name').setAttribute('placeholder', 'First Name')
+      // document.getElementById('shipping_last_name').setAttribute('placeholder', 'Last Name')
+      // document.getElementById('shipping_company').setAttribute('placeholder', 'Company')
+      // document.getElementById('shipping_postcode').setAttribute('placeholder', 'Zip Code')
+      // document.getElementById('shipping_city').setAttribute('placeholder', 'City')
 
       // document.querySelector('#stripe-payment-data > p').textContent = 'Pay bay card'
     }
@@ -1397,6 +1388,19 @@ ready(function() {
     
 
     if (checkoutPage) {
+      cartScroll()
+
+      const goToCheckout = document.getElementById('goToCheckout')
+      goToCheckout.addEventListener('click', () => {
+        kissToCheckout()
+      })
+
+      const goToCheckoutEn = document.getElementById('goToCheckoutEn')
+      goToCheckoutEn.addEventListener('click', () => {
+        kissToCheckout()
+      })
+
+      customShippingCart()
       shippingCustom()
     }
 

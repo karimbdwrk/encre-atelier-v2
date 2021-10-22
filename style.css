@@ -1162,9 +1162,17 @@ body.page-id-302 #myVideoLab {
 #zoomProductModal .modal-heading .col-12 {
   display: inline-flex;
   justify-content: space-between; }
-#zoomProductModal .modal-heading .logo-modal {
-  max-width: 175px;
-  min-width: 175px; }
+#zoomProductModal .modal-heading .col-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px; }
+  #zoomProductModal .modal-heading .col-2 .logo-modal {
+    max-width: 175px;
+    min-width: 175px; }
+#zoomProductModal .modal-heading .col-10 button {
+  margin-right: 30px; }
 #zoomProductModal .modal-dialog {
   max-width: 100vw;
   max-height: 90vh;
@@ -1898,6 +1906,45 @@ body.woocommerce-checkout #payment {
       body.woocommerce-checkout #payment .form-row.place-order button.button.alt:hover {
         background-color: #FFF;
         color: #000; }
+
+.wishlist-container #yith-wcwl-form {
+  display: none; }
+.wishlist-container h1 {
+  margin-bottom: 90px; }
+.wishlist-container #favoris {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .wishlist-container #favoris .item.favori {
+    width: 25%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px; }
+    .wishlist-container #favoris .item.favori img {
+      width: 300px; }
+    .wishlist-container #favoris .item.favori a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .wishlist-container #favoris .item.favori a.remove-cross {
+        color: #AAA;
+        margin-left: 280px; }
+        .wishlist-container #favoris .item.favori a.remove-cross:hover {
+          text-decoration: none;
+          color: #666; }
+      .wishlist-container #favoris .item.favori a svg path {
+        fill: #000; }
+      .wishlist-container #favoris .item.favori a:hover svg path {
+        fill: #D10000; }
+      .wishlist-container #favoris .item.favori a span {
+        position: absolute;
+        color: #FFF;
+        font-weight: 700;
+        font-size: 18px; }
 
 @keyframes transformBtn {
   from {

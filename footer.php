@@ -145,10 +145,12 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-body">
-					<div class="container">
+					<div class="container-fluid">
 						<div class="row modal-heading">
-							<div class="col-12">
+							<div class="col-2">
 								<img class="logo-modal" src="https://encre-atelier.com/wp-content/uploads/2021/04/encre-black.svg">
+							</div>
+							<div class="col-10">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<i class="fas fa-times"></i>
 								</button>

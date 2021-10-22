@@ -317,6 +317,18 @@ header#masthead {
             align-items: center; }
             header#masthead > .container-fluid .row .nav-container .buttons .btn.btn-panier #nbr {
               margin-left: 7px; }
+          header#masthead > .container-fluid .row .nav-container .buttons .btn.btn-wishlist {
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            header#masthead > .container-fluid .row .nav-container .buttons .btn.btn-wishlist .wishlist-svg {
+              overflow: visible; }
+              header#masthead > .container-fluid .row .nav-container .buttons .btn.btn-wishlist .wishlist-svg #heart-path {
+                fill: transparent;
+                stroke: #D10000;
+                stroke-width: 8px; }
+              header#masthead > .container-fluid .row .nav-container .buttons .btn.btn-wishlist .wishlist-svg.oui #heart-path {
+                fill: #D10000; }
           header#masthead > .container-fluid .row .nav-container .buttons .btn svg {
             height: 30px;
             width: 30px; }
@@ -667,66 +679,32 @@ body.page-id-49 .woof_term_17 > .woof_radio_label {
 body.page-id-49 .woof_term_17 .woof_childs_list {
   margin: -15px 0 0 0 !important; }
 
-body.page-id-196 .woof_container_product_tag {
-  display: none; }
-body.page-id-196 .woof_term_17, body.page-id-196 .woof_term_39 {
-  display: none; }
-body.page-id-196 .woof_term_38 {
-  order: 1 !important;
-  margin-bottom: 0px !important; }
-body.page-id-196 .woof_term_35 > .woof_radio_label {
-  display: none !important; }
-body.page-id-196 .woof_term_35 .woof_childs_list {
-  margin: -15px 0 0 0 !important; }
-body.page-id-196 video#myVideoHome {
-  height: auto;
-  width: 100%; }
-body.page-id-196 video#myVideoHomeMobile {
-  display: none; }
-body.page-id-196 #countdown .modal-dialog {
-  width: 100vw;
-  max-width: 100vw;
-  height: 80vh;
-  min-height: 90vh;
-  max-height: 90vh;
-  margin: 10vh 0 0 0;
-  background-color: #FFF; }
-  body.page-id-196 #countdown .modal-dialog .modal-content {
-    border: 0px;
-    background-color: transparent; }
-  body.page-id-196 #countdown .modal-dialog .modal-body {
-    min-height: 90vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    flex-direction: column; }
-    body.page-id-196 #countdown .modal-dialog .modal-body .countdown-container {
-      display: flex;
-      justify-content: space-around;
-      width: 100%;
-      margin-top: 25vh; }
-      body.page-id-196 #countdown .modal-dialog .modal-body .countdown-container .countdownEl .big-text {
-        font-family: 'Nunito Sans', sans-serif;
-        font-size: 72px;
-        font-weight: 900;
-        text-align: center; }
-      body.page-id-196 #countdown .modal-dialog .modal-body .countdown-container .countdownEl p {
-        text-align: center; }
-    body.page-id-196 #countdown .modal-dialog .modal-body > p {
-      width: 100%;
-      text-align: center;
-      margin-top: 90px; }
-      body.page-id-196 #countdown .modal-dialog .modal-body > p .return-to-shop {
-        color: #FFF;
-        background-color: #000;
-        border-radius: 0px;
-        border: 1px solid #000; }
+body.page-id-196 #content {
+  padding: 0; }
 
-body.page-id-302 .logoContainer {
-  position: fixed; }
-body.page-id-302 #myVideoLab {
-  width: 100%;
-  height: auto; }
+body.page-id-302 #content {
+  padding: 0; }
+  body.page-id-302 #content .miror-container {
+    border-left: 0px;
+    border-right: 1px solid #000; }
+  body.page-id-302 #content .products .product {
+    width: 50%; }
+  body.page-id-302 #content .presentation-container {
+    border-left: 1px solid #000; }
+    body.page-id-302 #content .presentation-container .text-content {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-height: calc(100vh - 125px);
+      overflow: hidden;
+      position: sticky;
+      top: 0; }
+      body.page-id-302 #content .presentation-container .text-content p {
+        font-weight: 700;
+        font-size: 18px; }
 
 .woocommerce-pagination {
   margin-top: 90px;
@@ -847,6 +825,15 @@ body.page-id-302 #myVideoLab {
               font-weight: 600; }
             #main > .product .summary form.cart .variations .select-items .dropdown-item:active {
               color: #000; }
+      #main > .product .summary form.cart .single_variation_wrap {
+        display: flex;
+        justify-content: flex-end; }
+        #main > .product .summary form.cart .single_variation_wrap .woocommerce-variation-add-to-cart {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 50%;
+          height: 40px; }
       #main > .product .summary form.cart .quantity {
         display: none; }
       #main > .product .summary form.cart .face-left {

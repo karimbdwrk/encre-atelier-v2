@@ -1,5 +1,29 @@
 (function ($) {
 
+    function flyToCart() {
+        console.log('add to cart ok')
+        let nbr = parseInt(document.querySelector('.btn-panier #nbr').innerHTML)
+
+        const cta = document.querySelector('.single_add_to_cart_button')
+        cta.innerHTML = ''
+        let countATC = 0
+
+        let timeline = anime.timeline()
+
+          timeline
+          .add({
+            targets: cta,
+            borderRadius: '50%',
+            width: '30px',
+            height: '30px',
+            easing: 'easeOutQuart',
+            borderWidth: '2px',
+            duration: 1000
+          }, 1000)
+
+        setTimeout(() => { document.querySelector('.btn-panier #nbr').innerHTML = nbr+1 }, 2000)
+    }
+
     $(document).on('click', '.single_add_to_cart_button', function (e) {
         e.preventDefault();
 

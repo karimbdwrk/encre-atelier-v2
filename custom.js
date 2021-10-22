@@ -266,7 +266,7 @@ ready(function() {
     })
   }
 
-  if (document.querySelector('.page-id-49')) {
+  if (document.querySelector('.page-id-49') || document.querySelector('.page-id-302') || document.querySelector('.page-id-196')) {
     imageMiror()
   }
 
@@ -1406,6 +1406,17 @@ ready(function() {
 
     // WISHLIST
 
+    function wishlistHeader() {
+      const headerHeart = document.querySelector('header#masthead .btn-wishlist .wishlist-svg')
+      const wishlistTable = document.querySelector('header#masthead #yith-wcwl-form .wishlist_table')
+      let nbr = wishlistTable.querySelectorAll('tbody tr').length
+      console.log('nbr wishlist : ', nbr)
+      if (nbr >= 1 && !document.querySelector('#yith-wcwl-form .wishlist_table .wishlist-items-wrapper tr td.wishlist-empty')) {
+        headerHeart.classList.add('oui')
+      }
+    }
+    wishlistHeader()
+
     function wishlistPage() {
       const table = document.querySelector('#yith-wcwl-form .wishlist_table')
       let products = table.querySelectorAll('.wishlist-items-wrapper tr')
@@ -1415,44 +1426,52 @@ ready(function() {
       // let i = 0
 
       for (product of products) {
-        let productImg = product.querySelector('.product-thumbnail a img').getAttribute('data-src')
-        let productLink = product.querySelector('.product-thumbnail a').getAttribute('href')
-        let removeLink = product.querySelector('.product-remove a').getAttribute('href')
-        let dataRowId = product.getAttribute('data-row-id')
 
-        let item = document.createElement('div')        
-        item.className = 'item favori'
-        let itemImg = document.createElement('img')
-        itemImg.setAttribute('src', productImg)
-        let cta = document.createElement('a')
-        cta.setAttribute('href', productLink)
-        cta.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 78 65">
-                            <path id="heart-path" data-name="Tracé 44" d="M0,23.91C-.26,12.77,5.31,4.49,13.26,1.38A20.34,20.34,0,0,1,35.73,6.71c2.22,2.34,3,2,5-.11,6-6.32,13.58-8.09,22-5.28a20.9,20.9,0,0,1,13.74,19,32.9,32.9,0,0,1-5.93,18.64c-7.6,11.4-18.33,19.58-30.37,26.39a3.67,3.67,0,0,1-4.07,0C24.35,58.66,13.87,50.68,6.3,39.67,2.44,34.06.06,28,0,23.91" fill="#d10000"/>
-                          </svg><span>BUY</span>`
-        // let ctaText = document.createTextNode('BUY')
-        // cta.append(ctaText)
+        if (product.querySelector('td.wishlist-empty')) {
+          console.log('wishlist vide')
+          cible.innerHTML = '<div class="text-center">VIDE</div>'
+        } else {
 
-        let remove = document.createElement('a')
-        remove.setAttribute('href', removeLink)
-        remove.setAttribute('data-row-id', dataRowId)
-        remove.classList.add('remove-cross')
-        remove.innerHTML = '<i class="fas fa-times"></i>'
-        // let removeText = document.createTextNode('X')
-        // remove.append(removeText)
+          let productImg = product.querySelector('.product-thumbnail a img').getAttribute('data-src')
+          let productLink = product.querySelector('.product-thumbnail a').getAttribute('href')
+          let removeLink = product.querySelector('.product-remove a').getAttribute('href')
+          let dataRowId = product.getAttribute('data-row-id')
+  
+          let item = document.createElement('div')        
+          item.className = 'item favori'
+          let itemImg = document.createElement('img')
+          itemImg.setAttribute('src', productImg)
+          let cta = document.createElement('a')
+          cta.setAttribute('href', productLink)
+          cta.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 78 65">
+                              <path class="heart-wishlist" data-name="Tracé 44" d="M0,23.91C-.26,12.77,5.31,4.49,13.26,1.38A20.34,20.34,0,0,1,35.73,6.71c2.22,2.34,3,2,5-.11,6-6.32,13.58-8.09,22-5.28a20.9,20.9,0,0,1,13.74,19,32.9,32.9,0,0,1-5.93,18.64c-7.6,11.4-18.33,19.58-30.37,26.39a3.67,3.67,0,0,1-4.07,0C24.35,58.66,13.87,50.68,6.3,39.67,2.44,34.06.06,28,0,23.91" fill="#d10000"/>
+                            </svg><span>BUY</span>`
+          // let ctaText = document.createTextNode('BUY')
+          // cta.append(ctaText)
+  
+          let remove = document.createElement('a')
+          remove.setAttribute('href', removeLink)
+          remove.setAttribute('data-row-id', dataRowId)
+          remove.classList.add('remove-cross')
+          remove.innerHTML = '<i class="fas fa-times"></i>'
+          // let removeText = document.createTextNode('X')
+          // remove.append(removeText)
+  
+          // let buttonRemove = document.createElement('button')
+          // buttonRemove.classList.add('btn')
+          // buttonRemove.classList.add('btn-remove')
+          // let buttonText = document.createTextNode('remove')
+          // buttonRemove.append(buttonText)
+          // buttonRemove.setAttribute('data-line', i)
+          // i++
+  
+          item.append(remove)
+          item.append(itemImg)
+          item.append(cta)
+          // item.append(buttonRemove)
+          cible.append(item)
 
-        // let buttonRemove = document.createElement('button')
-        // buttonRemove.classList.add('btn')
-        // buttonRemove.classList.add('btn-remove')
-        // let buttonText = document.createTextNode('remove')
-        // buttonRemove.append(buttonText)
-        // buttonRemove.setAttribute('data-line', i)
-        // i++
-
-        item.append(remove)
-        item.append(itemImg)
-        item.append(cta)
-        // item.append(buttonRemove)
-        cible.append(item)
+        }
       }
     }
 

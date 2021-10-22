@@ -510,6 +510,26 @@ header#masthead {
                             }
                         }
 
+                        &.btn-wishlist {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            .wishlist-svg {
+                                overflow: visible;
+                                #heart-path {
+                                    fill: transparent;
+                                    stroke: #D10000;
+                                    stroke-width: 8px;
+                                }
+                                &.oui {
+                                    #heart-path {
+                                        fill: #D10000;
+                                    }
+                                }
+                            }
+                        }
+
                         svg {
                             height: 30px;
                             width: 30px;
@@ -1213,111 +1233,50 @@ h1 {
 
  // HOME CATEG
 
- body.page-id-196 {
-    .woof_container_product_tag {
-        display: none;
-    }
-
-    .woof_term_17, .woof_term_39 {
-        display: none;
-    }
-
-    .woof_term_38 {
-        order: 1!important;
-        margin-bottom: 0px!important;
-    }
-    
-    .woof_term_35 {
-         
-        &>.woof_radio_label {
-            display: none!important;
-        }
-
-        .woof_childs_list {
-            margin: -15px 0 0 0!important;
-        }
-    }
-
-    video#myVideoHome {
-        height: auto;
-        width: 100%;
-    }
-
-    video#myVideoHomeMobile {
-        display: none;
-    }
-
-    #countdown {
-        // background-color: #FFF;
-        // opacity: 0.95;
-
-        .modal-dialog {
-            width: 100vw;
-            max-width: 100vw;
-            height: 80vh;
-            min-height: 90vh;
-            max-height: 90vh;
-            margin: 10vh 0 0 0;
-            background-color: #FFF;
-
-            .modal-content {
-                border: 0px;
-                background-color: transparent;
-            }
-
-            .modal-body {
-                min-height: 90vh;
-                width: 100vw;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-
-                .countdown-container {
-                    display: flex;
-                    justify-content: space-around;
-                    width: 100%;
-                    margin-top: 25vh;
-
-                    .countdownEl {
-                        .big-text {
-                            font-family: 'Nunito Sans', sans-serif;
-                            font-size: 72px;
-                            font-weight: 900;
-                            text-align: center;
-                        }
-
-                        p {
-                            text-align: center;
-                        }
-                    }
-                }
-
-                &>p {
-                    width: 100%;
-                    text-align: center;
-                    margin-top: 90px;
-                    .return-to-shop {
-                        color: #FFF;
-                        background-color: #000;
-                        border-radius: 0px;
-                        border: 1px solid #000;
-                    }
-
-                }
-            }
-        }
-    }
+body.page-id-196 {
+    #content {
+        padding: 0;
+    }    
 }
 
 // LAB
 
 body.page-id-302 {
-    .logoContainer {
-        position: fixed;
-    }
-    #myVideoLab {
-        width: 100%;
-        height: auto;
+    #content {
+        padding: 0;
+
+        .miror-container {
+            border-left: 0px;
+            border-right: 1px solid #000;
+        }
+
+        .products {
+            .product {
+                width: 50%;
+            }
+        }
+
+        .presentation-container {
+            border-left: 1px solid #000;
+
+            .text-content {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                max-height: calc(100vh - 125px);
+                overflow: hidden;
+                position: sticky;
+                top: 0;
+
+                p {
+                    font-weight: 700;
+                    font-size: 18px;
+                }
+            }
+        }
     }
 }
 
@@ -1516,6 +1475,19 @@ body.page-id-302 {
                             color: #000;
                         }
                     }
+                }
+            }
+
+            .single_variation_wrap {
+                display: flex;
+                justify-content: flex-end;
+
+                .woocommerce-variation-add-to-cart {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50%;
+                    height: 40px;
                 }
             }
 

@@ -9,8 +9,7 @@
  * @package WP_Bootstrap_Starter
  */
 
-?>
-<?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
+if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
 			</div><!-- .row -->
 		</div><!-- .container -->
 	</div><!-- #content -->
@@ -69,16 +68,19 @@
 		</div>
 	</div>
 	<footer id="colophon" class="site-footer <?php echo wp_bootstrap_starter_bg_class(); ?>" role="contentinfo">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-12 reseaux-sociaux">
-					<a href="https://www.instagram.com/encre_atelier" target="blank_"><i class="fab fa-instagram"></i></a>
 					<a href="https://www.facebook.com/encreclothes" target="blank_"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://www.instagram.com/encre_atelier" target="blank_"><i class="fab fa-instagram"></i></a>
 				</div>
 				<a class="cart-contents d-none" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></a>
 			</div>
 			<div class="row justify-content-center links-footer">
-				<div class="col-10 text-center lang_fr">
+				<div class="col-12 col-sm-2 ministere-culture">
+					<img src="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/icons/ministere-culture.svg" alt="">
+				</div>
+				<div class="col-10 col-sm-8 text-center lang_fr">
 					<a href="https://encre-atelier.com/fr/contact" >Contact</a><span class="sep"> | </span>
 					<a href="https://encre-atelier.com/fr/stockist" >Stockist</a><span class="sep"> | </span>
 					<a href="https://encre-atelier.com/fr/shipping/">Shipping & Handling</a><span class="sep"> | </span>
@@ -87,7 +89,7 @@
 					<a href="https://encre-atelier.com/fr/conditions-generales-de-vente/"><span class="lang_fr">Conditions Générales</span><span class="lang_en">Terms & Conditions</span></a><span class="sep"> | </span>
 					<a href="#"><span class="lang_fr">Politique de confidentialité</span><span class="lang_en">Privacy policy</span></a>
 				</div>
-				<div class="col-10 text-center lang_en">
+				<div class="col-10 col-sm-8 text-center lang_en">
 					<a href="https://encre-atelier.com/en/contact" >Contact</a><span class="sep"> | </span>
 					<a href="https://encre-atelier.com/en/stockist" >Stockist</a><span class="sep"> | </span>
 					<a href="https://encre-atelier.com/en/shipping/">Shipping & Handling</a><span class="sep"> | </span>
@@ -96,6 +98,7 @@
 					<a href="https://encre-atelier.com/en/conditions-generales-de-vente/"><span class="lang_fr">Conditions Générales</span><span class="lang_en">Terms & Conditions</span></a><span class="sep"> | </span>
 					<a href="#"><span class="lang_fr">Politique de confidentialité</span><span class="lang_en">Privacy policy</span></a>
 				</div>
+				<div class="col-sm-2 d-none d-sm-block"></div>
 				<button id="lang_footer" class="btn btn-default" >
 					<span class="lang_fr">En</span><span class="lang_en">Fr</span>
 				</button>
@@ -132,7 +135,15 @@
 						<div class="row">
 							<div class="col-12">
 								<!-- <img src="http://encre-atelier.com/wp-content/uploads/2021/02/rechercher-cover.png"> -->
-								<?php if ( function_exists( 'aws_get_search_form' ) ) { aws_get_search_form(); } ?>
+								<div class="search_bar">
+							        <form id="form" action="/" method="get" autocomplete="off">
+							            <input type="text" name="s" placeholder="RECHERCHER" id="keyword" class="input_search" onkeyup="fetch()">
+							            <button>
+							                Search
+							            </button>
+							        </form>
+							        <div class="search_result" id="datafetch"></div>
+							    </div>
 							</div>
 						</div>
 					</div>
@@ -205,42 +216,41 @@
 		</div>
 	</div>
 <?php endif; ?>
-</div><!-- #page -->
-<div id="rotateScreen">
-	<div class="container">
-		<div class="row">
-			<div class="col-6">
-				<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-				viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-					<path d="M351.68,53.653c69.653,33.067,119.68,100.8,127.253,181.013h32C500.053,103.253,390.187,0,256,0
-					c-4.8,0-9.387,0.427-14.187,0.747L323.2,82.133C323.2,82.133,351.68,53.653,351.68,53.653z M218.24,37.227
-					c-12.48-12.48-32.747-12.48-45.227,0L37.227,173.013c-12.48,12.48-12.48,32.747,0,45.227l256.427,256.427
-					c12.48,12.48,32.747,12.48,45.227,0L474.667,338.88c12.48-12.48,12.48-32.747,0-45.227L218.24,37.227z M316.373,452.053
-					L59.84,195.627L195.627,59.84l256.427,256.427L316.373,452.053z M160.32,458.347C90.667,425.28,40.64,357.547,33.067,277.333h-32
-					C11.947,408.747,121.813,512,256,512c4.8,0,9.387-0.427,14.187-0.747L188.8,429.867L160.32,458.347L160.32,458.347z"/>
-				</svg>
+	</div><!-- #page -->
+		<div id="rotateScreen">
+			<div class="container">
+				<div class="row">
+					<div class="col-6">
+						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+						<path d="M351.68,53.653c69.653,33.067,119.68,100.8,127.253,181.013h32C500.053,103.253,390.187,0,256,0
+						c-4.8,0-9.387,0.427-14.187,0.747L323.2,82.133C323.2,82.133,351.68,53.653,351.68,53.653z M218.24,37.227
+						c-12.48-12.48-32.747-12.48-45.227,0L37.227,173.013c-12.48,12.48-12.48,32.747,0,45.227l256.427,256.427
+						c12.48,12.48,32.747,12.48,45.227,0L474.667,338.88c12.48-12.48,12.48-32.747,0-45.227L218.24,37.227z M316.373,452.053
+						L59.84,195.627L195.627,59.84l256.427,256.427L316.373,452.053z M160.32,458.347C90.667,425.28,40.64,357.547,33.067,277.333h-32
+						C11.947,408.747,121.813,512,256,512c4.8,0,9.387-0.427,14.187-0.747L188.8,429.867L160.32,458.347L160.32,458.347z"/>
+						</svg>
+					</div>
+					
+					<div class="col-6"><p class="h1">ROTATE<br>YOUR<br>DEVICE<p></div>
+				</div>
 			</div>
-			<div class="col-6"><p class="h1">ROTATE<br>YOUR<br>DEVICE<p></div>
 		</div>
-	</div>
-</div>
-<button id="krimo" class="btn btn-warning d-none">RETOUR</button>
-<?php wp_footer(); ?>
-<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww==" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js" rel="text/js"></script>
-<script src="http://encre-atelier.badwork.fr/wp-content/themes/wp-bootstrap-starter-child/custom.js" rel="text/js"></script>
 
-<script src="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/owlcarousel/owl.carousel.min.js" rel="text/js"></script>
-    <script src="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/animejs/anime.min.js"></script>
-    <script src="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/zoom-img/js/image-zoom.js"></script>
-<!-- <script src="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/custom-jquery.js" rel="text/js"></script> -->
-<script src="http://encre-atelier.badwork.fr/wp-content/themes/wp-bootstrap-starter-child/custom-jquery.js" rel="text/js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.5/mobile-detect.min.js"></script>
-<script src="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/mobiledetect.js" rel="text/js"></script>
-<script type='text/javascript' id="my-test-script" rel="text/js">
-	//alert('hello')
-</script>
+		<button id="krimo" class="btn btn-warning d-none">RETOUR</button>
 
-
-</body>
+		<?php wp_footer(); ?>
+		
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+		<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww==" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js" rel="text/js"></script>
+		<script src="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/owlcarousel/owl.carousel.min.js" rel="text/js"></script>
+		<script src="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/animejs/anime.min.js"></script>
+		<script src="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/zoom-img/js/image-zoom.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.5/mobile-detect.min.js"></script>
+		<?php if(current_user_can('administrator')) : ?>
+		<div class="col-10 plugin_active">
+			<pre><?php echo do_shortcode('[activeplugins]'); ?></pre>
+		</div>
+		<?php endif; ?>
+	</body>
 </html>

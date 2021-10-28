@@ -1,17 +1,37 @@
 (function ($) {
+    function offset(element) {
+        var rect = element.getBoundingClientRect(),
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+    }
 
     function flyToCart() {
         console.log('add to cart ok')
         let nbr = parseInt(document.querySelector('.btn-panier #nbr').innerHTML)
 
         const cta = document.querySelector('.single_add_to_cart_button')
+        const faceCta = document.getElementById('faceSmile')
+        const faceHeader = document.getElementById('faceCart')
         cta.innerHTML = ''
         let countATC = 0
+        let faceCtaOffset = offset(faceCta)
+        let faceHeaderOffset = offset(faceHeader)
+
+        console.log('offset faces :')
+        console.log(faceCtaOffset)
+        console.log(faceHeaderOffset)
+
+        let toY = faceCtaOffset.left - faceHeaderOffset.left
+        let toX = faceCtaOffset.top - faceHeaderOffset.top
+
+        console.log(toX, toY)
+
 
         let timeline = anime.timeline()
 
-          timeline
-          .add({
+        timeline
+        .add({
             targets: cta,
             borderRadius: '50%',
             width: '30px',
@@ -19,9 +39,79 @@
             easing: 'easeOutQuart',
             borderWidth: '2px',
             duration: 1000
-          }, 1000)
+        }, '+=1000')
+        .add({
+            targets: cta,
+            easing: 'easeOutQuart',
+            opacity: [1, 0],
+            duration: 1000
+        }, '+=1000')
+        .add({
+            targets: faceCta,
+            easing: 'easeOutQuart',
+            opacity: [0, 1],
+            duration: 1000
+        }, '-=1000')
+        .add({
+            targets: faceCta,
+            easing: 'easeOutQuart',
+            translateX: { 
+                value: -toY, 
+                easing: 'easeOutQuart', 
+                duration: 1500
+            },
+            translateY: { 
+                value: -toX,
+                easing: 'easeOutBack', 
+                duration: 1500
+            }
+        }, '+=1000')
+        .add({
+            targets: faceCta,
+            easing: 'easeOutQuart',
+            opacity: [1, 0],
+            duration: 500
+        }, '+=1000')
+        .add({
+            targets: faceCta,
+            translateX: { 
+                value: 0, 
+                easing: 'linear', 
+                duration: 500
+            },
+            translateY: { 
+                value: 0,
+                easing: 'linear', 
+                duration: 500
+            }
+        }, '+=1000')
+        .add({
+            targets: cta,
+            borderRadius: '0%',
+            width: '50%',
+            height: '40px',
+            easing: 'easeOutQuart',
+            borderWidth: '1px',
+            duration: 500
+        }, '+=1000')
+        .add({
+            targets: cta,
+            easing: 'easeOutQuart',
+            opacity: [0, 1],
+            duration: 1000
+        }, '+=1000')
 
-        setTimeout(() => { document.querySelector('.btn-panier #nbr').innerHTML = nbr+1 }, 2000)
+
+        setTimeout(() => { 
+            document.querySelector('.btn-panier #nbr').innerHTML = nbr+1
+            faceHeader.classList.remove('empty')
+            cta.innerHTML = 'BUY'
+        }, 7000)
+
+        setTimeout(() => { 
+            cta.classList.remove('added')
+            // faceCta.classList.add('d-none')
+        }, 10000)
     }
 
     $(document).on('click', '.single_add_to_cart_button', function (e) {

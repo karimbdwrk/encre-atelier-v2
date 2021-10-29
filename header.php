@@ -14,7 +14,7 @@
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-195957052-1"></script>
-    <script>
+    <script defer>
     window.dataLayer = window.dataLayer || [];
     function gtag(){window.dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -25,14 +25,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link href='https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/fonts/Metropolis-SemiBold.woff' rel='stylesheet' type='text/css'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <!-- <link href="http://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/reset.css" rel="stylesheet"> -->
-    <link href="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/zoom-img/css/image-zoom.css">
     <?php wp_head(); ?>
 </head>
 

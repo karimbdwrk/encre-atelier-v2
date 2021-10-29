@@ -78,7 +78,7 @@ if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-
 			</div>
 			<div class="row justify-content-center links-footer">
 				<div class="col-12 col-sm-2 ministere-culture">
-					<img src="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/icons/ministere-culture.svg" alt="">
+					<img src="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/assets/icons/ministere-culture.svg" alt="">
 				</div>
 				<div class="col-10 col-sm-8 text-center lang_fr">
 					<a href="https://encre-atelier.com/fr/contact" >Contact</a><span class="sep"> | </span>
@@ -239,18 +239,5 @@ if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-
 		<button id="krimo" class="btn btn-warning d-none">RETOUR</button>
 
 		<?php wp_footer(); ?>
-		
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-		<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" integrity="sha512-YUkaLm+KJ5lQXDBdqBqk7EVhJAdxRnVdT2vtCzwPHSweCzyMgYV/tgGF4/dCyqtCC2eCphz0lRQgatGVdfR0ww==" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js" rel="text/js"></script>
-		<script src="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/owlcarousel/owl.carousel.min.js" rel="text/js"></script>
-		<script src="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/animejs/anime.min.js"></script>
-		<script src="https://encre-atelier.com/wp-content/themes/wp-bootstrap-starter-child/zoom-img/js/image-zoom.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.5/mobile-detect.min.js"></script>
-		<?php if(current_user_can('administrator')) : ?>
-		<div class="col-10 plugin_active">
-			<pre><?php echo do_shortcode('[activeplugins]'); ?></pre>
-		</div>
-		<?php endif; ?>
 	</body>
 </html>

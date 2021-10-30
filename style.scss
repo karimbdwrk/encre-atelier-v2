@@ -299,9 +299,9 @@ ul {
     //     width: 1400px!important;
     // }
 
-    body.woocommerce-cart .kiss-row {
-        max-width: 1140px;
-    }
+    // body.woocommerce-cart .kiss-row {
+    //     max-width: 1140px;
+    // }
 
 }
 
@@ -1156,6 +1156,7 @@ header#masthead {
 .owl-references-container {
     background-color: #FFF;
     border-top: 1px solid #000;
+    padding: 0;
 }
 
 #owlRefs {
@@ -1567,7 +1568,7 @@ body.page-id-302 {
                     }
     
                     img {
-                        max-width: 520px;
+                        max-width: 100%;
                         height: auto;
                         margin: 0!important;
     
@@ -2754,7 +2755,7 @@ body.page-id-302 {
 
 /* CART PAGE */
 
-body.woocommerce-cart, body.woocommerce-checkout {
+body.woocommerce-cart {
 
     // .first-column {
     //     z-index: 99999;
@@ -2762,8 +2763,14 @@ body.woocommerce-cart, body.woocommerce-checkout {
 
     #content {
         padding-top: 0;
-        min-height: 800px;
+        padding-bottom: 0;
+        // min-height: 800px;
         // max-height: 800px;
+
+        .entry-content {
+            margin: 0;
+            height: 830px;
+        }
     }
 
     .cart-container {
@@ -2777,6 +2784,7 @@ body.woocommerce-cart, body.woocommerce-checkout {
         h1.text-center {
             margin-top: 90px;
             padding-bottom: 50px;
+            font-weight: 700;
         }
 
         &>img {
@@ -3168,36 +3176,61 @@ body.woocommerce-cart, body.woocommerce-checkout {
         position: absolute;
         width: 100%;
         top: 0;
+        left: 0;
+        z-index: 10;
         pointer-events:none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-        .eye {
-            fill: #FFF;
-        }
+        svg {
+            // max-height: 600px;
+            overflow: visible;
+            width: 1920px;
 
-        #leftFace {
-            transform: translateX(-40%);
-        }
+            g {
 
-        #rightFace {
-            transform: translateX(65%);
-        }
+                &#Calque_2 {
+                    opacity: 1;
+                }
 
-        #cartHeartContainer {
-            opacity: 0;
-            transform-origin: center;
+                &#Calque_3 {
+                    opacity: 0;
+                }
 
-            path {
-                fill: #de0000;
+                &#Calque_4 {
+                    opacity: 0;
+                }
+
+                &#Calque_5 {
+                    opacity: 0;
+                }
+
+                &#Calque_6 {
+                    opacity: 0;
+                }
+
+                &#Calque_7 {
+                    opacity: 0;
+                }
+
+                &#Calque_8 {
+                    opacity: 0;
+                }
+
+                &#Calque_9 {
+                    opacity: 0;
+                }
             }
-        }
-    }
 
-    svg {
-        // max-height: 600px;
-        overflow: visible;
-
-        .cls-1 {
-            fill: #FFF;
+            // .st0{display:none;}
+            .st1{display:inline;}
+            .st2{display:inline;fill:#FFFFFF;}
+            .st3{clip-path:url(#SVGID_00000083077223179859069050000002620240034164099998_);}
+            .st4{clip-path:url(#SVGID_00000083077223179859069050000002620240034164099998_);fill:#FFFFFF;}
+            .st5{fill:#FFFFFF;}
+            .st6{fill:none;}
         }
     }
 
@@ -5449,6 +5482,20 @@ body.single-product {
         #content {
             .products {
                 padding-top: 60px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                li.product {
+                    width: 50%;
+                    margin-right: 0;
+                    margin-bottom: 15px;
+
+                    h2.woocommerce-loop-product__title {
+                        font-size: 16px;
+                    }
+                }
             }
         }
     }
@@ -6415,6 +6462,7 @@ body.single-product {
         }
 
         .cart-container {
+            height: 600px;
             &>img {
                 transform: translateY(0px);
             }

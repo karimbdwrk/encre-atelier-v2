@@ -828,8 +828,29 @@ ready(function() {
     }
     // END PSEUDO CAROUSEL FOR SHOP TABLE CART PAGE
     function kissToCheckout() {
-    	// window.location.href = 'https://encre-atelier.badwork.fr/fr/checkout'
-      window.location.href = 'https://encre-atelier.com/fr/checkout'
+      console.log('kiss to checkout')
+
+      let tl = anime.timeline()
+
+      tl
+      .add({
+        targets: '.cart-container .woocommerce',
+        opacity: 0,
+        duration: 1500
+      })
+      .add({
+        targets: '.faces-container svg .step',
+        opacity: 1,
+        direction: 'alternate',
+        loop: false,
+        delay: function(el, i, l) {
+          return i * 250;
+        }
+      }, '-=750')
+
+      setTimeout(() => {
+        window.location.href = 'https://encre-atelier.com/checkout'
+      }, 2500)
     }
 
     if (document.querySelector('.woocommerce-checkout')) {

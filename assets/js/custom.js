@@ -178,9 +178,23 @@ ready(function() {
         document.querySelector('.add_to_cart_button').prepend('test')
       }
 
-      const wishlistTable = document.querySelector('header#masthead #yith-wcwl-form .wishlist_table')
-      let wishlistList = wishlistTable.querySelectorAll('tbody tr')
-      let newList = []
+      let wishlistTable
+      let wishlistList
+
+      if (window.innerWidth > 425) {
+        wishlistTable = document.querySelector('header#masthead #yith-wcwl-form .wishlist_table')
+        wishlistList = wishlistTable.querySelectorAll('tbody tr')
+      } else {
+        wishlistTable = document.querySelector('header#masthead #yith-wcwl-form .wishlist_table')
+        wishlistList = wishlistTable.querySelectorAll('li')
+      }
+
+      // const wishlistTable = document.querySelector('header#masthead #yith-wcwl-form .wishlist_table')
+      // let wishlistList = wishlistTable.querySelectorAll('tbody tr')
+
+      console.log('wishlist list')
+      console.log(wishlistList)
+
       
       for (item of wishlistList) {
         let idProduit = item.dataset.rowId
@@ -836,21 +850,20 @@ ready(function() {
       .add({
         targets: '.cart-container .woocommerce',
         opacity: 0,
-        duration: 1500
+        duration: 500
       })
       .add({
         targets: '.faces-container svg .step',
         opacity: 1,
-        direction: 'alternate',
         loop: false,
         delay: function(el, i, l) {
-          return i * 250;
+          return i * 500;
         }
-      }, '-=750')
+      }, '-=500')
 
       setTimeout(() => {
         window.location.href = 'https://encre-atelier.com/checkout'
-      }, 2500)
+      }, 3500)
     }
 
     if (document.querySelector('.woocommerce-checkout')) {
@@ -875,8 +888,8 @@ ready(function() {
         const cart = document.querySelector('.woocommerce .shop-scroll')
         if(cart == null) {
           document.querySelector('h1.text-center').classList.add('d-none')
-          document.querySelector('.kiss-row').classList.add('d-none')
-          document.querySelector('.cart-container').innerHTML = '<img src="https://encre-atelier.com/wp-content/uploads/2021/04/illu_Panier_vide.svg"><a href="/clothing" class="btn btn-primary">Continuer vos achats</a>'
+          // document.querySelector('.kiss-row').classList.add('d-none')
+          document.querySelector('.cart-container').innerHTML = '<img class="empty-cart-illu" src="https://encre-atelier.com/wp-content/uploads/2021/04/illu_Panier_vide.svg"><a href="/clothing" class="btn btn-primary">Continuer vos achats</a>'
         }
       }
 
@@ -1064,6 +1077,174 @@ ready(function() {
           }
         }
       }
+
+    }
+
+
+    function offset(element) {
+      var rect = element.getBoundingClientRect(),
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+    }
+
+    function addToWishlistHeart() {
+
+      document.getElementById('heartWishlist').addEventListener('click', () => {
+        console.log('Wishlist click !')
+        let heartHeader = document.querySelector('header#masthead .buttons .wishlist-svg')
+        let heartPage = document.querySelector('#heartWishlist .wishlist-svg')
+        let heartHeaderOffset = offset(heartHeader)
+        let heartPageOffset = offset(heartPage)
+        let toY = heartPageOffset.left - heartHeaderOffset.left
+        let toX = heartPageOffset.top - heartHeaderOffset.top
+
+        let timeline = anime.timeline()
+
+        // if (window.innerWidth <= 425) {
+
+        //     timeline
+        //     .add({
+        //         targets: cta,
+        //         borderRadius: '100px',
+        //         easing: 'easeOutQuart',
+        //         duration: 250
+        //     })
+        //     .add({
+        //         targets: cta,
+        //         borderRadius: '100px',
+        //         width: '40px',
+        //         height: '40px',
+        //         easing: 'easeOutQuart',
+        //         borderWidth: '2px',
+        //         duration: 250
+        //     }, '-=250')
+        //     .add({
+        //         targets: cta,
+        //         easing: 'easeOutQuart',
+        //         opacity: [1, 0],
+        //         duration: 250
+        //     }, '+=250')
+        //     .add({
+        //         targets: faceCta,
+        //         easing: 'easeOutQuart',
+        //         opacity: [0, 1],
+        //         duration: 250
+        //     }, '-=500')
+        //     .add({
+        //         targets: faceCta,
+        //         easing: 'easeOutQuart',
+        //         translateX: { 
+        //             value: -toY, 
+        //             easing: 'easeOutQuart', 
+        //             duration: 1500
+        //         },
+        //         translateY: { 
+        //             value: -toX,
+        //             easing: 'easeOutBack', 
+        //             duration: 1500
+        //         },
+        //         scale: .5
+        //     })
+        //     .add({
+        //         targets: '#faceSmile g',
+        //         easing: 'easeOutQuart',
+        //         translateX: '-50%',
+        //         translateY: '-50%',
+        //         duration: 250
+        //     }, '-=500')
+        //     .add({
+        //         targets: faceCta,
+        //         easing: 'easeOutQuart',
+        //         opacity: [1, 0],
+        //         duration: 500
+        //     }, '+=250')
+        //     .add({
+        //         targets: faceCta,
+        //         translateX: { 
+        //             value: 0, 
+        //             easing: 'linear', 
+        //             duration: 500
+        //         },
+        //         translateY: { 
+        //             value: 0,
+        //             easing: 'linear', 
+        //             duration: 500
+        //         },
+        //         scale: 1
+        //     })
+        //     .add({
+        //         targets: '#faceSmile g',
+        //         easing: 'easeOutQuart',
+        //         translateX: '0%',
+        //         translateY: '0%',
+        //         duration: 250
+        //     }, '-=500')
+        //     .add({
+        //         targets: cta,
+        //         borderRadius: '0',
+        //         width: '50%',
+        //         height: '40px',
+        //         easing: 'easeOutQuart',
+        //         borderWidth: '1px',
+        //         duration: 250
+        //     })
+        //     .add({
+        //         targets: cta,
+        //         easing: 'easeOutQuart',
+        //         opacity: [0, 1],
+        //         duration: 250
+        //     })
+
+        // } else {
+
+            timeline
+            .add({
+                targets: heartPage,
+                easing: 'easeOutQuart',
+                width: 30,
+                translateX: { 
+                    value: -toY, 
+                    easing: 'easeOutQuart', 
+                    duration: 1500
+                },
+                translateY: { 
+                    value: -toX,
+                    easing: 'easeOutBack', 
+                    duration: 1500
+                }
+            })
+            .add({
+                targets: heartPage,
+                easing: 'easeOutQuart',
+                opacity: [1, 0],
+                duration: 500
+            }, '+=250')
+            .add({
+                targets: heartPage,
+                translateX: { 
+                    value: 0, 
+                    easing: 'linear', 
+                    duration: 500
+                },
+                translateY: { 
+                    value: 0,
+                    easing: 'linear', 
+                    duration: 500
+                }
+            })
+            .add({
+                targets: heartPage,
+                easing: 'easeOutQuart',
+                opacity: [0, 1],
+                duration: 250
+            })
+        // }
+      })
+    }
+
+    if (document.querySelector('body.single-product')) {
+        addToWishlistHeart()
     }
 
     function removeWishlist() {

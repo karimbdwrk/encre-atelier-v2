@@ -431,13 +431,11 @@ function data_fetch(){
         while( $the_query->have_posts() ): $the_query->the_post();?>
             <?php $product = wc_get_product(get_the_ID());?>
             <div class="display-search-item">
-                <img src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" width="520" height="578">
-                <h4>
-                    <a class="title" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-                        <?php the_title(); ?>
-                    </a>
-                </h4>
-                <p><?php echo $product->get_price_html(); ?></p>
+                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
+                    <img src="<?php echo wp_get_attachment_url( $product->get_image_id() ); ?>" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" width="520" height="578">
+                    <h4 class="title"><?php the_title(); ?></h4>
+                    <p class="price"><?php echo $product->get_price_html(); ?></p>
+                </a>
             </div>
         <?php endwhile;
        echo '</div>';
@@ -715,3 +713,16 @@ function shapeSpace_disable_scripts_styles_admin_area() {
     wp_dequeue_style('jquery-ui-css');
 }
 add_action('admin_enqueue_scripts', 'shapeSpace_disable_scripts_styles_admin_area', 100);
+
+/**
+ * Allow Pods Templates to use shortcodes
+ *
+ * NOTE: Will only work if the constant PODS_SHORTCODE_ALLOW_SUB_SHORTCODES is
+ * defined and set to true, which by default it IS NOT.
+ */
+add_filter( 'pods_shortcode', function( $tags )  {
+    $tags[ 'shortcodes' ] = true;
+    
+    return $tags;
+    
+});

@@ -151,6 +151,15 @@ jQuery(document).ready(function() {
         items: 1
     })
 
+    jQuery('#collaborationsPage .owl-carousel').owlCarousel({
+        loop:true,
+        autoplay: true,
+        margin:30,
+        nav:false,
+        dots: true,
+        items: 1
+    })
+
     jQuery('#owlRefs').owlCarousel({
         loop:true,
         autoplay: true,
@@ -264,6 +273,7 @@ jQuery(document).ready(function() {
     const contactPage = jQuery('.page-id-150').html()
 
     if (contactPage) {
+        console.log('contact-page')
         let mailAtelier = jQuery('#collapseOne a').text()
         jQuery('.formulaire #rm_reg_form_email_3_1').val(mailAtelier)
 
@@ -278,7 +288,8 @@ jQuery(document).ready(function() {
 
         // ALERT MESSAGE ENVOYÉ
         if (jQuery('#accordionContact .ok-message').html()) {
-            jQuery('#content.site-content > .container').prepend('<div class="alert alert-success alert-dismissible fade show text-center" role="alert"><span class="lang_fr">Votre message à bien été envoyé</span><span class="lang_en">Your message has been sent</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>')
+            console.log('message envoyé')
+            jQuery('#content.site-content > .container-fluid').prepend('<div class="alert alert-success alert-dismissible fade show text-center" role="alert"><span class="lang_fr">Votre message à bien été envoyé</span><span class="lang_en">Your message has been sent</span><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>')
         }
 
         // COLLAPSE CONTACT ATELIER
@@ -447,10 +458,14 @@ jQuery(document).ready(function() {
 
     /* STOCKIST PAGE  */
     jQuery('button.btn-link.btn-eu').on('click', function() {
-        if (jQuery('#Tokyo').hasClass('show')) {
-            const owl = jQuery('#stockistPage .owl-carousel')
-            owl.trigger('prev.owl.carousel')
-        }
+        jQuery('.card').removeClass('open')
+        jQuery(this).parent().parent().addClass('open')
+        const owl = jQuery('#stockistPage .owl-carousel')
+        owl.trigger('prev.owl.carousel')
+        // if (jQuery('#Tokyo').hasClass('show')) {
+        //     const owl = jQuery('#stockistPage .owl-carousel')
+        //     owl.trigger('prev.owl.carousel')
+        // }
         jQuery('path.st2').addClass('d-none')
         jQuery('path.st2').removeClass('animate_animated bounceInDown')
         let location = jQuery(this).attr('aria-controls')
@@ -460,6 +475,8 @@ jQuery(document).ready(function() {
     })
 
     jQuery('button.btn-link.btn-jpn').on('click', function() {
+        jQuery('.card').removeClass('open')
+        jQuery(this).parent().parent().addClass('open')
         jQuery('path.st2').addClass('d-none')
         jQuery('path.st2').removeClass('animate_animated bounceInDown')
         const owl = jQuery('#stockistPage .owl-carousel')
@@ -468,4 +485,17 @@ jQuery(document).ready(function() {
             jQuery('path[data-location=Tokyo]').toggleClass('d-none animate_animated bounceInDown')
         }, 300)
     })
+
+    jQuery('#accordionMapMobile button[data-toggle="collapse"]').on('click',function(e){
+        console.log('collapse clicked')
+        jQuery('#accordionMapMobile .card .collapse').removeClass('show')
+        // if ( jQuery(this).parent().parent().parent().find('.card .card-body .collapse.show') ){
+        //     console.log(jQuery(this).parent().parent().parent().find('.card .card-header .collapse.show'))
+        //     // var idx = jQuery(this).index('[data-toggle="collapse"]');
+        //     // if (idx == jQuery('.collapse.show').index('.collapse')) {
+        //     //     // prevent collapse
+        //     //     e.stopPropagation();
+        //     // }
+        // }
+    });
 });

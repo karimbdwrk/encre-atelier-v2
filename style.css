@@ -17,7 +17,7 @@ Version: 1.0
 
 @font-face {
   font-family: 'metropolissemi_bold';
-  src: url("./fonts/metropolis-semibold-webfont.woff2") format("woff2"), url("./fonts/metropolis-semibold-webfont.woff") format("woff");
+  src: url("./assets/fonts/metropolis-semibold-webfont.woff2") format("woff2"), url("./assets/fonts/metropolis-semibold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 #sendcloudshipping_service_point_select {
@@ -356,6 +356,7 @@ header#masthead {
             display: flex; }
             header#masthead > .container-fluid .row .nav-container .navbar .navbar-nav > .menu-item > a {
               color: #000;
+              font-family: "Nunito Sans", sans-serif;
               font-size: 24px;
               font-weight: 700;
               width: 100%;
@@ -426,7 +427,8 @@ header#masthead {
             header#masthead > .container-fluid .row .nav-container .buttons .btn.btn-panier #faceCart.empty .no-smile {
               opacity: 1; }
             header#masthead > .container-fluid .row .nav-container .buttons .btn.btn-panier #nbr {
-              margin-left: 7px; }
+              margin-left: 7px;
+              width: 20px; }
           header#masthead > .container-fluid .row .nav-container .buttons .btn.btn-wishlist {
             display: flex;
             justify-content: center;
@@ -517,37 +519,37 @@ header#masthead {
       height: 28px;
       transform: translate(0px, -2px); }
 
-.home header#masthead .navbar-nav .menu-item-74:hover, .woocommerce-page header#masthead .navbar-nav .menu-item-74:hover, .page-template-clothing-template header#masthead .navbar-nav .menu-item-74:hover, .page-template-home-template header#masthead .navbar-nav .menu-item-74:hover, .page-template-lab-template header#masthead .navbar-nav .menu-item-74:hover, .archive header#masthead .navbar-nav .menu-item-74:hover {
+.home header#masthead .navbar-nav .menu-item-74:hover, .woocommerce-page header#masthead .navbar-nav .menu-item-74:hover, .page-template-clothing-template header#masthead .navbar-nav .menu-item-74:hover, .page-template-home-template header#masthead .navbar-nav .menu-item-74:hover, .page-template-lab-template header#masthead .navbar-nav .menu-item-74:hover, .archive header#masthead .navbar-nav .menu-item-74:hover, .page-id-4711 header#masthead .navbar-nav .menu-item-74:hover, .page-id-179 header#masthead .navbar-nav .menu-item-74:hover, .page-id-150 header#masthead .navbar-nav .menu-item-74:hover {
   background-color: #FFD9D9; }
-.home header#masthead .navbar-nav .menu-item-74 .sub-menu, .woocommerce-page header#masthead .navbar-nav .menu-item-74 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .menu-item-74 .sub-menu, .page-template-home-template header#masthead .navbar-nav .menu-item-74 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .menu-item-74 .sub-menu, .archive header#masthead .navbar-nav .menu-item-74 .sub-menu {
+.home header#masthead .navbar-nav .menu-item-74 .sub-menu, .woocommerce-page header#masthead .navbar-nav .menu-item-74 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .menu-item-74 .sub-menu, .page-template-home-template header#masthead .navbar-nav .menu-item-74 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .menu-item-74 .sub-menu, .archive header#masthead .navbar-nav .menu-item-74 .sub-menu, .page-id-4711 header#masthead .navbar-nav .menu-item-74 .sub-menu, .page-id-179 header#masthead .navbar-nav .menu-item-74 .sub-menu, .page-id-150 header#masthead .navbar-nav .menu-item-74 .sub-menu {
   background-color: #FFD9D9; }
-.home header#masthead .navbar-nav .menu-item-75:hover, .woocommerce-page header#masthead .navbar-nav .menu-item-75:hover, .page-template-clothing-template header#masthead .navbar-nav .menu-item-75:hover, .page-template-home-template header#masthead .navbar-nav .menu-item-75:hover, .page-template-lab-template header#masthead .navbar-nav .menu-item-75:hover, .archive header#masthead .navbar-nav .menu-item-75:hover {
+.home header#masthead .navbar-nav .menu-item-75:hover, .woocommerce-page header#masthead .navbar-nav .menu-item-75:hover, .page-template-clothing-template header#masthead .navbar-nav .menu-item-75:hover, .page-template-home-template header#masthead .navbar-nav .menu-item-75:hover, .page-template-lab-template header#masthead .navbar-nav .menu-item-75:hover, .archive header#masthead .navbar-nav .menu-item-75:hover, .page-id-4711 header#masthead .navbar-nav .menu-item-75:hover, .page-id-179 header#masthead .navbar-nav .menu-item-75:hover, .page-id-150 header#masthead .navbar-nav .menu-item-75:hover {
   background-color: #FFF5D9; }
-.home header#masthead .navbar-nav .menu-item-75 .sub-menu, .woocommerce-page header#masthead .navbar-nav .menu-item-75 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .menu-item-75 .sub-menu, .page-template-home-template header#masthead .navbar-nav .menu-item-75 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .menu-item-75 .sub-menu, .archive header#masthead .navbar-nav .menu-item-75 .sub-menu {
+.home header#masthead .navbar-nav .menu-item-75 .sub-menu, .woocommerce-page header#masthead .navbar-nav .menu-item-75 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .menu-item-75 .sub-menu, .page-template-home-template header#masthead .navbar-nav .menu-item-75 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .menu-item-75 .sub-menu, .archive header#masthead .navbar-nav .menu-item-75 .sub-menu, .page-id-4711 header#masthead .navbar-nav .menu-item-75 .sub-menu, .page-id-179 header#masthead .navbar-nav .menu-item-75 .sub-menu, .page-id-150 header#masthead .navbar-nav .menu-item-75 .sub-menu {
   background-color: #FFF5D9; }
-.home header#masthead .navbar-nav .menu-item-76:hover, .woocommerce-page header#masthead .navbar-nav .menu-item-76:hover, .page-template-clothing-template header#masthead .navbar-nav .menu-item-76:hover, .page-template-home-template header#masthead .navbar-nav .menu-item-76:hover, .page-template-lab-template header#masthead .navbar-nav .menu-item-76:hover, .archive header#masthead .navbar-nav .menu-item-76:hover {
+.home header#masthead .navbar-nav .menu-item-76:hover, .woocommerce-page header#masthead .navbar-nav .menu-item-76:hover, .page-template-clothing-template header#masthead .navbar-nav .menu-item-76:hover, .page-template-home-template header#masthead .navbar-nav .menu-item-76:hover, .page-template-lab-template header#masthead .navbar-nav .menu-item-76:hover, .archive header#masthead .navbar-nav .menu-item-76:hover, .page-id-4711 header#masthead .navbar-nav .menu-item-76:hover, .page-id-179 header#masthead .navbar-nav .menu-item-76:hover, .page-id-150 header#masthead .navbar-nav .menu-item-76:hover {
   background-color: #CDF8E3; }
-.home header#masthead .navbar-nav .menu-item-76 .sub-menu, .woocommerce-page header#masthead .navbar-nav .menu-item-76 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .menu-item-76 .sub-menu, .page-template-home-template header#masthead .navbar-nav .menu-item-76 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .menu-item-76 .sub-menu, .archive header#masthead .navbar-nav .menu-item-76 .sub-menu {
+.home header#masthead .navbar-nav .menu-item-76 .sub-menu, .woocommerce-page header#masthead .navbar-nav .menu-item-76 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .menu-item-76 .sub-menu, .page-template-home-template header#masthead .navbar-nav .menu-item-76 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .menu-item-76 .sub-menu, .archive header#masthead .navbar-nav .menu-item-76 .sub-menu, .page-id-4711 header#masthead .navbar-nav .menu-item-76 .sub-menu, .page-id-179 header#masthead .navbar-nav .menu-item-76 .sub-menu, .page-id-150 header#masthead .navbar-nav .menu-item-76 .sub-menu {
   background-color: #CDF8E3; }
-.home header#masthead .navbar-nav .current-menu-item.menu-item-74, .home header#masthead .navbar-nav .current-menu-parent.menu-item-74, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-74, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-74, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-74, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-74, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-74, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-74, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-74, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-74, .archive header#masthead .navbar-nav .current-menu-item.menu-item-74, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-74 {
+.home header#masthead .navbar-nav .current-menu-item.menu-item-74, .home header#masthead .navbar-nav .current-menu-parent.menu-item-74, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-74, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-74, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-74, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-74, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-74, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-74, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-74, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-74, .archive header#masthead .navbar-nav .current-menu-item.menu-item-74, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-74, .page-id-4711 header#masthead .navbar-nav .current-menu-item.menu-item-74, .page-id-4711 header#masthead .navbar-nav .current-menu-parent.menu-item-74, .page-id-179 header#masthead .navbar-nav .current-menu-item.menu-item-74, .page-id-179 header#masthead .navbar-nav .current-menu-parent.menu-item-74, .page-id-150 header#masthead .navbar-nav .current-menu-item.menu-item-74, .page-id-150 header#masthead .navbar-nav .current-menu-parent.menu-item-74 {
   background-color: #FFD9D9; }
-  .home header#masthead .navbar-nav .current-menu-item.menu-item-74:hover, .home header#masthead .navbar-nav .current-menu-parent.menu-item-74:hover, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-74:hover, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-74:hover, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-74:hover, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-74:hover, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-74:hover, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-74:hover, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-74:hover, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-74:hover, .archive header#masthead .navbar-nav .current-menu-item.menu-item-74:hover, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-74:hover {
+  .home header#masthead .navbar-nav .current-menu-item.menu-item-74:hover, .home header#masthead .navbar-nav .current-menu-parent.menu-item-74:hover, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-74:hover, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-74:hover, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-74:hover, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-74:hover, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-74:hover, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-74:hover, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-74:hover, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-74:hover, .archive header#masthead .navbar-nav .current-menu-item.menu-item-74:hover, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-74:hover, .page-id-4711 header#masthead .navbar-nav .current-menu-item.menu-item-74:hover, .page-id-4711 header#masthead .navbar-nav .current-menu-parent.menu-item-74:hover, .page-id-179 header#masthead .navbar-nav .current-menu-item.menu-item-74:hover, .page-id-179 header#masthead .navbar-nav .current-menu-parent.menu-item-74:hover, .page-id-150 header#masthead .navbar-nav .current-menu-item.menu-item-74:hover, .page-id-150 header#masthead .navbar-nav .current-menu-parent.menu-item-74:hover {
     background-color: #FFD9D9; }
-  .home header#masthead .navbar-nav .current-menu-item.menu-item-74 .sub-menu, .home header#masthead .navbar-nav .current-menu-parent.menu-item-74 .sub-menu, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-74 .sub-menu, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-74 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-74 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-74 .sub-menu, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-74 .sub-menu, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-74 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-74 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-74 .sub-menu, .archive header#masthead .navbar-nav .current-menu-item.menu-item-74 .sub-menu, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-74 .sub-menu {
+  .home header#masthead .navbar-nav .current-menu-item.menu-item-74 .sub-menu, .home header#masthead .navbar-nav .current-menu-parent.menu-item-74 .sub-menu, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-74 .sub-menu, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-74 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-74 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-74 .sub-menu, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-74 .sub-menu, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-74 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-74 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-74 .sub-menu, .archive header#masthead .navbar-nav .current-menu-item.menu-item-74 .sub-menu, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-74 .sub-menu, .page-id-4711 header#masthead .navbar-nav .current-menu-item.menu-item-74 .sub-menu, .page-id-4711 header#masthead .navbar-nav .current-menu-parent.menu-item-74 .sub-menu, .page-id-179 header#masthead .navbar-nav .current-menu-item.menu-item-74 .sub-menu, .page-id-179 header#masthead .navbar-nav .current-menu-parent.menu-item-74 .sub-menu, .page-id-150 header#masthead .navbar-nav .current-menu-item.menu-item-74 .sub-menu, .page-id-150 header#masthead .navbar-nav .current-menu-parent.menu-item-74 .sub-menu {
     background-color: #FFD9D9; }
-.home header#masthead .navbar-nav .current-menu-item.menu-item-75, .home header#masthead .navbar-nav .current-menu-parent.menu-item-75, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-75, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-75, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-75, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-75, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-75, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-75, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-75, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-75, .archive header#masthead .navbar-nav .current-menu-item.menu-item-75, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-75 {
+.home header#masthead .navbar-nav .current-menu-item.menu-item-75, .home header#masthead .navbar-nav .current-menu-parent.menu-item-75, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-75, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-75, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-75, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-75, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-75, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-75, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-75, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-75, .archive header#masthead .navbar-nav .current-menu-item.menu-item-75, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-75, .page-id-4711 header#masthead .navbar-nav .current-menu-item.menu-item-75, .page-id-4711 header#masthead .navbar-nav .current-menu-parent.menu-item-75, .page-id-179 header#masthead .navbar-nav .current-menu-item.menu-item-75, .page-id-179 header#masthead .navbar-nav .current-menu-parent.menu-item-75, .page-id-150 header#masthead .navbar-nav .current-menu-item.menu-item-75, .page-id-150 header#masthead .navbar-nav .current-menu-parent.menu-item-75 {
   background-color: #FFF5D9; }
-  .home header#masthead .navbar-nav .current-menu-item.menu-item-75:hover, .home header#masthead .navbar-nav .current-menu-parent.menu-item-75:hover, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-75:hover, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-75:hover, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-75:hover, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-75:hover, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-75:hover, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-75:hover, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-75:hover, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-75:hover, .archive header#masthead .navbar-nav .current-menu-item.menu-item-75:hover, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-75:hover {
+  .home header#masthead .navbar-nav .current-menu-item.menu-item-75:hover, .home header#masthead .navbar-nav .current-menu-parent.menu-item-75:hover, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-75:hover, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-75:hover, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-75:hover, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-75:hover, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-75:hover, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-75:hover, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-75:hover, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-75:hover, .archive header#masthead .navbar-nav .current-menu-item.menu-item-75:hover, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-75:hover, .page-id-4711 header#masthead .navbar-nav .current-menu-item.menu-item-75:hover, .page-id-4711 header#masthead .navbar-nav .current-menu-parent.menu-item-75:hover, .page-id-179 header#masthead .navbar-nav .current-menu-item.menu-item-75:hover, .page-id-179 header#masthead .navbar-nav .current-menu-parent.menu-item-75:hover, .page-id-150 header#masthead .navbar-nav .current-menu-item.menu-item-75:hover, .page-id-150 header#masthead .navbar-nav .current-menu-parent.menu-item-75:hover {
     background-color: #FFF5D9; }
-  .home header#masthead .navbar-nav .current-menu-item.menu-item-75 .sub-menu, .home header#masthead .navbar-nav .current-menu-parent.menu-item-75 .sub-menu, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-75 .sub-menu, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-75 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-75 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-75 .sub-menu, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-75 .sub-menu, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-75 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-75 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-75 .sub-menu, .archive header#masthead .navbar-nav .current-menu-item.menu-item-75 .sub-menu, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-75 .sub-menu {
+  .home header#masthead .navbar-nav .current-menu-item.menu-item-75 .sub-menu, .home header#masthead .navbar-nav .current-menu-parent.menu-item-75 .sub-menu, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-75 .sub-menu, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-75 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-75 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-75 .sub-menu, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-75 .sub-menu, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-75 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-75 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-75 .sub-menu, .archive header#masthead .navbar-nav .current-menu-item.menu-item-75 .sub-menu, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-75 .sub-menu, .page-id-4711 header#masthead .navbar-nav .current-menu-item.menu-item-75 .sub-menu, .page-id-4711 header#masthead .navbar-nav .current-menu-parent.menu-item-75 .sub-menu, .page-id-179 header#masthead .navbar-nav .current-menu-item.menu-item-75 .sub-menu, .page-id-179 header#masthead .navbar-nav .current-menu-parent.menu-item-75 .sub-menu, .page-id-150 header#masthead .navbar-nav .current-menu-item.menu-item-75 .sub-menu, .page-id-150 header#masthead .navbar-nav .current-menu-parent.menu-item-75 .sub-menu {
     background-color: #FFF5D9; }
-.home header#masthead .navbar-nav .current-menu-item.menu-item-76, .home header#masthead .navbar-nav .current-menu-parent.menu-item-76, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-76, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-76, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-76, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-76, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-76, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-76, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-76, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-76, .archive header#masthead .navbar-nav .current-menu-item.menu-item-76, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-76 {
+.home header#masthead .navbar-nav .current-menu-item.menu-item-76, .home header#masthead .navbar-nav .current-menu-parent.menu-item-76, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-76, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-76, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-76, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-76, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-76, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-76, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-76, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-76, .archive header#masthead .navbar-nav .current-menu-item.menu-item-76, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-76, .page-id-4711 header#masthead .navbar-nav .current-menu-item.menu-item-76, .page-id-4711 header#masthead .navbar-nav .current-menu-parent.menu-item-76, .page-id-179 header#masthead .navbar-nav .current-menu-item.menu-item-76, .page-id-179 header#masthead .navbar-nav .current-menu-parent.menu-item-76, .page-id-150 header#masthead .navbar-nav .current-menu-item.menu-item-76, .page-id-150 header#masthead .navbar-nav .current-menu-parent.menu-item-76 {
   background-color: #CDF8E3; }
-  .home header#masthead .navbar-nav .current-menu-item.menu-item-76:hover, .home header#masthead .navbar-nav .current-menu-parent.menu-item-76:hover, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-76:hover, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-76:hover, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-76:hover, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-76:hover, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-76:hover, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-76:hover, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-76:hover, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-76:hover, .archive header#masthead .navbar-nav .current-menu-item.menu-item-76:hover, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-76:hover {
+  .home header#masthead .navbar-nav .current-menu-item.menu-item-76:hover, .home header#masthead .navbar-nav .current-menu-parent.menu-item-76:hover, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-76:hover, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-76:hover, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-76:hover, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-76:hover, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-76:hover, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-76:hover, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-76:hover, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-76:hover, .archive header#masthead .navbar-nav .current-menu-item.menu-item-76:hover, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-76:hover, .page-id-4711 header#masthead .navbar-nav .current-menu-item.menu-item-76:hover, .page-id-4711 header#masthead .navbar-nav .current-menu-parent.menu-item-76:hover, .page-id-179 header#masthead .navbar-nav .current-menu-item.menu-item-76:hover, .page-id-179 header#masthead .navbar-nav .current-menu-parent.menu-item-76:hover, .page-id-150 header#masthead .navbar-nav .current-menu-item.menu-item-76:hover, .page-id-150 header#masthead .navbar-nav .current-menu-parent.menu-item-76:hover {
     background-color: #CDF8E3; }
-  .home header#masthead .navbar-nav .current-menu-item.menu-item-76 .sub-menu, .home header#masthead .navbar-nav .current-menu-parent.menu-item-76 .sub-menu, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-76 .sub-menu, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-76 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-76 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-76 .sub-menu, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-76 .sub-menu, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-76 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-76 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-76 .sub-menu, .archive header#masthead .navbar-nav .current-menu-item.menu-item-76 .sub-menu, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-76 .sub-menu {
+  .home header#masthead .navbar-nav .current-menu-item.menu-item-76 .sub-menu, .home header#masthead .navbar-nav .current-menu-parent.menu-item-76 .sub-menu, .woocommerce-page header#masthead .navbar-nav .current-menu-item.menu-item-76 .sub-menu, .woocommerce-page header#masthead .navbar-nav .current-menu-parent.menu-item-76 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item.menu-item-76 .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent.menu-item-76 .sub-menu, .page-template-home-template header#masthead .navbar-nav .current-menu-item.menu-item-76 .sub-menu, .page-template-home-template header#masthead .navbar-nav .current-menu-parent.menu-item-76 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .current-menu-item.menu-item-76 .sub-menu, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent.menu-item-76 .sub-menu, .archive header#masthead .navbar-nav .current-menu-item.menu-item-76 .sub-menu, .archive header#masthead .navbar-nav .current-menu-parent.menu-item-76 .sub-menu, .page-id-4711 header#masthead .navbar-nav .current-menu-item.menu-item-76 .sub-menu, .page-id-4711 header#masthead .navbar-nav .current-menu-parent.menu-item-76 .sub-menu, .page-id-179 header#masthead .navbar-nav .current-menu-item.menu-item-76 .sub-menu, .page-id-179 header#masthead .navbar-nav .current-menu-parent.menu-item-76 .sub-menu, .page-id-150 header#masthead .navbar-nav .current-menu-item.menu-item-76 .sub-menu, .page-id-150 header#masthead .navbar-nav .current-menu-parent.menu-item-76 .sub-menu {
     background-color: #CDF8E3; }
-.home header#masthead .navbar-nav .current-menu-item .sub-menu, .home header#masthead .navbar-nav .current-menu-parent .sub-menu, .woocommerce-page header#masthead .navbar-nav .current-menu-item .sub-menu, .woocommerce-page header#masthead .navbar-nav .current-menu-parent .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent .sub-menu, .page-template-home-template header#masthead .navbar-nav .current-menu-item .sub-menu, .page-template-home-template header#masthead .navbar-nav .current-menu-parent .sub-menu, .page-template-lab-template header#masthead .navbar-nav .current-menu-item .sub-menu, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent .sub-menu, .archive header#masthead .navbar-nav .current-menu-item .sub-menu, .archive header#masthead .navbar-nav .current-menu-parent .sub-menu {
+.home header#masthead .navbar-nav .current-menu-item .sub-menu, .home header#masthead .navbar-nav .current-menu-parent .sub-menu, .woocommerce-page header#masthead .navbar-nav .current-menu-item .sub-menu, .woocommerce-page header#masthead .navbar-nav .current-menu-parent .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .current-menu-item .sub-menu, .page-template-clothing-template header#masthead .navbar-nav .current-menu-parent .sub-menu, .page-template-home-template header#masthead .navbar-nav .current-menu-item .sub-menu, .page-template-home-template header#masthead .navbar-nav .current-menu-parent .sub-menu, .page-template-lab-template header#masthead .navbar-nav .current-menu-item .sub-menu, .page-template-lab-template header#masthead .navbar-nav .current-menu-parent .sub-menu, .archive header#masthead .navbar-nav .current-menu-item .sub-menu, .archive header#masthead .navbar-nav .current-menu-parent .sub-menu, .page-id-4711 header#masthead .navbar-nav .current-menu-item .sub-menu, .page-id-4711 header#masthead .navbar-nav .current-menu-parent .sub-menu, .page-id-179 header#masthead .navbar-nav .current-menu-item .sub-menu, .page-id-179 header#masthead .navbar-nav .current-menu-parent .sub-menu, .page-id-150 header#masthead .navbar-nav .current-menu-item .sub-menu, .page-id-150 header#masthead .navbar-nav .current-menu-parent .sub-menu {
   opacity: 1 !important;
   height: 50px !important;
   border-top: 1px solid #000;
@@ -579,6 +581,8 @@ header#masthead {
           font-weight: 800;
           text-transform: uppercase;
           padding-left: 30px; }
+          #searchModal .modal-dialog .modal-content .modal-body .search_bar #form input:focus-visible {
+            outline: none !important; }
         #searchModal .modal-dialog .modal-content .modal-body .search_bar #form button {
           display: none; }
       #searchModal .modal-dialog .modal-content .modal-body .search_bar .search_result .display-search-items {
@@ -594,10 +598,13 @@ header#masthead {
           flex-direction: column;
           align-items: center;
           margin-bottom: 30px; }
-          #searchModal .modal-dialog .modal-content .modal-body .search_bar .search_result .display-search-items .display-search-item a:hover h4.title {
-            text-decoration: none; }
-          #searchModal .modal-dialog .modal-content .modal-body .search_bar .search_result .display-search-items .display-search-item a:hover .price {
-            text-decoration: none; }
+          #searchModal .modal-dialog .modal-content .modal-body .search_bar .search_result .display-search-items .display-search-item a:hover {
+            text-decoration: none;
+            opacity: .8; }
+            #searchModal .modal-dialog .modal-content .modal-body .search_bar .search_result .display-search-items .display-search-item a:hover h4.title {
+              text-decoration: none; }
+            #searchModal .modal-dialog .modal-content .modal-body .search_bar .search_result .display-search-items .display-search-item a:hover .price {
+              text-decoration: none; }
           #searchModal .modal-dialog .modal-content .modal-body .search_bar .search_result .display-search-items .display-search-item a h4.title {
             font-size: 22px;
             text-align: center;
@@ -714,6 +721,42 @@ h1 {
   display: none !important; }
 
 /* CUSTOM GENERAL PAGE CATEGORIES */
+/* COLLABORATIONS PAGE */
+.page-id-4711 #content {
+  padding: 0; }
+  .page-id-4711 #content .entry-content {
+    margin-top: 0; }
+
+#collaborationsPage .row {
+  padding-top: 30px;
+  padding-bottom: 45px; }
+  #collaborationsPage .row:not(:last-of-type) {
+    border-bottom: 1px solid #000; }
+  #collaborationsPage .row .title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; }
+    #collaborationsPage .row .title-container img {
+      max-height: 400px;
+      width: auto; }
+    #collaborationsPage .row .title-container .btn {
+      background-color: #000;
+      color: #FFF;
+      border: 1px solid #000;
+      border-radius: 0; }
+  #collaborationsPage .row .owl-carousel .item {
+    max-height: 450px;
+    display: flex;
+    justify-content: center; }
+    #collaborationsPage .row .owl-carousel .item img {
+      max-height: 450px;
+      width: auto; }
+
+@media screen and (max-width: 425px) {
+  #collaborationsPage {
+    padding-top: 30px; } }
 /* CLOTHING CATEGORY */
 .tablepress {
   display: none; }
@@ -1577,6 +1620,10 @@ body.woocommerce-cart .cart-container {
   flex-direction: column;
   text-align: center;
   height: 800px; }
+  body.woocommerce-cart .cart-container .empty-cart-illu {
+    max-height: 500px;
+    margin-top: 0px;
+    width: auto; }
   body.woocommerce-cart .cart-container h1.text-center {
     margin-top: 90px;
     padding-bottom: 50px;
@@ -1815,7 +1862,8 @@ body.woocommerce-cart .faces-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  opacity: 0; }
   body.woocommerce-cart .faces-container svg {
     overflow: visible;
     width: 1920px; }
@@ -1849,6 +1897,8 @@ body.woocommerce-cart .faces-container {
       fill: #FFFFFF; }
     body.woocommerce-cart .faces-container svg .st6 {
       fill: none; }
+body.woocommerce-cart.page-id-4633 .faces-container {
+  opacity: 1; }
 
 /* CHECKOUT PAGE */
 body.woocommerce-checkout h2.text-center.title-paiement {
@@ -2258,11 +2308,11 @@ body.woocommerce-checkout #payment {
     margin-top: 0px;
     transform: translateY(-10px); } }
 body.page-id-150 #contactPage {
-  min-height: 80vh; }
+  min-height: 60vh; }
   body.page-id-150 #contactPage h1 {
     font-family: "Nunito Sans", sans-serif;
     text-align: center;
-    font-weight: 900;
+    font-weight: 800;
     padding-bottom: 0;
     margin-bottom: 0; }
   body.page-id-150 #contactPage #rm_form_page_form_2_1_1 .rmfieldset .rmrow:first-of-type, body.page-id-150 #contactPage #rm_form_page_form_3_1_1 .rmfieldset .rmrow:first-of-type, body.page-id-150 #contactPage #rm_form_page_form_4_1_1 .rmfieldset .rmrow:first-of-type, body.page-id-150 #contactPage #rm_form_page_form_5_1_1 .rmfieldset .rmrow:first-of-type {
@@ -2280,16 +2330,25 @@ body.page-id-150 #contactPage {
         text-align: center;
         width: 200px;
         height: 40px;
-        border: 1px solid #000;
+        border: 0px solid #000;
         font-size: 20px;
-        font-family: 'Nunito Sans';
+        font-family: 'Nunito Sans', sans-serif;
         font-weight: 700;
         color: #000;
         border-radius: 0px;
         margin-top: 20px;
-        overflow: visible; }
+        overflow: visible;
+        text-transform: uppercase; }
         body.page-id-150 #contactPage #accordionContact .card .card-header button.btn-link:hover, body.page-id-150 #contactPage #accordionContact .card .card-header button.btn-link:focus {
           text-decoration: none; }
+        body.page-id-150 #contactPage #accordionContact .card .card-header button.btn-link.atelier {
+          background-color: #FFD5D8; }
+        body.page-id-150 #contactPage #accordionContact .card .card-header button.btn-link.business {
+          background-color: #FDFFCB; }
+        body.page-id-150 #contactPage #accordionContact .card .card-header button.btn-link.communication {
+          background-color: #98D8E0; }
+        body.page-id-150 #contactPage #accordionContact .card .card-header button.btn-link.sav {
+          background-color: #98BCE0; }
         body.page-id-150 #contactPage #accordionContact .card .card-header button.btn-link.selected {
           animation-name: transformBtn;
           animation-duration: 300ms;
@@ -2410,9 +2469,154 @@ body.page-id-150 #contactPage {
   body.page-id-150 #contactPage #accordionContact .ok-message + .custom-contact {
     display: none; }
 
-#stockistPage {
-  min-height: 75vh; }
+.page-id-179 #content {
+  padding: 0;
+  min-height: 80vh; }
+  .page-id-179 #content .entry-content {
+    margin-top: 0; }
+.page-id-179 .owl-references-container {
+  height: 90px; }
+  .page-id-179 .owl-references-container .owl-carousel {
+    position: inherit; }
+.page-id-179 #stockistPage .row > .col-sm-3 {
+  border-right: 1px solid #000;
+  padding: 0; }
+.page-id-179 #stockistPage .row > .col-sm-9 {
+  padding: 0; }
+.page-id-179 #stockistPage #accordionMap {
+  margin-top: 0px; }
+  .page-id-179 #stockistPage #accordionMap .card {
+    border: 0px;
+    margin-top: 0px;
+    border-bottom: 1px solid #000;
+    border-radius: 0 !important;
+    overflow: visible; }
+    .page-id-179 #stockistPage #accordionMap .card .card-header {
+      background-color: transparent;
+      padding: 0;
+      margin: 0;
+      width: 100%; }
+      .page-id-179 #stockistPage #accordionMap .card .card-header .btn {
+        color: #000;
+        font-size: 22px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 900;
+        box-shadow: none !important;
+        text-decoration: none !important;
+        margin: 0;
+        border-radius: 0;
+        padding: 15px; }
+    .page-id-179 #stockistPage #accordionMap .card.open .card-header .btn {
+      color: #D10000; }
+    .page-id-179 #stockistPage #accordionMap .card .card-body {
+      padding: 0px;
+      font-size: 14px;
+      color: #666;
+      position: absolute;
+      width: 100%;
+      left: 100%;
+      opacity: 0;
+      border: 1px solid #000;
+      transform: translateY(-1px);
+      background-color: #FFF;
+      z-index: 9; }
+      .page-id-179 #stockistPage #accordionMap .card .card-body div div {
+        color: #000;
+        padding: 10px 15px; }
+        .page-id-179 #stockistPage #accordionMap .card .card-body div div:not(:last-of-type) {
+          border-bottom: 1px solid #000; }
+      .page-id-179 #stockistPage #accordionMap .card .card-body a {
+        color: #000; }
+    .page-id-179 #stockistPage #accordionMap .card.open .card-body {
+      opacity: 1; }
+    .page-id-179 #stockistPage #accordionMap .card .collapse {
+      position: absolute;
+      left: 100%; }
+      .page-id-179 #stockistPage #accordionMap .card .collapse .card-body {
+        padding: 15px;
+        font-size: 14px;
+        color: #666; }
+        .page-id-179 #stockistPage #accordionMap .card .collapse .card-body a {
+          color: #000; }
+.page-id-179 #stockistPage #accordionMapMobile {
+  margin-top: 0px; }
+  .page-id-179 #stockistPage #accordionMapMobile .card {
+    border: 0px;
+    margin-top: 0px;
+    border-top: 1px solid #000;
+    border-radius: 0 !important;
+    overflow: visible; }
+    .page-id-179 #stockistPage #accordionMapMobile .card .card-header {
+      background-color: transparent;
+      padding: 0;
+      margin: 0;
+      width: 100%; }
+      .page-id-179 #stockistPage #accordionMapMobile .card .card-header .btn {
+        color: #000;
+        font-size: 22px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 900;
+        box-shadow: none !important;
+        text-decoration: none !important;
+        margin: 0;
+        border-radius: 0;
+        padding: 15px; }
+    .page-id-179 #stockistPage #accordionMapMobile .card.open .card-header .btn {
+      color: #D10000; }
+    .page-id-179 #stockistPage #accordionMapMobile .card .card-body {
+      padding: 0px;
+      font-size: 14px;
+      color: #666;
+      transform: translateY(-1px);
+      background-color: #FFF; }
+      .page-id-179 #stockistPage #accordionMapMobile .card .card-body div div {
+        color: #000;
+        padding: 10px 15px; }
+        .page-id-179 #stockistPage #accordionMapMobile .card .card-body div div:first-of-type {
+          border-top: 1px solid #000; }
+        .page-id-179 #stockistPage #accordionMapMobile .card .card-body div div:not(:last-of-type) {
+          border-top: 1px solid #000; }
+      .page-id-179 #stockistPage #accordionMapMobile .card .card-body a {
+        color: #000; }
+.page-id-179 #stockistPage .owl-carousel .st0 {
+  opacity: 0.234; }
+.page-id-179 #stockistPage .owl-carousel .st1 {
+  fill: none;
+  stroke: #000;
+  stroke-width: 6.0009;
+  stroke-miterlimit: 10.0014; }
+.page-id-179 #stockistPage .owl-carousel .st2 {
+  fill: #D10000; }
+.page-id-179 #stockistPage .owl-carousel .item {
+  padding: 30px 0; }
+  .page-id-179 #stockistPage .owl-carousel .item .map-svg {
+    display: flex;
+    justify-content: center;
+    height: 75vh; }
+    .page-id-179 #stockistPage .owl-carousel .item .map-svg svg {
+      max-height: 75vh;
+      height: 100%; }
 
+@media screen and (max-width: 425px) {
+  .page-id-179 #stockistPage .row .col-12:first-of-type {
+    order: 1; }
+  .page-id-179 #stockistPage .row .col-12:last-of-type {
+    order: 0; }
+  .page-id-179 #stockistPage .row .owl-carousel .item {
+    height: 350px; }
+    .page-id-179 #stockistPage .row .owl-carousel .item .map-svg {
+      height: 100%; }
+  .page-id-179 #accordionMap {
+    padding-left: 0 !important; }
+    .page-id-179 #accordionMap .card-body {
+      left: 0 !important;
+      top: 100% !important; }
+  .page-id-179 .owl-carousel .item .map-svg {
+    height: max-content; }
+  .page-id-179 #owlRefs .owl-carousel {
+    top: 0px !important; } }
 .animate_animated {
   -webkit-animation-duration: 500ms;
   animation-duration: 500ms;
@@ -2441,27 +2645,27 @@ body.page-id-150 #contactPage {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown; }
 
-body.page-id-179 .st0, body.page-id-2526 .st0 {
+body.page-id-2526 .st0 {
   opacity: 0.234; }
-body.page-id-179 .st1, body.page-id-2526 .st1 {
+body.page-id-2526 .st1 {
   fill: none;
   stroke: #000;
   stroke-width: 6.0009;
   stroke-miterlimit: 10.0014; }
-body.page-id-179 .st2, body.page-id-2526 .st2 {
+body.page-id-2526 .st2 {
   fill: #FA4825; }
-body.page-id-179 h1.text-center, body.page-id-2526 h1.text-center {
+body.page-id-2526 h1.text-center {
   margin-top: -50px; }
-body.page-id-179 #accordionMap, body.page-id-2526 #accordionMap {
+body.page-id-2526 #accordionMap {
   margin-top: 0px; }
-  body.page-id-179 #accordionMap .card, body.page-id-2526 #accordionMap .card {
+  body.page-id-2526 #accordionMap .card {
     border: 0px;
     margin-top: 15px; }
-    body.page-id-179 #accordionMap .card .card-header, body.page-id-2526 #accordionMap .card .card-header {
+    body.page-id-2526 #accordionMap .card .card-header {
       background-color: transparent;
       border: 0px;
       padding: 0px; }
-      body.page-id-179 #accordionMap .card .card-header .btn, body.page-id-2526 #accordionMap .card .card-header .btn {
+      body.page-id-2526 #accordionMap .card .card-header .btn {
         color: #FF6243;
         font-size: 22px;
         text-transform: uppercase;
@@ -2469,52 +2673,52 @@ body.page-id-179 #accordionMap, body.page-id-2526 #accordionMap {
         box-shadow: none !important;
         text-decoration: none !important;
         padding-bottom: 0px; }
-        body.page-id-179 #accordionMap .card .card-header .btn.collapsed, body.page-id-2526 #accordionMap .card .card-header .btn.collapsed {
+        body.page-id-2526 #accordionMap .card .card-header .btn.collapsed {
           color: #000; }
-    body.page-id-179 #accordionMap .card .card-body, body.page-id-2526 #accordionMap .card .card-body {
+    body.page-id-2526 #accordionMap .card .card-body {
       padding: 0px 0px 0px 15px;
       font-size: 14px;
       color: #666; }
-      body.page-id-179 #accordionMap .card .card-body a, body.page-id-2526 #accordionMap .card .card-body a {
+      body.page-id-2526 #accordionMap .card .card-body a {
         color: #000; }
-body.page-id-179 .divider, body.page-id-2526 .divider {
+body.page-id-2526 .divider {
   width: 85px;
   height: 1px;
   background-color: #000;
   margin-top: 15px;
   margin-bottom: 15px;
   margin-left: 15px; }
-body.page-id-179 .btn-link.soon, body.page-id-2526 .btn-link.soon {
+body.page-id-2526 .btn-link.soon {
   color: #000;
   font-size: 22px;
   text-transform: uppercase;
   font-weight: 900;
   padding-left: 30px;
   pointer-events: none; }
-  body.page-id-179 .btn-link.soon:hover, body.page-id-179 .btn-link.soon:active, body.page-id-179 .btn-link.soon:focus, body.page-id-2526 .btn-link.soon:hover, body.page-id-2526 .btn-link.soon:active, body.page-id-2526 .btn-link.soon:focus {
+  body.page-id-2526 .btn-link.soon:hover, body.page-id-2526 .btn-link.soon:active, body.page-id-2526 .btn-link.soon:focus {
     text-decoration: none; }
-  body.page-id-179 .btn-link.soon span, body.page-id-2526 .btn-link.soon span {
+  body.page-id-2526 .btn-link.soon span {
     text-transform: capitalize;
     font-weight: 300;
     font-size: 16px; }
-body.page-id-179 .owl-carousel, body.page-id-2526 .owl-carousel {
+body.page-id-2526 .owl-carousel {
   position: absolute;
   top: 0px;
   pointer-events: none; }
-  body.page-id-179 .owl-carousel .owl-stage-outer, body.page-id-2526 .owl-carousel .owl-stage-outer {
+  body.page-id-2526 .owl-carousel .owl-stage-outer {
     pointer-events: none; }
-    body.page-id-179 .owl-carousel .owl-stage-outer .item, body.page-id-2526 .owl-carousel .owl-stage-outer .item {
+    body.page-id-2526 .owl-carousel .owl-stage-outer .item {
       height: 900px; }
-      body.page-id-179 .owl-carousel .owl-stage-outer .item .map-svg, body.page-id-2526 .owl-carousel .owl-stage-outer .item .map-svg {
+      body.page-id-2526 .owl-carousel .owl-stage-outer .item .map-svg {
         width: 100%;
         top: -50px;
         pointer-events: none;
         display: grid;
         justify-content: center; }
-        body.page-id-179 .owl-carousel .owl-stage-outer .item .map-svg svg, body.page-id-2526 .owl-carousel .owl-stage-outer .item .map-svg svg {
+        body.page-id-2526 .owl-carousel .owl-stage-outer .item .map-svg svg {
           max-width: 1000px;
           width: 1000px; }
-        body.page-id-179 .owl-carousel .owl-stage-outer .item .map-svg.map-jpn svg, body.page-id-2526 .owl-carousel .owl-stage-outer .item .map-svg.map-jpn svg {
+        body.page-id-2526 .owl-carousel .owl-stage-outer .item .map-svg.map-jpn svg {
           max-width: 600px; }
 
 body.page-id-310 h1.text-center {
@@ -2838,6 +3042,9 @@ body.single-product #zoomProductCarousel .owl-nav {
       header#masthead .buttons .btn img {
         max-height: 16px;
         width: auto !important; }
+      header#masthead .buttons .btn #nbr {
+        margin-left: 0px !important;
+        width: 15px !important; }
     header#masthead .btn-recherche {
       transform: translateX(0px) !important;
       padding: 0px 3px; }
@@ -3121,7 +3328,7 @@ body.single-product #zoomProductCarousel .owl-nav {
       overflow: visible; }
       body.single-product #main .product #heartWishlist svg {
         height: 20px;
-        width: auto; }
+        width: 23px; }
     body.single-product #main .product.product-type-simple .price {
       margin-bottom: 10px !important; }
     body.single-product #main .product .summary {
@@ -3368,6 +3575,20 @@ body.single-product #zoomProductCarousel .owl-nav {
     border-bottom: 0px; }
   .related-container .col-12 {
     padding: 0; }
+  .related-container .upsells.products .products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
+    .related-container .upsells.products .products .product {
+      width: 50%;
+      display: flex !important;
+      flex-direction: column;
+      border-top: 1px solid #000;
+      padding: 15px; }
+      .related-container .upsells.products .products .product .woocommerce-loop-product__link .size-woocommerce_thumbnail {
+        max-height: 150px; }
+      .related-container .upsells.products .products .product .woocommerce-loop-product__link h2, .related-container .upsells.products .products .product .woocommerce-loop-product__link .price {
+        display: none; }
   .related-container .related.products .products {
     flex-wrap: wrap; }
     .related-container .related.products .products .product {
@@ -3616,32 +3837,6 @@ body.single-product #zoomProductCarousel .owl-nav {
         body.woocommerce-checkout #payment .form-row.place-order button.button.alt:hover {
           background-color: #FFF;
           color: #000; }
-
-  body.page-id-179 #accordionMap, body.page-id-2526 #accordionMap {
-    margin-top: 0px;
-    padding-left: 15px; }
-    body.page-id-179 #accordionMap .card, body.page-id-2526 #accordionMap .card {
-      background-color: transparent; }
-      body.page-id-179 #accordionMap .card .card-header button.btn, body.page-id-2526 #accordionMap .card .card-header button.btn {
-        padding-left: 0;
-        font-size: 18px; }
-      body.page-id-179 #accordionMap .card .card-body, body.page-id-2526 #accordionMap .card .card-body {
-        padding-left: 0; }
-  body.page-id-179 .divider, body.page-id-2526 .divider {
-    margin-left: 0 !important; }
-  body.page-id-179 .btn-link.soon, body.page-id-2526 .btn-link.soon {
-    padding-left: 0 !important; }
-  body.page-id-179 .col-12, body.page-id-2526 .col-12 {
-    padding-left: 0; }
-  body.page-id-179 .owl-carousel, body.page-id-2526 .owl-carousel {
-    top: 70px; }
-  body.page-id-179 .map-svg, body.page-id-2526 .map-svg {
-    top: 100px !important;
-    overflow: hidden; }
-    body.page-id-179 .map-svg svg, body.page-id-2526 .map-svg svg {
-      height: 350px;
-      width: inherit;
-      max-width: inherit; }
 
   body.page-id-310 #subheader-logo {
     display: none !important; }

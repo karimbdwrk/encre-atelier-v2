@@ -20,8 +20,8 @@ Version: 1.0
 
 @font-face {
     font-family: 'metropolissemi_bold';
-    src: url('./fonts/metropolis-semibold-webfont.woff2') format('woff2'),
-         url('./fonts/metropolis-semibold-webfont.woff') format('woff');
+    src: url('./assets/fonts/metropolis-semibold-webfont.woff2') format('woff2'),
+         url('./assets/fonts/metropolis-semibold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -578,6 +578,7 @@ header#masthead {
 
                             &>a {
                                 color: #000;
+                                font-family: "Nunito Sans", sans-serif;
                                 font-size: 24px;
                                 font-weight: 700;
                                 width: 100%;
@@ -589,18 +590,6 @@ header#masthead {
                                     text-decoration: none;
                                 }
                             }
-
-                            // &:first-of-type {
-                            //     .sub-menu {
-                            //         left: 0;
-
-                            //     }
-                            // }
-                            // &:nth-of-type(2) {
-                            //     .sub-menu {
-                            //         left: -100%;
-                            //     }
-                            // }
 
                             .sub-menu {
                                 position: absolute;
@@ -707,6 +696,7 @@ header#masthead {
 
                             #nbr {
                                 margin-left: 7px;
+                                width: 20px;
                             }
                         }
 
@@ -904,7 +894,7 @@ header#masthead {
     }
 }
 
-.home, .woocommerce-page, .page-template-clothing-template, .page-template-home-template, .page-template-lab-template, .archive  {
+.home, .woocommerce-page, .page-template-clothing-template, .page-template-home-template, .page-template-lab-template, .archive, .page-id-4711, .page-id-179, .page-id-150  {
     header#masthead {
         .navbar-nav {
             .menu-item-74 {
@@ -1040,6 +1030,10 @@ header#masthead {
                             font-weight: 800;
                             text-transform: uppercase;
                             padding-left: 30px;
+
+                            &:focus-visible {
+                                outline: none!important;
+                            }
                         }
                         button {
                             display: none;
@@ -1065,6 +1059,8 @@ header#masthead {
 
                                 a {
                                     &:hover {
+                                        text-decoration: none;
+                                        opacity: .8;
                                         h4.title {
                                             text-decoration: none;
                                         }
@@ -1295,6 +1291,69 @@ h1 {
 }
 
 /* CUSTOM GENERAL PAGE CATEGORIES */
+
+/* COLLABORATIONS PAGE */
+
+.page-id-4711 {
+    #content {
+        padding: 0;
+
+        .entry-content {
+            margin-top: 0;
+        }
+    }
+}
+
+#collaborationsPage {
+    .row {
+        padding-top: 30px;
+        padding-bottom: 45px;
+
+        &:not(:last-of-type) {
+            border-bottom: 1px solid #000;
+        }
+
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+
+            img {
+                max-height: 400px;
+                width: auto;
+            }
+
+            .btn {
+                background-color: #000;
+                color: #FFF;
+                border: 1px solid #000;
+                border-radius: 0;
+            }
+        }
+
+        .owl-carousel {
+            .item {
+                max-height: 450px;
+                display: flex;
+                justify-content: center;
+
+                img {
+                    max-height: 450px;
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #collaborationsPage {
+        padding-top: 30px;
+    }
+}
+
 /* CLOTHING CATEGORY */
 
 .tablepress {
@@ -2780,6 +2839,12 @@ body.woocommerce-cart {
         text-align: center;
         height: 800px;
 
+        .empty-cart-illu {
+            max-height: 500px;
+            margin-top: 0px;
+            width: auto;
+        }
+
 
         h1.text-center {
             margin-top: 90px;
@@ -3183,6 +3248,7 @@ body.woocommerce-cart {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        opacity: 0;
 
         svg {
             // max-height: 600px;
@@ -3231,6 +3297,12 @@ body.woocommerce-cart {
             .st4{clip-path:url(#SVGID_00000083077223179859069050000002620240034164099998_);fill:#FFFFFF;}
             .st5{fill:#FFFFFF;}
             .st6{fill:none;}
+        }
+    }
+
+    &.page-id-4633 {
+        .faces-container {
+            opacity: 1;
         }
     }
 
@@ -4313,11 +4385,11 @@ body.woocommerce-checkout {
 
 body.page-id-150 {
     #contactPage {
-        min-height: 80vh;
+        min-height: 60vh;
         h1 {
             font-family: "Nunito Sans", sans-serif;
             text-align: center;
-            font-weight: 900;
+            font-weight: 800;
             padding-bottom: 0;
             margin-bottom: 0;
         }
@@ -4344,17 +4416,31 @@ body.page-id-150 {
                         text-align: center;
                         width: 200px;
                         height: 40px;
-                        border: 1px solid #000;  
+                        border: 0px solid #000;  
                         font-size: 20px;
-                        font-family: 'Nunito Sans';
+                        font-family: 'Nunito Sans', sans-serif;
                         font-weight: 700;
                         color: #000;
                         border-radius: 0px;
                         margin-top: 20px;
                         overflow: visible;
+                        text-transform: uppercase;
 
                         &:hover, &:focus {
                             text-decoration: none;
+                        }
+
+                        &.atelier {
+                            background-color: #FFD5D8;
+                        }
+                        &.business {
+                            background-color: #FDFFCB;
+                        }
+                        &.communication {
+                            background-color: #98D8E0;
+                        }
+                        &.sav {
+                            background-color: #98BCE0;
                         }
 
                         &.selected {
@@ -4557,8 +4643,302 @@ body.page-id-150 {
 // Stockist Page
 
 #stockistPage {
-    min-height: 75vh;
+    // min-height: 75vh;
 }
+
+.page-id-179 {
+
+    #content {
+        padding: 0;
+        min-height: 80vh;
+
+        .entry-content {
+            margin-top: 0;
+        }
+    }
+
+    .owl-references-container {
+        height: 90px;
+
+        .owl-carousel {
+            position: inherit;
+        }
+    }
+
+    #stockistPage {
+        .row {
+            &>.col-sm-3 {
+                border-right: 1px solid #000;
+                padding: 0;
+            }
+            &>.col-sm-9 {
+                padding: 0;
+            }
+        }
+        #accordionMap {
+            margin-top: 0px;
+            .card {
+                border: 0px;
+                margin-top: 0px;
+                border-bottom: 1px solid #000;
+                border-radius: 0!important;
+                overflow: visible;
+
+                .card-header {
+                    background-color: transparent;
+                    padding: 0;
+                    margin: 0;
+                    width: 100%;
+
+                    .btn {
+                        color: #000;
+                        font-size: 22px;
+                        text-transform: uppercase;
+                        text-align: center;
+                        font-weight: 900;
+                        box-shadow: none!important;
+                        text-decoration: none!important;
+                        // padding-bottom: 0px;
+                        margin: 0;
+                        border-radius: 0;
+                        padding: 15px;
+                    }
+                }
+
+                &.open {
+                    .card-header {
+                        .btn {
+                            color: #D10000;
+                        }
+                    }
+                }
+
+                .card-body {
+                    padding: 0px; 
+                    font-size: 14px;
+                    color: #666;
+                    position: absolute;
+                    width: 100%;
+                    left: 100%;
+                    opacity: 0;
+                    border: 1px solid #000;
+                    transform: translateY(-1px);
+                    background-color: #FFF;
+                    z-index: 9;
+
+                    div {
+                        div {
+                            color: #000;
+                            padding: 10px 15px;
+                            
+                            &:not(:last-of-type) {
+                                border-bottom: 1px solid #000;
+                            }
+                        }
+                    }
+
+                    a {
+                        color: #000;
+                    }
+                }
+
+                &.open {
+                    .card-body {
+                        opacity: 1;
+                    }
+                }
+
+                .collapse {
+                    position: absolute;
+                    left: 100%;
+
+                    .card-body {
+                        padding: 15px; 
+                        font-size: 14px;
+                        color: #666;
+    
+                        a {
+                            color: #000;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        #accordionMapMobile {
+            margin-top: 0px;
+            .card {
+                border: 0px;
+                margin-top: 0px;
+                border-top: 1px solid #000;
+                border-radius: 0!important;
+                overflow: visible;
+
+                .card-header {
+                    background-color: transparent;
+                    padding: 0;
+                    margin: 0;
+                    width: 100%;
+
+                    .btn {
+                        color: #000;
+                        font-size: 22px;
+                        text-transform: uppercase;
+                        text-align: center;
+                        font-weight: 900;
+                        box-shadow: none!important;
+                        text-decoration: none!important;
+                        // padding-bottom: 0px;
+                        margin: 0;
+                        border-radius: 0;
+                        padding: 15px;
+                    }
+                }
+
+                &.open {
+                    .card-header {
+                        .btn {
+                            color: #D10000;
+                        }
+                    }
+                }
+
+                .card-body {
+                    padding: 0px; 
+                    font-size: 14px;
+                    color: #666;
+                    // position: absolute;
+                    // width: 100%;
+                    // left: 100%;
+                    // opacity: 0;
+                    // border: 1px solid #000;
+                    transform: translateY(-1px);
+                    background-color: #FFF;
+                    // z-index: 9;
+
+                    div {
+                        div {
+                            color: #000;
+                            padding: 10px 15px;
+
+                            &:first-of-type {
+                                border-top: 1px solid #000;
+                            }
+                            
+                            &:not(:last-of-type) {
+                                border-top: 1px solid #000;
+                            }
+                        }
+                    }
+
+                    a {
+                        color: #000;
+                    }
+                }
+
+                // &.open {
+                //     .card-body {
+                //         opacity: 1;
+                //     }
+                // }
+
+                // .collapse {
+                //     // position: absolute;
+                //     // left: 100%;
+
+                //     .card-body {
+                //         padding: 15px; 
+                //         font-size: 14px;
+                //         color: #666;
+    
+                //         a {
+                //             color: #000;
+                //         }
+                //     }
+
+                // }
+            }
+        }
+
+
+        .owl-carousel {
+
+            .st0{opacity:0.234;}
+            .st1{fill:none;stroke:#000;stroke-width:6.0009;stroke-miterlimit:10.0014;}
+            .st2{fill:#D10000;}
+
+            .item {
+                padding: 30px 0;
+
+                .map-svg {
+                    display: flex;
+                    justify-content: center;
+                    height: 75vh;
+                    svg {
+                        max-height: 75vh;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+
+    .page-id-179 {
+
+        #stockistPage {
+            .row {
+                .col-12 {
+                    &:first-of-type {
+                        order: 1;
+                    }
+                    &:last-of-type {
+                        order: 0;
+                    }
+                }
+
+                .owl-carousel {
+                    .item {
+                        height: 350px;
+                        .map-svg {
+                            height: 100%;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        #accordionMap {
+            padding-left: 0!important;
+
+            .card-body {
+                left: 0!important;
+                top: 100%!important;
+            }
+        }
+
+        .owl-carousel {
+
+            .item {
+                .map-svg {
+                    height: max-content;
+                }
+            }
+        }
+
+        #owlRefs {
+            .owl-carousel {
+                top: 0px !important;
+            }
+        }
+
+    }
+}
+
 
 .animate_animated {
     -webkit-animation-duration: 500ms;
@@ -4598,7 +4978,7 @@ body.page-id-150 {
     animation-name: fadeInDown;
   }
 
-body.page-id-179, body.page-id-2526 {
+body.page-id-2526 {
     .st0{opacity:0.234;}
 	.st1{fill:none;stroke:#000;stroke-width:6.0009;stroke-miterlimit:10.0014;}
 	.st2{fill:#FA4825;}
@@ -5303,6 +5683,10 @@ body.single-product {
                     max-height: 16px;
                     width: auto!important;
                 }
+                #nbr {
+                    margin-left: 0px!important;
+                    width: 15px!important;
+                }
             }
         }
 
@@ -5857,7 +6241,7 @@ body.single-product {
 
                     svg {
                         height: 20px;
-                        width: auto;
+                        width: 23px;
                     }
                 }
 
@@ -6297,6 +6681,30 @@ body.single-product {
 
         .col-12 {
             padding: 0;
+        }
+
+        .upsells.products {
+            .products {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                .product {
+                    width: 50%;
+                    display: flex!important;
+                    flex-direction: column;
+                    border-top: 1px solid #000;
+                    padding: 15px;
+
+                    .woocommerce-loop-product__link {
+                        .size-woocommerce_thumbnail {
+                            max-height: 150px;
+                        }
+                        h2, .price {
+                            display: none;
+                        }
+                    }
+                }
+            }
         }
 
         .related.products {
@@ -6820,57 +7228,57 @@ body.single-product {
 
     // Stockist Page
 
-    body.page-id-179, body.page-id-2526 {
+    // body.page-id-179, body.page-id-2526 {
 
-        #accordionMap {
-            margin-top: 0px;
-            padding-left: 15px;
+    //     #accordionMap {
+    //         margin-top: 0px;
+    //         padding-left: 15px;
 
-            .card {
-                background-color: transparent;
+    //         .card {
+    //             background-color: transparent;
 
-                .card-header {
-                    button.btn {
-                        padding-left: 0;
-                        font-size: 18px;
-                    }
-                }
+    //             .card-header {
+    //                 button.btn {
+    //                     padding-left: 0;
+    //                     font-size: 18px;
+    //                 }
+    //             }
 
-                .card-body {
-                    padding-left: 0;
-                }
-            }
-        }
+    //             .card-body {
+    //                 padding-left: 0;
+    //             }
+    //         }
+    //     }
 
-        .divider {
-            margin-left: 0!important;
-        }
+    //     .divider {
+    //         margin-left: 0!important;
+    //     }
 
-        .btn-link.soon {
-            padding-left: 0!important;
-        }
+    //     .btn-link.soon {
+    //         padding-left: 0!important;
+    //     }
 
-        .col-12 {
-            padding-left: 0;
-        }
+    //     .col-12 {
+    //         padding-left: 0;
+    //     }
 
-        .owl-carousel {
-            top: 70px;
-        }
+    //     .owl-carousel {
+    //         top: 70px;
+    //     }
 
-        .map-svg {
-            //width: 130%;
-            top: 100px!important;
-            //left: -40px;
-            overflow: hidden;
+    //     .map-svg {
+    //         //width: 130%;
+    //         top: 100px!important;
+    //         //left: -40px;
+    //         overflow: hidden;
 
-            svg {
-                height: 350px;
-                width: inherit;
-                max-width: inherit;
-            }
-        }
-    }
+    //         svg {
+    //             height: 350px;
+    //             width: inherit;
+    //             max-width: inherit;
+    //         }
+    //     }
+    // }
 
     // About page
 

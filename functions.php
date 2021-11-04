@@ -118,6 +118,15 @@ function custom_product_variation_title($should_include_attributes, $product)
     return $should_include_attributes;
 }
 
+// add_filter( 'woocommerce_variation_is_active', 'grey_out_variations_when_out_of_stock', 10, 2 );
+// function grey_out_variations_when_out_of_stock( $grey_out, $variation ){
+// if ( ! $variation->is_in_stock() ){
+//   return false;
+//  }else{
+//   return true;
+//  }
+// }
+
 add_action( 'init', 'woocommerce_clear_cart_url' );
 function woocommerce_clear_cart_url()
 {
@@ -154,17 +163,17 @@ function add_on_hover_shop_loop_image()
 // -----------------------------------------
 // 1. Show custom input field above Add to Cart
  
-/*add_action( 'woocommerce_before_add_to_cart_button', 'bbloomer_product_add_on', 9 );
+add_action( 'woocommerce_before_add_to_cart_button', 'bbloomer_product_add_on', 9 );
  
 function bbloomer_product_add_on() {
     $value = isset( $_POST['custom_text_add_on'] ) ? sanitize_text_field( $_POST['custom_text_add_on'] ) : '';
-    echo '<div><label>Custom Text Add-On <abbr class="required" title="required">*</abbr></label><p><input name="custom_text_add_on" value="' . $value . '"></p></div>';
-}*/
+    echo '<div id="customInputText"><label>Custom Text Add-On <abbr class="required" title="required">*</abbr></label><p><input name="custom_text_add_on" value="' . $value . '"></p></div>';
+}
  
 // -----------------------------------------
 // 2. Throw error if custom input field empty
  
-/*add_filter( 'woocommerce_add_to_cart_validation', 'bbloomer_product_add_on_validation', 10, 3 );
+add_filter( 'woocommerce_add_to_cart_validation', 'bbloomer_product_add_on_validation', 10, 3 );
  
 function bbloomer_product_add_on_validation( $passed, $product_id, $qty ){
    if( isset( $_POST['custom_text_add_on'] ) && sanitize_text_field( $_POST['custom_text_add_on'] ) == '' ) {
@@ -172,24 +181,24 @@ function bbloomer_product_add_on_validation( $passed, $product_id, $qty ){
       $passed = false;
    }
    return $passed;
-}*/
+}
  
 // -----------------------------------------
 // 3. Save custom input field value into cart item data
  
-/*add_filter( 'woocommerce_add_cart_item_data', 'bbloomer_product_add_on_cart_item_data', 10, 2 );
+add_filter( 'woocommerce_add_cart_item_data', 'bbloomer_product_add_on_cart_item_data', 10, 2 );
  
 function bbloomer_product_add_on_cart_item_data( $cart_item, $product_id ){
     if( isset( $_POST['custom_text_add_on'] ) ) {
         $cart_item['custom_text_add_on'] = sanitize_text_field( $_POST['custom_text_add_on'] );
     }
     return $cart_item;
-}*/
+}
  
 // -----------------------------------------
 // 4. Display custom input field value @ Cart
  
-/*add_filter( 'woocommerce_get_item_data', 'bbloomer_product_add_on_display_cart', 10, 2 );
+add_filter( 'woocommerce_get_item_data', 'bbloomer_product_add_on_display_cart', 10, 2 );
  
 function bbloomer_product_add_on_display_cart( $data, $cart_item ) {
     if ( isset( $cart_item['custom_text_add_on'] ) ){
@@ -199,40 +208,40 @@ function bbloomer_product_add_on_display_cart( $data, $cart_item ) {
         );
     }
     return $data;
-}*/
+}
  
 // -----------------------------------------
 // 5. Save custom input field value into order item meta
  
-/*add_action( 'woocommerce_add_order_item_meta', 'bbloomer_product_add_on_order_item_meta', 10, 2 );
+add_action( 'woocommerce_add_order_item_meta', 'bbloomer_product_add_on_order_item_meta', 10, 2 );
  
 function bbloomer_product_add_on_order_item_meta( $item_id, $values ) {
     if ( ! empty( $values['custom_text_add_on'] ) ) {
         wc_add_order_item_meta( $item_id, 'Custom Text Add-On', $values['custom_text_add_on'], true );
     }
-}*/
+}
  
 // -----------------------------------------
 // 6. Display custom input field value into order table
  
-/*add_filter( 'woocommerce_order_item_product', 'bbloomer_product_add_on_display_order', 10, 2 );
+add_filter( 'woocommerce_order_item_product', 'bbloomer_product_add_on_display_order', 10, 2 );
  
 function bbloomer_product_add_on_display_order( $cart_item, $order_item ){
     if( isset( $order_item['custom_text_add_on'] ) ){
         $cart_item['custom_text_add_on'] = $order_item['custom_text_add_on'];
     }
     return $cart_item;
-}*/
+}
  
 // -----------------------------------------
 // 7. Display custom input field value into order emails
  
-/*add_filter( 'woocommerce_email_order_meta_fields', 'bbloomer_product_add_on_display_emails' );
+add_filter( 'woocommerce_email_order_meta_fields', 'bbloomer_product_add_on_display_emails' );
  
 function bbloomer_product_add_on_display_emails( $fields ) { 
     $fields['custom_text_add_on'] = 'Custom Text Add-On';
     return $fields; 
-}*/
+}
 
 add_filter( 'template_include', 'woocommerce_archive_template', 99 );
 function woocommerce_archive_template( $template )

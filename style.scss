@@ -10,7 +10,7 @@ Version: 1.0
 #wesh {
     display: flex;
     .morray {
-        display: none;
+        display: block;
     }
 }
 
@@ -1594,14 +1594,30 @@ body.page-id-302 {
 
         .products {
             margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            list-style: none;
+
+            &::marker {
+                display: none;
+            }
     
             li.product {
                 margin: 0;
                 width: 50%;
+
+                &::marker {
+                    display: none;
+                }
+
                 &.outofstock {
                     //pointer-events: none;
                     opacity: .5;
                     h2 {
+                        display: flex;
+                        justify-content: center;
+
                         &::after {
                             content: 'Out of stock';
                             position: absolute;
@@ -1616,11 +1632,12 @@ body.page-id-302 {
     
                 a {
                     text-align: center;
-                    // position: relative;
+                    position: relative;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
+                    text-decoration: none;
     
                     &.button.product_type_simple {
                         display: none;
@@ -1636,6 +1653,7 @@ body.page-id-302 {
                             top: 0;
                             right: 50px;
                             opacity: 0;
+                            pointer-events: none;
                         }
                     }
     
@@ -1841,6 +1859,10 @@ body.page-id-302 {
             background-color: #FFFFFFEE;
         }
 
+        #customInputText {
+            display: none;
+        }
+
         form.cart {
             order: 5;
             margin-bottom: 0px;
@@ -1907,7 +1929,7 @@ body.page-id-302 {
 
                         &:hover {
                             font-weight: 600;
-                            background-color: #FFF;
+                            background-color: #FFFFFF33;
                         }
 
                         &:active {
@@ -3656,6 +3678,39 @@ body.woocommerce-checkout {
     h2.text-center.title-paiement {
         display: none;
     }
+
+    // #shipping_method {
+    //     li #shipping_method_0_flexible_shipping_single53 + label {
+    //         display: none;
+    //     }
+    //     li #shipping_method_0_service_point_shipping_method54 + label {
+    //         display: none;
+    //     }
+    //     li #shipping_method_0_flexible_shipping_single50 + label {
+    //         display: inline;
+    //     }
+    //     li #shipping_method_0_service_point_shipping_method40 + label {
+    //         display: inline;
+    //     }
+    // }
+
+    // &.has-home-product {
+
+    //     #shipping_method {
+    //         li #shipping_method_0_flexible_shipping_single53 + label {
+    //             display: inline;
+    //         }
+    //         li #shipping_method_0_service_point_shipping_method54 + label {
+    //             display: inline;
+    //         }
+    //         li #shipping_method_0_flexible_shipping_single50 + label {
+    //             display: none;
+    //         }
+    //         li #shipping_method_0_service_point_shipping_method40 + label {
+    //             display: none;
+    //         }
+    //     }
+    // }
     .woocommerce {
 
         .woocommerce-message[data-flexible_shipping_free_shipping_notice] {
@@ -3900,6 +3955,10 @@ body.woocommerce-checkout {
                     & > .container {
                         max-height: 235px;
                         overflow-y: auto;
+                    }
+
+                    .categories {
+                        display: none;
                     }
 
                     .cart_item {
@@ -4918,6 +4977,105 @@ body.page-id-150 {
             .card-body {
                 left: 0!important;
                 top: 100%!important;
+            }
+        }
+        
+        #accordionMapMobile {
+            margin-top: 0px;
+            .card {
+                border: 0px;
+                margin-top: 0px;
+                border-top: 1px solid #000;
+                border-radius: 0!important;
+                overflow: visible;
+
+                .card-header {
+                    background-color: transparent;
+                    padding: 0;
+                    margin: 0;
+                    width: 100%;
+
+                    .btn {
+                        color: #000;
+                        font-size: 22px;
+                        text-transform: uppercase;
+                        text-align: center;
+                        font-weight: 900;
+                        box-shadow: none!important;
+                        text-decoration: none!important;
+                        // padding-bottom: 0px;
+                        margin: 0;
+                        border-radius: 0;
+                        padding: 15px;
+                    }
+                }
+
+                &.open {
+                    .card-header {
+                        .btn {
+                            color: #D10000;
+                        }
+                    }
+                }
+
+                .card-body {
+                    padding: 0px; 
+                    font-size: 14px;
+                    color: #666;
+                    // position: absolute;
+                    // width: 100%;
+                    // left: 100%;
+                    // opacity: 0;
+                    // border: 1px solid #000;
+                    transform: translateY(-1px);
+                    background-color: #FFF;
+                    // z-index: 9;
+
+                    div {
+                        div {
+                            color: #000;
+                            padding: 10px 15px;
+
+                            &:first-of-type {
+                                border-top: 1px solid #000;
+                            }
+                            
+                            &:not(:last-of-type) {
+                                border-top: 1px solid #000;
+                            }
+                            
+                            &:last-of-type {
+                                border-top: 1px solid #000;
+                            }
+                        }
+                    }
+
+                    a {
+                        color: #000;
+                    }
+                }
+
+                // &.open {
+                //     .card-body {
+                //         opacity: 1;
+                //     }
+                // }
+
+                // .collapse {
+                //     // position: absolute;
+                //     // left: 100%;
+
+                //     .card-body {
+                //         padding: 15px; 
+                //         font-size: 14px;
+                //         color: #666;
+    
+                //         a {
+                //             color: #000;
+                //         }
+                //     }
+
+                // }
             }
         }
 
@@ -6333,6 +6491,12 @@ body.single-product {
                                     color: #FFF;
                                     background-color: #000;
                                     padding: 15px;
+
+                                    &.disabled {
+                                        color: #aaa;
+                                        pointer-events: none;
+                                        cursor: none;
+                                    }
                                 }
                             }
                         }

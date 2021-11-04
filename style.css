@@ -10,7 +10,7 @@ Version: 1.0
 #wesh {
   display: flex; }
   #wesh .morray {
-    display: none; }
+    display: block; }
 
 .plugin_active {
   display: none; }
@@ -891,26 +891,39 @@ body.page-id-302 #content {
     body.page-id-302 #content .woocommerce .woocommerce-result-count, body.page-id-302 #content .woocommerce .woocommerce-ordering {
       display: none; }
   body.page-id-302 #content .products {
-    margin-top: 30px; }
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none; }
+    body.page-id-302 #content .products::marker {
+      display: none; }
     body.page-id-302 #content .products li.product {
       margin: 0;
       width: 50%; }
+      body.page-id-302 #content .products li.product::marker {
+        display: none; }
       body.page-id-302 #content .products li.product.outofstock {
         opacity: .5; }
-        body.page-id-302 #content .products li.product.outofstock h2::after {
-          content: 'Out of stock';
-          position: absolute;
-          color: #000;
-          font-weight: 700;
-          top: 50%;
-          left: 50%;
-          transform: translate3D(-50%, -50%, 0); }
+        body.page-id-302 #content .products li.product.outofstock h2 {
+          display: flex;
+          justify-content: center; }
+          body.page-id-302 #content .products li.product.outofstock h2::after {
+            content: 'Out of stock';
+            position: absolute;
+            color: #000;
+            font-weight: 700;
+            top: 50%;
+            left: 50%;
+            transform: translate3D(-50%, -50%, 0); }
       body.page-id-302 #content .products li.product a {
         text-align: center;
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center; }
+        justify-content: center;
+        text-decoration: none; }
         body.page-id-302 #content .products li.product a.button.product_type_simple {
           display: none; }
         body.page-id-302 #content .products li.product a img {
@@ -921,7 +934,8 @@ body.page-id-302 #content {
             position: absolute;
             top: 0;
             right: 50px;
-            opacity: 0; }
+            opacity: 0;
+            pointer-events: none; }
         body.page-id-302 #content .products li.product a h2.woocommerce-loop-product__title {
           text-align: center;
           font-size: 20px;
@@ -1030,6 +1044,8 @@ body.page-id-302 #content {
       display: none; }
     #main > .product .summary .md-size-chart-overlay {
       background-color: #FFFFFFEE; }
+    #main > .product .summary #customInputText {
+      display: none; }
     #main > .product .summary form.cart {
       order: 5;
       margin-bottom: 0px; }
@@ -1079,7 +1095,7 @@ body.page-id-302 #content {
               cursor: none; }
             #main > .product .summary form.cart .variations .select-items .dropdown-item:hover {
               font-weight: 600;
-              background-color: #FFF; }
+              background-color: #FFFFFF33; }
             #main > .product .summary form.cart .variations .select-items .dropdown-item:active {
               color: #000; }
       #main > .product .summary form.cart .single_variation_wrap {
@@ -2042,6 +2058,8 @@ body.woocommerce-checkout .woocommerce form.checkout.woocommerce-checkout {
       body.woocommerce-checkout .woocommerce form.checkout.woocommerce-checkout .order-review-column .shop_table > .container {
         max-height: 235px;
         overflow-y: auto; }
+      body.woocommerce-checkout .woocommerce form.checkout.woocommerce-checkout .order-review-column .shop_table .categories {
+        display: none; }
       body.woocommerce-checkout .woocommerce form.checkout.woocommerce-checkout .order-review-column .shop_table .cart_item {
         display: flex;
         width: 100%;
@@ -2613,6 +2631,49 @@ body.page-id-150 #contactPage {
     .page-id-179 #accordionMap .card-body {
       left: 0 !important;
       top: 100% !important; }
+  .page-id-179 #accordionMapMobile {
+    margin-top: 0px; }
+    .page-id-179 #accordionMapMobile .card {
+      border: 0px;
+      margin-top: 0px;
+      border-top: 1px solid #000;
+      border-radius: 0 !important;
+      overflow: visible; }
+      .page-id-179 #accordionMapMobile .card .card-header {
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        width: 100%; }
+        .page-id-179 #accordionMapMobile .card .card-header .btn {
+          color: #000;
+          font-size: 22px;
+          text-transform: uppercase;
+          text-align: center;
+          font-weight: 900;
+          box-shadow: none !important;
+          text-decoration: none !important;
+          margin: 0;
+          border-radius: 0;
+          padding: 15px; }
+      .page-id-179 #accordionMapMobile .card.open .card-header .btn {
+        color: #D10000; }
+      .page-id-179 #accordionMapMobile .card .card-body {
+        padding: 0px;
+        font-size: 14px;
+        color: #666;
+        transform: translateY(-1px);
+        background-color: #FFF; }
+        .page-id-179 #accordionMapMobile .card .card-body div div {
+          color: #000;
+          padding: 10px 15px; }
+          .page-id-179 #accordionMapMobile .card .card-body div div:first-of-type {
+            border-top: 1px solid #000; }
+          .page-id-179 #accordionMapMobile .card .card-body div div:not(:last-of-type) {
+            border-top: 1px solid #000; }
+          .page-id-179 #accordionMapMobile .card .card-body div div:last-of-type {
+            border-top: 1px solid #000; }
+        .page-id-179 #accordionMapMobile .card .card-body a {
+          color: #000; }
   .page-id-179 .owl-carousel .item .map-svg {
     height: max-content; }
   .page-id-179 #owlRefs .owl-carousel {
@@ -3390,6 +3451,10 @@ body.single-product #zoomProductCarousel .owl-nav {
               color: #FFF;
               background-color: #000;
               padding: 15px; }
+              body.single-product #main .product .summary form.cart .variations .select-items .dropdown-item.disabled {
+                color: #aaa;
+                pointer-events: none;
+                cursor: none; }
         body.single-product #main .product .summary form.cart .single_variation_wrap {
           width: 50%;
           justify-content: flex-start; }

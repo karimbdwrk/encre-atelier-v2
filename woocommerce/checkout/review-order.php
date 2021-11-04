@@ -31,18 +31,24 @@ defined( 'ABSPATH' ) || exit;
 		<?php
 		do_action( 'woocommerce_review_order_before_cart_contents' );
 
+		// var_dump(WC()->cart->get_cart());
+
 		foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 			$_product = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+			// var_dump($_product->get_sku());
 
 			if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 				?>
 				<div class="row">
-					
+				<div class="categories"><?php echo wc_get_product_category_list( $cart_item['product_id'] ); ?></div>
 					<div class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 						<div class="col-3">
 							<div class="product-img">
 								<?php
 									$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+
+									// $categorie = $_product->get_category_ids();
+									// echo $categorie;
 
 									if ( ! $product_permalink ) {
 										echo $thumbnail; // PHPCS: XSS ok.
@@ -51,6 +57,9 @@ defined( 'ABSPATH' ) || exit;
 									}
 								?>
 							</div>
+							<?php 
+								
+							?>
 						</div>
 						<div class="col-6">
 							<div class="product-name">

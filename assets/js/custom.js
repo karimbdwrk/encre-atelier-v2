@@ -275,12 +275,16 @@ ready(function() {
         const firstSelect = JSON.parse(document.querySelector('form.variations_form').getAttribute('data-product_variations'))
         
         for (option of firstSelect) {
-          tableau1.push(option.attributes.attribute_size)
+          if (option.is_in_stock) {
+            tableau1.push(option.attributes.attribute_size)
+            console.log(tableau1)
+          }
         }
 
         const lastSelect = document.querySelector('.select-items')
         const lastOptions = lastSelect.querySelectorAll('.dropdown-item')
         for (option of lastOptions) {
+          console.log(option.textContent)
           let bool = tableau1.includes(option.textContent)
           if (!bool) {
             option.classList.add('disabled')
@@ -950,6 +954,31 @@ ready(function() {
       document.querySelector('#stripe-payment-data > p').textContent = 'Pay bay card'
     }
 
+    function shippingDelay() {
+      let categories = document.querySelectorAll('.shop_table .categories a')
+      let labels = document.querySelectorAll('#shipping_method li label')
+      console.log(categories)
+      for (cat of categories) {
+        console.log(cat.innerText)
+        if (cat.innerText == 'Home') {
+          console.log('is product HOME')
+          document.querySelector('body').classList.add('has-home-product')
+          // for (label of labels) {
+          //   let title = label.innerText
+          //   let newTitle = title.replace('(1 à 3 jours ouvrés)', '(7 à 12 jours ouvrés)')
+          //   console.log(newTitle)
+          //   label.innerText = newTitle
+          // }
+        } else {
+          console.log('no home')
+        }
+      }
+
+      document.querySelector('form.checkout').addEventListener('change', () => {
+        console.log('refresh')
+      })
+    }
+
     const checkoutPage = document.querySelector('.woocommerce-checkout')
     const pageLang = document.querySelector('html').lang
 
@@ -974,6 +1003,7 @@ ready(function() {
     }
 
     if (checkoutPage) {
+      shippingDelay()
       cartScroll()
 
       const goToCheckout = document.getElementById('goToCheckout')

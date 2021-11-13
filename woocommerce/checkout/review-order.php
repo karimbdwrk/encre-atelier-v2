@@ -41,6 +41,7 @@ defined( 'ABSPATH' ) || exit;
 				?>
 				<div class="row">
 				<div class="categories"><?php echo wc_get_product_category_list( $cart_item['product_id'] ); ?></div>
+				<div class="tags"><?php echo wc_get_product_tag_list( $cart_item['product_id'] ); ?></div>
 					<div class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 						<div class="col-3">
 							<div class="product-img">

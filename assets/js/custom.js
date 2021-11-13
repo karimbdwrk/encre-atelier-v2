@@ -16,6 +16,11 @@ const singleProductPage = document.querySelector('.single.single-product')
 
 if (singleProductPage) {
 
+  const cta = document.querySelector('.single_add_to_cart_button')
+  if (document.querySelector('#main > .product').classList.contains('product_tag-precommande')) {
+    cta.innerHTML = 'PRE-ORDER'
+  }
+
   if(document.querySelector('.product.type-product').classList.contains('outofstock')) {
     if (document.querySelector('.single_add_to_cart_button') != null) {
       document.querySelector('.single_add_to_cart_button').innerText = 'SORRY, IT\'S OUT OF STOCK'
@@ -954,15 +959,15 @@ ready(function() {
       document.querySelector('#stripe-payment-data > p').textContent = 'Pay bay card'
     }
 
-    function shippingDelay() {
-      let categories = document.querySelectorAll('.shop_table .categories a')
+    function preorderDelay() {
+      let tags = document.querySelectorAll('.shop_table .tags a')
       let labels = document.querySelectorAll('#shipping_method li label')
-      console.log(categories)
-      for (cat of categories) {
-        console.log(cat.innerText)
-        if (cat.innerText == 'Home') {
-          console.log('is product HOME')
-          document.querySelector('body').classList.add('has-home-product')
+      console.log(tags)
+      for (tag of tags) {
+        console.log(tag.innerText)
+        if (tag.innerText == 'precommande') {
+          console.log('is precommande')
+          document.querySelector('body').classList.add('has-precommande')
           // for (label of labels) {
           //   let title = label.innerText
           //   let newTitle = title.replace('(1 à 3 jours ouvrés)', '(7 à 12 jours ouvrés)')
@@ -970,7 +975,7 @@ ready(function() {
           //   label.innerText = newTitle
           // }
         } else {
-          console.log('no home')
+          console.log('no precommande')
         }
       }
 
@@ -1003,7 +1008,7 @@ ready(function() {
     }
 
     if (checkoutPage) {
-      shippingDelay()
+      preorderDelay()
       cartScroll()
 
       const goToCheckout = document.getElementById('goToCheckout')

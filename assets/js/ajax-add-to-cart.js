@@ -209,7 +209,12 @@
         setTimeout(() => { 
             document.querySelector('.btn-panier #nbr').innerHTML = nbr+1
             faceHeader.classList.remove('empty')
-            cta.innerHTML = 'BUY'
+            if (document.querySelector('#main > .product').classList.contains('product_tag-precommande')) {
+                cta.innerHTML = 'PRE-ORDER'
+            } else {
+                cta.innerHTML = 'BUY'
+            }
+            
         }, 2500)
 
         setTimeout(() => { 

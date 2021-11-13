@@ -99,7 +99,7 @@
                         <button type="button" class="btn btn-recherche" data-toggle="modal" data-target="#searchModal">
                             <img src="https://encre-atelier.com/wp-content/uploads/2021/03/eye-close.svg" class="search-svg"/>
                         </button>
-                        <a href="https://encre-atelier.com/fr/cart/" class="btn btn-panier">
+                        <a href="#" class="btn btn-panier xoo-wsc-cart-trigger">
                             <!-- <img src="https://encre-atelier.com/wp-content/uploads/2021/03/eye-close.svg" class="panier-svg"/> -->
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.95 49.95" class="face-no-smile">
                                 <g id="faceCart" class="empty" data-name="face-no-smile">

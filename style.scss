@@ -10,7 +10,7 @@ Version: 1.0
 #wesh {
     display: flex;
     .morray {
-        display: block;
+        display: none;
     }
 }
 
@@ -1878,6 +1878,12 @@ body.page-id-302 {
     display: flex;
     border-bottom: 1px solid #000;
 
+    &.product_tag-custom {
+        .summary {
+            padding-bottom: 90px;
+        }
+    }
+
     .summary {
         display: flex;
         flex-direction: column;
@@ -1960,7 +1966,20 @@ body.page-id-302 {
         }
 
         #customInputText {
-            display: none;
+            // display: none;
+
+            input {
+                border: 1px solid #000;
+                background-color: transparent;
+                border-radius: 0px;
+                transform: translateX(-50%);
+                margin-top: 50px;
+                text-align: center;
+
+                &::placeholder {
+                    text-transform: uppercase;
+                }
+            }
         }
 
         form.cart {
@@ -2491,6 +2510,37 @@ body.page-id-302 {
                 td {
                     padding-bottom: 6px;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #main > .product {
+        &.product_tag-custom {
+
+            .summary {
+
+                .variations_form.cart {
+                    padding-top: 120px;
+                }
+
+                #customInputText {
+                    width: 100%;
+
+                    input {
+                        margin-top: 0;
+                        transform: translateX(-50%) translateY(-75px);
+                        width: 100%;
+                        height: 38px;
+                        font-size: 18px;
+
+                        &:hover, &:active {
+                            outline: none;
+                        }
+                    }
+                }
+
             }
         }
     }
@@ -5837,6 +5887,10 @@ body.single-product {
         .blue-banner {
             height: 40px!important;
             padding-top: 12px;
+
+            ul.list.cloned {
+                top: 12px;
+            }
         }
 
         .logo-container {

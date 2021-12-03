@@ -10,7 +10,7 @@ Version: 1.0
 #wesh {
   display: flex; }
   #wesh .morray {
-    display: block; }
+    display: none; }
 
 .plugin_active {
   display: none; }
@@ -1057,6 +1057,8 @@ body.page-id-302 #content {
   display: flex;
   border-bottom: 1px solid #000;
   /* SIZE GUIDE MODAL */ }
+  #main > .product.product_tag-custom .summary {
+    padding-bottom: 90px; }
   #main > .product .summary {
     display: flex;
     flex-direction: column;
@@ -1103,8 +1105,15 @@ body.page-id-302 #content {
     #main > .product .summary .md-size-chart-overlay {
       background-color: #000;
       opacity: .2; }
-    #main > .product .summary #customInputText {
-      display: none; }
+    #main > .product .summary #customInputText input {
+      border: 1px solid #000;
+      background-color: transparent;
+      border-radius: 0px;
+      transform: translateX(-50%);
+      margin-top: 50px;
+      text-align: center; }
+      #main > .product .summary #customInputText input::placeholder {
+        text-transform: uppercase; }
     #main > .product .summary form.cart {
       order: 5;
       margin-bottom: 0px; }
@@ -1433,6 +1442,19 @@ body.page-id-302 #content {
         #main > .product .chart-container .chart-table #size-chart td {
           padding-bottom: 6px; }
 
+@media screen and (max-width: 425px) {
+  #main > .product.product_tag-custom .summary .variations_form.cart {
+    padding-top: 120px; }
+  #main > .product.product_tag-custom .summary #customInputText {
+    width: 100%; }
+    #main > .product.product_tag-custom .summary #customInputText input {
+      margin-top: 0;
+      transform: translateX(-50%) translateY(-75px);
+      width: 100%;
+      height: 38px;
+      font-size: 18px; }
+      #main > .product.product_tag-custom .summary #customInputText input:hover, #main > .product.product_tag-custom .summary #customInputText input:active {
+        outline: none; } }
 .related-container h3.title {
   text-align: center;
   border-bottom: 1px solid #000;
@@ -3112,6 +3134,8 @@ body.single-product #zoomProductCarousel .owl-nav {
     header#masthead .blue-banner {
       height: 40px !important;
       padding-top: 12px; }
+      header#masthead .blue-banner ul.list.cloned {
+        top: 12px; }
     header#masthead .logo-container {
       height: 50px !important;
       padding-left: 15px; }

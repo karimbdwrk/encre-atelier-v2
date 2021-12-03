@@ -304,6 +304,7 @@ ready(function () {
       try {
         for (var _iterator2 = firstSelect[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
           option = _step2.value;
+          console.log(option);
 
           if (option.is_in_stock) {
             tableau1.push(option.attributes.attribute_size);

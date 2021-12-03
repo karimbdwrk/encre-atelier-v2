@@ -21,48 +21,7 @@ if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-
 					<div class="item">
 						<p>SEEN IN</p>
 					</div>
-					<div class="item">
-						<img src="https://encre-atelier.com/wp-content/uploads/2021/04/69tiny.png" alt="">
-					</div>
-					<div class="item">
-						<img src="https://encre-atelier.com/wp-content/uploads/2021/04/Konbinitiny.png" alt="">
-					</div>
-					<div class="item">
-						<img src="https://encre-atelier.com/wp-content/uploads/2021/04/Paulettetiny.png" alt="">
-					</div>
-					<div class="item">
-						<img src="https://encre-atelier.com/wp-content/uploads/2021/04/Tribunetiny.png" alt="">
-					</div>
-					<div class="item">
-						<img src="https://encre-atelier.com/wp-content/uploads/2021/04/Journaldudesigntiny.png" alt="">
-					</div>
-					<div class="item">
-						<img src="https://encre-atelier.com/wp-content/uploads/2021/04/Paperboystiny.png" alt="">
-					</div>
-					<div class="item">
-						<img src="https://encre-atelier.com/wp-content/uploads/2021/04/Hypebeasttiny.png" alt="">
-					</div>
-					<div class="item">
-						<img src="https://encre-atelier.com/wp-content/uploads/2021/04/Fudgetiny.png" alt="">
-					</div>
-					<div class="item">
-						<img src="https://encre-atelier.com/wp-content/uploads/2021/04/ELLEtiny.png" alt="">
-					</div>
-					<div class="item">
-						<img src="https://encre-atelier.com/wp-content/uploads/2021/04/Madametiny.png" alt="">
-					</div>
-					<div class="item">
-						<img src="https://encre-atelier.com/wp-content/uploads/2021/04/Fashiontiny.png" alt="">
-					</div>
-					<div class="item">
-						<img src="https://encre-atelier.com/wp-content/uploads/2021/04/IDtiny.png" alt="">
-					</div>
-					<div class="item">
-						<img src="https://encre-atelier.com/wp-content/uploads/2021/04/KALTBLUTtiny.png" alt="">
-					</div>
-					<div class="item">
-						<img src="https://encre-atelier.com/wp-content/uploads/2021/04/LOBStiny.png" alt="">
-					</div>
+					<?php echo do_shortcode( '[pods name="reference" template="References Template"]' ); ?>
 				</div>
 			</div>
 		</div>

@@ -280,6 +280,7 @@ ready(function() {
         const firstSelect = JSON.parse(document.querySelector('form.variations_form').getAttribute('data-product_variations'))
         
         for (option of firstSelect) {
+          console.log(option)
           if (option.is_in_stock) {
             tableau1.push(option.attributes.attribute_size)
             console.log(tableau1)

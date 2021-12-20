@@ -53,8 +53,17 @@
                 <div class="col-12">
                     <div class="blue-banner tickerwrapper">
                         <ul class="list">
-                            <li class="item">
+                            <!-- <li class="item">
                                 <p>INFOS&nbsp;COMMANDES&nbsp;DE&nbsp;NOËL&nbsp;:&nbsp;VOUS&nbsp;AVEZ&nbsp;JUSQU’AU&nbsp;15&nbsp;DÉCEMBRE&nbsp;POUR&nbsp;PASSER&nbsp;VOS&nbsp;COMMANDES&nbsp;AFIN&nbsp;DE&nbsp;VOUS&nbsp;GARANTIR&nbsp;UNE&nbsp;ARRIVÉE&nbsp;POUR&nbsp;LES&nbsp;FÊTES.</p>
+                            </li> -->
+                            <li class="item">
+                                <p>FRANCE : FREE SHIPPING FOR ORDERS OVER 100€</p>
+                            </li>
+                            <li class="item">
+                                <p>EU : FREE SHIPPING FOR  ORDERS OVER 150€</p>
+                            </li>
+                            <li class="item">
+                                <p>REST OF THE WORLD : FREE SHIPPING FOR  ORDERS OVER 200€</p>
                             </li>
                         </ul>
                     </div>

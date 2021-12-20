@@ -978,6 +978,10 @@ header#masthead {
     display: none!important;
 }
 
+.xoo-wsc-slider {
+    right: -100%;
+}
+
 .xoo-wsc-cart-active{
 
     .xoo-wsc-basket {
@@ -1046,7 +1050,7 @@ header#masthead {
         
         .xoo-wsc-footer {
             .xoo-wsc-ft-extras {
-                display: none;
+                // display: none;
             }
             .xoo-wsc-sp-wide {
                 display: none;
@@ -1073,9 +1077,33 @@ header#masthead {
     .xoo-wsc-slider {
         max-width: 25vw!important;
         border-left: 1px solid #000;
-        right: -25vw;
+        margin-top: 70px;
 
+        .xoo-wsc-sl-body {
+            .xoo-wsc-sl-apply-coupon {
+                input {
+                    border-radius: 0;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                    border: 1px solid #000;
+                    padding-left: 10px;
+                    text-transform: uppercase;
+                    margin: 0;
+                }
+                .btn {
+                    background-color: #000;
+                    border: 1px solid #000;
+                    color: #FFF;
+                    border-radius: 0;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                }
+            }
+        }
     }
+
+
 
     .xoo-wsc-opac {
         // background-color: transparent!important;
@@ -1881,6 +1909,14 @@ body.page-id-302 {
     &.product_tag-custom {
         .summary {
             padding-bottom: 90px;
+        }
+    }
+
+    &.product_tag-carte-cadeau {
+        .summary {
+            .size-guide {
+                display: none;
+            }
         }
     }
 
@@ -5889,7 +5925,7 @@ body.single-product {
             padding-top: 12px;
 
             ul.list.cloned {
-                top: 12px;
+                padding-top: 12px!important;
             }
         }
 
@@ -6552,6 +6588,33 @@ body.single-product {
                 &.product-type-simple {
                     .price {
                         margin-bottom: 10px!important;
+                    }
+                }
+
+                &.product_tag-carte-cadeau {
+                    .summary {
+                        .price {
+                            padding-left: 0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-size: 14px;
+                            line-height: 10px;
+                            color: transparent;
+                            height: 40px;
+                            width: 25vw;
+
+                            & > span.amount {
+                                color: #000;
+
+                                &:first-of-type {
+                                    &::after {
+                                        content: '/';
+                                        margin-left: 5px;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
 

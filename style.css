@@ -14,6 +14,16 @@ Version: 1.0
   display: none;
 }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  body {
+    display: none;
+  }
+}
+@media only screen and (min-device-width: 426px) and (max-device-width: 1024px) and (orientation: portrait) {
+  body {
+    display: none;
+  }
+}
 .plugin_active {
   display: none;
 }

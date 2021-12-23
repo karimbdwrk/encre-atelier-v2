@@ -1,24 +1,24 @@
-if (jQuery( window ).width() <= 425) {
-    jQuery('#rotateScreen').removeClass('active')
-} else if (jQuery( window ).width() > 425 && jQuery( window ).height() <= 425 && jQuery( window ).height() < jQuery( window ).width()) {
-    jQuery('#rotateScreen').addClass('active')
-} else if (jQuery( window ).width() > 425 && jQuery( window ).height() < jQuery( window ).width()) {
-    jQuery('#rotateScreen').removeClass('active')
-} else if (jQuery( window ).width() > 425 && jQuery( window ).height() > jQuery( window ).width()) {
-    jQuery('#rotateScreen').addClass('active')
-}
+// if (jQuery( window ).width() <= 425) {
+//     jQuery('#rotateScreen').removeClass('active')
+// } else if (jQuery( window ).width() > 425 && jQuery( window ).height() <= 425 && jQuery( window ).height() < jQuery( window ).width()) {
+//     jQuery('#rotateScreen').addClass('active')
+// } else if (jQuery( window ).width() > 425 && jQuery( window ).height() < jQuery( window ).width()) {
+//     jQuery('#rotateScreen').removeClass('active')
+// } else if (jQuery( window ).width() > 425 && jQuery( window ).height() > jQuery( window ).width()) {
+//     jQuery('#rotateScreen').addClass('active')
+// }
 
-jQuery( window ).on('resize', function() {
-    if (jQuery( window ).width() <= 425) {
-        jQuery('#rotateScreen').removeClass('active')
-    } else if (jQuery( window ).width() > 425 && jQuery( window ).height() <= 425 && jQuery( window ).height() < jQuery( window ).width()) {
-        jQuery('#rotateScreen').addClass('active')
-    } else if (jQuery( window ).width() > 425 && jQuery( window ).height() < jQuery( window ).width()) {
-        jQuery('#rotateScreen').removeClass('active')
-    } else if (jQuery( window ).width() > 425 && jQuery( window ).height() > jQuery( window ).width()) {
-        jQuery('#rotateScreen').addClass('active')
-    }
-});
+// jQuery( window ).on('resize', function() {
+//     if (jQuery( window ).width() <= 425) {
+//         jQuery('#rotateScreen').removeClass('active')
+//     } else if (jQuery( window ).width() > 425 && jQuery( window ).height() <= 425 && jQuery( window ).height() < jQuery( window ).width()) {
+//         jQuery('#rotateScreen').addClass('active')
+//     } else if (jQuery( window ).width() > 425 && jQuery( window ).height() < jQuery( window ).width()) {
+//         jQuery('#rotateScreen').removeClass('active')
+//     } else if (jQuery( window ).width() > 425 && jQuery( window ).height() > jQuery( window ).width()) {
+//         jQuery('#rotateScreen').addClass('active')
+//     }
+// });
 
 if(jQuery('body.single-product').html()) {
     if(jQuery('body.single-product').html()) {

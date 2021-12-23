@@ -1,15 +1,15 @@
-window.addEventListener("orientationchange", function(event) {
-  console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
-  if (event.target.screen.orientation.angle === 0) {
-    if (window.innerWidth <= 425) {
-      document.querySelector('#rotateScreen').classList.remove('active')
-    }
-  } else {
-    if (window.innerWidth > 425) {
-      document.querySelector('#rotateScreen').classList.add('active')
-    }
-  }
-});
+// window.addEventListener("orientationchange", function(event) {
+//   console.log("the orientation of the device is now " + event.target.screen.orientation.angle);
+//   if (event.target.screen.orientation.angle === 0) {
+//     if (window.innerWidth <= 425) {
+//       document.querySelector('#rotateScreen').classList.remove('active')
+//     }
+//   } else {
+//     if (window.innerWidth > 425) {
+//       document.querySelector('#rotateScreen').classList.add('active')
+//     }
+//   }
+// });
 
 // CUSTOM CAROUSEL IMAGES PRODUCT PAGE
 const singleProductPage = document.querySelector('.single.single-product')

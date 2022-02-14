@@ -18,6 +18,9 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 <div class="shop_table woocommerce-checkout-review-order-table">
+<div class="stock-container">
+	<?php echo do_shortcode( '[slw_cart_message qty_from_location="location-slug" only_location_available="no"]Your custom cart message/HTML here[/slw_cart_message]' ); ?>
+</div>	
 	<!-- <thead>
 		<tr>
 			<th class="product-img">Image</th>

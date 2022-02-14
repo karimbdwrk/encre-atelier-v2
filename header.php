@@ -54,7 +54,7 @@
                     <div class="blue-banner tickerwrapper">
                         <ul class="list">
                             <!-- <li class="item">
-                                <p>INFOS&nbsp;COMMANDES&nbsp;DE&nbsp;NOËL&nbsp;:&nbsp;VOUS&nbsp;AVEZ&nbsp;JUSQU’AU&nbsp;15&nbsp;DÉCEMBRE&nbsp;POUR&nbsp;PASSER&nbsp;VOS&nbsp;COMMANDES&nbsp;AFIN&nbsp;DE&nbsp;VOUS&nbsp;GARANTIR&nbsp;UNE&nbsp;ARRIVÉE&nbsp;POUR&nbsp;LES&nbsp;FÊTES.</p>
+                                <p>-30%&nbsp;SUR&nbsp;TOUT&nbsp;NOTRE&nbsp;E-SHOP&nbsp;JUSQU'À&nbsp;DIMANCHE&nbsp;19H&nbsp;AVEC&nbsp;LE&nbsp;CODE&nbsp;PROMO&nbsp;<b>SHOP30</b>.</p>
                             </li> -->
                             <li class="item">
                                 <p>FRANCE : FREE SHIPPING FOR ORDERS OVER 100€</p>

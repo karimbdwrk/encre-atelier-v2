@@ -199,5 +199,8 @@ if ( post_password_required() ) {
 		</div>
 	</div>
 </div>
+<div class="stock-container d-none">
+	<?php echo do_shortcode( '[slw_product_locations show_qty=”yes” show_stock_status=”no” show_empty_stock=”yes”]' ); ?>
+</div>
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>

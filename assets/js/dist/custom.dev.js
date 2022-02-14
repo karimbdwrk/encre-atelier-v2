@@ -14,6 +14,7 @@
 // });
 // CUSTOM CAROUSEL IMAGES PRODUCT PAGE
 var singleProductPage = document.querySelector('.single.single-product');
+console.log('test');
 
 if (singleProductPage) {
   var cta = document.querySelector('.single_add_to_cart_button');
@@ -154,13 +155,20 @@ ready(function () {
 
 
   if (singleProductPage) {
+    console.log('single product page');
     wishlistBtnProduct();
 
-    if (document.querySelector('#size') == null) {
+    if (document.querySelector('select') == null) {
       return null;
     } else {
       customSelect();
-    }
+    } // if (document.querySelector('#pa_frcolor') == null) {
+    //   return null;
+    // } else {
+    //   customSelect2()
+    //   console.log('custom select 2')
+    // }
+
   } // WISHLIST BTN PAGE PRODUCT
 
 
@@ -232,6 +240,7 @@ ready(function () {
     /* Look for any elements with the class "custom-select": */
 
     x = document.getElementsByClassName("value");
+    console.log('x = ', x);
     l = x.length;
 
     for (i = 0; i < l; i++) {
@@ -245,7 +254,13 @@ ready(function () {
       a.setAttribute("data-toggle", "dropdown");
       a.setAttribute("aria-haspopup", "true");
       a.setAttribute("aria-expanded", "false");
-      a.innerHTML = 'Size';
+
+      if (document.getElementById('size')) {
+        a.innerHTML = 'Size';
+      } else if (document.getElementById('pa_frcolor')) {
+        a.innerHTML = 'Color';
+      }
+
       x[i].appendChild(a);
       /* For each element, create a new DIV that will contain the option list: */
 
@@ -271,7 +286,13 @@ ready(function () {
           for (i = 0; i < sl; i++) {
             if (s.options[i].innerHTML == this.innerHTML) {
               s.selectedIndex = i;
-              h.innerHTML = '<span>Size: </span><b>' + this.innerHTML + '</b>';
+
+              if (document.getElementById('size')) {
+                h.innerHTML = '<span>Size: </span><b>' + this.innerHTML + '</b>';
+              } else if (document.getElementById('pa_frcolor')) {
+                h.innerHTML = '<b>' + this.innerHTML + '</b>';
+              }
+
               y = this.parentNode.getElementsByClassName("same-as-selected");
               yl = y.length;
               this.classList.add("same-as-selected");
@@ -307,7 +328,9 @@ ready(function () {
 
           if (option.is_in_stock) {
             tableau1.push(option.attributes.attribute_size);
+            tableau2.push(option.attributes.attribute_pa_frcolor);
             console.log(tableau1);
+            console.log(tableau2);
           }
         }
       } catch (err) {
@@ -327,13 +350,185 @@ ready(function () {
 
       var lastSelect = document.querySelector('.select-items');
       var lastOptions = lastSelect.querySelectorAll('.dropdown-item');
-      var _iteratorNormalCompletion3 = true;
-      var _didIteratorError3 = false;
-      var _iteratorError3 = undefined;
+
+      if (document.getElementById('size')) {
+        var _iteratorNormalCompletion3 = true;
+        var _didIteratorError3 = false;
+        var _iteratorError3 = undefined;
+
+        try {
+          for (var _iterator3 = lastOptions[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+            option = _step3.value;
+            console.log(option.textContent);
+            var bool = tableau1.includes(option.textContent);
+
+            if (!bool) {
+              option.classList.add('disabled');
+            }
+          }
+        } catch (err) {
+          _didIteratorError3 = true;
+          _iteratorError3 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
+              _iterator3["return"]();
+            }
+          } finally {
+            if (_didIteratorError3) {
+              throw _iteratorError3;
+            }
+          }
+        }
+      }
+    }
+
+    hideOutOfStockSize();
+
+    function closeAllSelect(elmnt) {
+      /* A function that will close all select boxes in the document,
+      except the current select box: */
+      var x,
+          y,
+          i,
+          xl,
+          yl,
+          arrNo = [];
+      x = document.getElementsByClassName("select-items");
+      y = document.getElementsByClassName("select-selected");
+      xl = x.length;
+      yl = y.length;
+
+      for (i = 0; i < yl; i++) {
+        if (elmnt == y[i]) {
+          arrNo.push(i);
+        } else {
+          y[i].classList.remove("select-arrow-active");
+        }
+      }
+
+      for (i = 0; i < xl; i++) {
+        if (arrNo.indexOf(i)) {
+          x[i].classList.add("select-hide");
+        }
+      }
+    }
+    /* If the user clicks anywhere outside the select box,
+    then close all select boxes: */
+
+
+    document.addEventListener("click", closeAllSelect);
+  } // CUSTOM SELECT PRODUCT PAGE 2
+
+
+  function customSelect2() {
+    var x, i, j, l, ll, selElmnt, a, b, c;
+    /* Look for any elements with the class "custom-select": */
+
+    x = document.getElementsByClassName("value");
+    console.log('x = ', x);
+    l = x.length;
+
+    for (i = 0; i < l; i++) {
+      selElmnt = x[i].getElementsByTagName("select")[0];
+      ll = selElmnt.length;
+      /* For each element, create a new DIV that will act as the selected item: */
+
+      a = document.createElement("button");
+      a.setAttribute("class", "select-selected btn btn-secondary dropdown-toggle");
+      a.setAttribute("id", "dropdownSelect");
+      a.setAttribute("data-toggle", "dropdown");
+      a.setAttribute("aria-haspopup", "true");
+      a.setAttribute("aria-expanded", "false");
+      a.innerHTML = 'Color';
+      x[i].appendChild(a);
+      /* For each element, create a new DIV that will contain the option list: */
+
+      b = document.createElement("DIV");
+      b.setAttribute("class", "select-items select-hide dropdown-menu");
+      b.setAttribute("aria-labelledby", "dropdownSelect");
+
+      for (j = 1; j < ll; j++) {
+        /* For each option in the original select element,
+        create a new DIV that will act as an option item: */
+        c = document.createElement("DIV");
+        c.setAttribute("class", "dropdown-item");
+        c.setAttribute("variation_id", selElmnt.options[j].variation_id);
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        c.addEventListener("click", function (e) {
+          /* When an item is clicked, update the original select box,
+          and the selected item: */
+          var y, i, k, s, h, sl, yl;
+          s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+          sl = s.length;
+          h = this.parentNode.previousSibling;
+
+          for (i = 0; i < sl; i++) {
+            if (s.options[i].innerHTML == this.innerHTML) {
+              s.selectedIndex = i;
+              h.innerHTML = '<b>' + this.innerHTML + '</b>';
+              y = this.parentNode.getElementsByClassName("same-as-selected");
+              yl = y.length;
+              this.classList.add("same-as-selected");
+              var all_variations = JSON.parse(s.parentNode.parentNode.parentNode.parentNode.parentNode.getAttribute('data-product_variations'));
+              var id_variation = all_variations[i - 1].variation_id;
+              var valueCart = document.getElementsByClassName('variation_id');
+              valueCart[0].value = id_variation.toString();
+              document.getElementsByClassName('single_add_to_cart_button')[0].classList.remove('disabled');
+              break;
+            }
+          }
+
+          h.click();
+        });
+        b.appendChild(c);
+      }
+
+      x[i].appendChild(b);
+    }
+
+    function hideOutOfStockSize() {
+      var tableau1 = [];
+      var tableau2 = [];
+      var firstSelect = JSON.parse(document.querySelector('form.variations_form').getAttribute('data-product_variations'));
+      var _iteratorNormalCompletion4 = true;
+      var _didIteratorError4 = false;
+      var _iteratorError4 = undefined;
 
       try {
-        for (var _iterator3 = lastOptions[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-          option = _step3.value;
+        for (var _iterator4 = firstSelect[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+          option = _step4.value;
+          console.log(option);
+
+          if (option.is_in_stock) {
+            tableau1.push(option.attributes.attribute_size);
+            console.log(tableau1);
+          }
+        }
+      } catch (err) {
+        _didIteratorError4 = true;
+        _iteratorError4 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion4 && _iterator4["return"] != null) {
+            _iterator4["return"]();
+          }
+        } finally {
+          if (_didIteratorError4) {
+            throw _iteratorError4;
+          }
+        }
+      }
+
+      var lastSelect = document.querySelector('.select-items');
+      var lastOptions = lastSelect.querySelectorAll('.dropdown-item');
+      var _iteratorNormalCompletion5 = true;
+      var _didIteratorError5 = false;
+      var _iteratorError5 = undefined;
+
+      try {
+        for (var _iterator5 = lastOptions[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+          option = _step5.value;
           console.log(option.textContent);
           var bool = tableau1.includes(option.textContent);
 
@@ -342,16 +537,16 @@ ready(function () {
           }
         }
       } catch (err) {
-        _didIteratorError3 = true;
-        _iteratorError3 = err;
+        _didIteratorError5 = true;
+        _iteratorError5 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion3 && _iterator3["return"] != null) {
-            _iterator3["return"]();
+          if (!_iteratorNormalCompletion5 && _iterator5["return"] != null) {
+            _iterator5["return"]();
           }
         } finally {
-          if (_didIteratorError3) {
-            throw _iteratorError3;
+          if (_didIteratorError5) {
+            throw _iteratorError5;
           }
         }
       }
@@ -789,13 +984,13 @@ ready(function () {
 
   function zoomOnHover() {
     var targets = document.querySelectorAll('.zoomImg img');
-    var _iteratorNormalCompletion4 = true;
-    var _didIteratorError4 = false;
-    var _iteratorError4 = undefined;
+    var _iteratorNormalCompletion6 = true;
+    var _didIteratorError6 = false;
+    var _iteratorError6 = undefined;
 
     try {
-      for (var _iterator4 = targets[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
-        target = _step4.value;
+      for (var _iterator6 = targets[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+        target = _step6.value;
         target.addEventListener('mouseenter', function () {
           anime({
             targets: document.target,
@@ -810,16 +1005,16 @@ ready(function () {
         });
       }
     } catch (err) {
-      _didIteratorError4 = true;
-      _iteratorError4 = err;
+      _didIteratorError6 = true;
+      _iteratorError6 = err;
     } finally {
       try {
-        if (!_iteratorNormalCompletion4 && _iterator4["return"] != null) {
-          _iterator4["return"]();
+        if (!_iteratorNormalCompletion6 && _iterator6["return"] != null) {
+          _iterator6["return"]();
         }
       } finally {
-        if (_didIteratorError4) {
-          throw _iteratorError4;
+        if (_didIteratorError6) {
+          throw _iteratorError6;
         }
       }
     }
@@ -1012,13 +1207,13 @@ ready(function () {
     var tags = document.querySelectorAll('.shop_table .tags a');
     var labels = document.querySelectorAll('#shipping_method li label');
     console.log(tags);
-    var _iteratorNormalCompletion5 = true;
-    var _didIteratorError5 = false;
-    var _iteratorError5 = undefined;
+    var _iteratorNormalCompletion7 = true;
+    var _didIteratorError7 = false;
+    var _iteratorError7 = undefined;
 
     try {
-      for (var _iterator5 = tags[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
-        tag = _step5.value;
+      for (var _iterator7 = tags[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+        tag = _step7.value;
         console.log(tag.innerText);
 
         if (tag.innerText == 'precommande') {
@@ -1034,16 +1229,16 @@ ready(function () {
         }
       }
     } catch (err) {
-      _didIteratorError5 = true;
-      _iteratorError5 = err;
+      _didIteratorError7 = true;
+      _iteratorError7 = err;
     } finally {
       try {
-        if (!_iteratorNormalCompletion5 && _iterator5["return"] != null) {
-          _iterator5["return"]();
+        if (!_iteratorNormalCompletion7 && _iterator7["return"] != null) {
+          _iterator7["return"]();
         }
       } finally {
-        if (_didIteratorError5) {
-          throw _iteratorError5;
+        if (_didIteratorError7) {
+          throw _iteratorError7;
         }
       }
     }
@@ -1125,13 +1320,13 @@ ready(function () {
     var cible = document.getElementById('favoris');
 
     if (window.innerWidth > 425) {
-      var _iteratorNormalCompletion6 = true;
-      var _didIteratorError6 = false;
-      var _iteratorError6 = undefined;
+      var _iteratorNormalCompletion8 = true;
+      var _didIteratorError8 = false;
+      var _iteratorError8 = undefined;
 
       try {
-        for (var _iterator6 = productsDesktop[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
-          product = _step6.value;
+        for (var _iterator8 = productsDesktop[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
+          product = _step8.value;
 
           if (product.querySelector('td.wishlist-empty')) {
             cible.innerHTML = '<div class="empty-wishlist text-center"><h2>Votre liste de favoris est vide</h2><a href="/clothing" class="btn">GO TO SHOP</a></div>';
@@ -1168,27 +1363,27 @@ ready(function () {
           }
         }
       } catch (err) {
-        _didIteratorError6 = true;
-        _iteratorError6 = err;
+        _didIteratorError8 = true;
+        _iteratorError8 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion6 && _iterator6["return"] != null) {
-            _iterator6["return"]();
+          if (!_iteratorNormalCompletion8 && _iterator8["return"] != null) {
+            _iterator8["return"]();
           }
         } finally {
-          if (_didIteratorError6) {
-            throw _iteratorError6;
+          if (_didIteratorError8) {
+            throw _iteratorError8;
           }
         }
       }
     } else {
-      var _iteratorNormalCompletion7 = true;
-      var _didIteratorError7 = false;
-      var _iteratorError7 = undefined;
+      var _iteratorNormalCompletion9 = true;
+      var _didIteratorError9 = false;
+      var _iteratorError9 = undefined;
 
       try {
-        for (var _iterator7 = productsMobile[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
-          product = _step7.value;
+        for (var _iterator9 = productsMobile[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
+          product = _step9.value;
 
           if (document.querySelector('.wishlist-container #yith-wcwl-form .wishlist_table p.wishlist-empty')) {
             cible.innerHTML = '<div class="empty-wishlist text-center"><h2>Votre liste de favoris est vide</h2><a href="/clothing" class="btn">GO TO SHOP</a></div>';
@@ -1235,16 +1430,16 @@ ready(function () {
           }
         }
       } catch (err) {
-        _didIteratorError7 = true;
-        _iteratorError7 = err;
+        _didIteratorError9 = true;
+        _iteratorError9 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion7 && _iterator7["return"] != null) {
-            _iterator7["return"]();
+          if (!_iteratorNormalCompletion9 && _iterator9["return"] != null) {
+            _iterator9["return"]();
           }
         } finally {
-          if (_didIteratorError7) {
-            throw _iteratorError7;
+          if (_didIteratorError9) {
+            throw _iteratorError9;
           }
         }
       }
@@ -1270,101 +1465,7 @@ ready(function () {
       var heartPageOffset = offset(heartPage);
       var toY = heartPageOffset.left - heartHeaderOffset.left;
       var toX = heartPageOffset.top - heartHeaderOffset.top;
-      var timeline = anime.timeline(); // if (window.innerWidth <= 425) {
-      //     timeline
-      //     .add({
-      //         targets: cta,
-      //         borderRadius: '100px',
-      //         easing: 'easeOutQuart',
-      //         duration: 250
-      //     })
-      //     .add({
-      //         targets: cta,
-      //         borderRadius: '100px',
-      //         width: '40px',
-      //         height: '40px',
-      //         easing: 'easeOutQuart',
-      //         borderWidth: '2px',
-      //         duration: 250
-      //     }, '-=250')
-      //     .add({
-      //         targets: cta,
-      //         easing: 'easeOutQuart',
-      //         opacity: [1, 0],
-      //         duration: 250
-      //     }, '+=250')
-      //     .add({
-      //         targets: faceCta,
-      //         easing: 'easeOutQuart',
-      //         opacity: [0, 1],
-      //         duration: 250
-      //     }, '-=500')
-      //     .add({
-      //         targets: faceCta,
-      //         easing: 'easeOutQuart',
-      //         translateX: { 
-      //             value: -toY, 
-      //             easing: 'easeOutQuart', 
-      //             duration: 1500
-      //         },
-      //         translateY: { 
-      //             value: -toX,
-      //             easing: 'easeOutBack', 
-      //             duration: 1500
-      //         },
-      //         scale: .5
-      //     })
-      //     .add({
-      //         targets: '#faceSmile g',
-      //         easing: 'easeOutQuart',
-      //         translateX: '-50%',
-      //         translateY: '-50%',
-      //         duration: 250
-      //     }, '-=500')
-      //     .add({
-      //         targets: faceCta,
-      //         easing: 'easeOutQuart',
-      //         opacity: [1, 0],
-      //         duration: 500
-      //     }, '+=250')
-      //     .add({
-      //         targets: faceCta,
-      //         translateX: { 
-      //             value: 0, 
-      //             easing: 'linear', 
-      //             duration: 500
-      //         },
-      //         translateY: { 
-      //             value: 0,
-      //             easing: 'linear', 
-      //             duration: 500
-      //         },
-      //         scale: 1
-      //     })
-      //     .add({
-      //         targets: '#faceSmile g',
-      //         easing: 'easeOutQuart',
-      //         translateX: '0%',
-      //         translateY: '0%',
-      //         duration: 250
-      //     }, '-=500')
-      //     .add({
-      //         targets: cta,
-      //         borderRadius: '0',
-      //         width: '50%',
-      //         height: '40px',
-      //         easing: 'easeOutQuart',
-      //         borderWidth: '1px',
-      //         duration: 250
-      //     })
-      //     .add({
-      //         targets: cta,
-      //         easing: 'easeOutQuart',
-      //         opacity: [0, 1],
-      //         duration: 250
-      //     })
-      // } else {
-
+      var timeline = anime.timeline();
       timeline.add({
         targets: heartPage,
         easing: 'easeOutQuart',
@@ -1401,7 +1502,7 @@ ready(function () {
         easing: 'easeOutQuart',
         opacity: [0, 1],
         duration: 250
-      }); // }
+      });
     });
   }
 
@@ -1423,5 +1524,17 @@ ready(function () {
     console.log('wishlist page');
     wishlistPage();
     removeWishlist();
+  }
+
+  if (document.querySelector('body.woocommerce-checkout')) {
+    console.log('checkout page :)');
+    var eventsURL = "https://encre-atelier.com/wp-json/wc/v3/products/id";
+    fetch(eventsURL).then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      return console.log(JSON.stringify(data));
+    })["catch"](function (error) {
+      console.log('Error during fetch: ' + error.message);
+    });
   }
 }); // end ready function

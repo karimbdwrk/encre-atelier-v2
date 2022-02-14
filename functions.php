@@ -173,15 +173,15 @@ function bbloomer_product_add_on() {
 // -----------------------------------------
 // 2. Throw error if custom input field empty
  
-add_filter( 'woocommerce_add_to_cart_validation', 'bbloomer_product_add_on_validation', 10, 3 );
+// add_filter( 'woocommerce_add_to_cart_validation', 'bbloomer_product_add_on_validation', 10, 3 );
  
-function bbloomer_product_add_on_validation( $passed, $product_id, $qty ){
-   if( isset( $_POST['custom_text_add_on'] ) && sanitize_text_field( $_POST['custom_text_add_on'] ) == '' ) {
-      wc_add_notice( 'Custom Text Add-On is a required field', 'error' );
-      $passed = false;
-   }
-   return $passed;
-}
+// function bbloomer_product_add_on_validation( $passed, $product_id, $qty ){
+//    if( isset( $_POST['custom_text_add_on'] ) && sanitize_text_field( $_POST['custom_text_add_on'] ) == '' ) {
+//       wc_add_notice( 'Custom Text Add-On is a required field', 'error' );
+//       $passed = false;
+//    }
+//    return $passed;
+// }
  
 // -----------------------------------------
 // 3. Save custom input field value into cart item data
@@ -735,3 +735,78 @@ add_filter( 'pods_shortcode', function( $tags )  {
     return $tags;
     
 });
+
+
+// EXPORT DE COMMANDES POUR L'ATELIER
+// add_filter("woe_storage_sort_by_field", function($key){
+//     return "name"; //EDIT
+// });
+
+// // sort products by SKU , summary  report
+// add_action( 'woe_summary_before_output', function() {
+// 	uasort( $_SESSION['woe_summary_products'], function ( $a, $b ) {
+// 		return strcmp( $a['name'], $b['name'] );
+// 	} );
+// });
+
+
+// Sort by column "Item Name"
+// Format PDF
+// class WOE_PDF_Sort{
+ 
+// 	function __construct() {
+// 		add_action("woe_settings_above_buttons", array($this,"draw_options") );
+// 		add_filter("woe_settings_validate_defaults", function($settings) {
+// 			if( !empty($settings[ 'sort_by_products' ]) ) {
+// 				add_action("woe_pdf_started",array($this,"rebuild_pdf_file"),10,2);
+// 			}
+// 			return $settings;
+// 		});
+// 	}	
+ 
+// 	// 1
+// 	function draw_options($settings) {
+// 		$selected = !empty($settings[ 'sort_by_products' ]) ? 'checked': '';
+// 		echo '<input type=hidden name="settings[sort_by_products]" value="0">
+// 		<input type=checkbox name="settings[sort_by_products]" value="1" '. $selected .'>
+// 		<span class="wc-oe-header">Sort by products by field "Name",  Format PDF</span>';
+// 	}
+	
+// 	//2
+// 	function rebuild_pdf_file($pdf, $formatter){
+// 		//read 
+// 		$file = fopen($formatter->filename, 'r');
+// 		$keys = fgetcsv($file);
+// 		$keys[]  = "order_id";
+// 		$rows = array();
+// 		while ($val = fgetcsv($file)) {
+// 			$row = array_combine($keys, $val);
+// 			$order_id = $row["order_id"];
+// 			if(!isset($rows[$order_id])) {
+// 				//date as timestamp
+// 				//$key = strtotime(str_replace(" om ", " , ", $row["Pickup Datum"])); 
+// 				$key = $row["name"];  //EDIT this line 
+// 				$rows[$order_id] = array( "key"=>$key,"rows"=>array());
+// 			}
+// 			$rows[$order_id]["rows"][]= $row;
+// 		}
+// 		fclose($file);
+ 
+// 		//sort 
+// 		usort ($rows, function ($a, $b) {
+// 			return $a['key']<$b['key'] ? -1:1; 
+// 		});
+ 
+// 		//write back
+// 		$file = fopen($formatter->filename, 'w');
+// 		array_pop($keys);
+// 		fputcsv($file,$keys);
+// 		foreach($rows as $row) {
+// 			foreach($row["rows"] as $rec)
+// 				fputcsv($file,$rec);
+// 		}
+// 		fclose($file);
+// 	}
+// }
+ 
+// new WOE_PDF_Sort();

@@ -14,6 +14,8 @@
 // CUSTOM CAROUSEL IMAGES PRODUCT PAGE
 const singleProductPage = document.querySelector('.single.single-product')
 
+console.log('test')
+
 if (singleProductPage) {
 
   const cta = document.querySelector('.single_add_to_cart_button')
@@ -161,14 +163,22 @@ ready(function() {
 
     // PRODUCT PAGE 
     if (singleProductPage) {
+      console.log('single product page')
 
       wishlistBtnProduct()
 
-      if (document.querySelector('#size') == null) {
+      if (document.querySelector('select') == null) {
         return null;
       } else {
         customSelect()
       }
+
+      // if (document.querySelector('#pa_frcolor') == null) {
+      //   return null;
+      // } else {
+      //   customSelect2()
+      //   console.log('custom select 2')
+      // }
     }
 
     // WISHLIST BTN PAGE PRODUCT
@@ -221,6 +231,7 @@ ready(function() {
       var x, i, j, l, ll, selElmnt, a, b, c;
       /* Look for any elements with the class "custom-select": */
       x = document.getElementsByClassName("value");
+      console.log('x = ', x) 
       l = x.length;
       for (i = 0; i < l; i++) {
         selElmnt = x[i].getElementsByTagName("select")[0];
@@ -232,7 +243,11 @@ ready(function() {
         a.setAttribute("data-toggle", "dropdown");
         a.setAttribute("aria-haspopup", "true");
         a.setAttribute("aria-expanded", "false");
-        a.innerHTML = 'Size';
+        if (document.getElementById('size')) {
+          a.innerHTML = 'Size';
+        } else if (document.getElementById('pa_frcolor')) {
+          a.innerHTML = 'Color';
+        }
         x[i].appendChild(a);
         /* For each element, create a new DIV that will contain the option list: */
         b = document.createElement("DIV");
@@ -255,7 +270,126 @@ ready(function() {
               for (i = 0; i < sl; i++) {
                 if (s.options[i].innerHTML == this.innerHTML) {
                   s.selectedIndex = i;
-                  h.innerHTML = '<span>Size: </span><b>' + this.innerHTML + '</b>';
+                  if (document.getElementById('size')) {
+                    h.innerHTML = '<span>Size: </span><b>' + this.innerHTML + '</b>';
+                  } else if (document.getElementById('pa_frcolor')) {
+                    h.innerHTML = '<b>' + this.innerHTML + '</b>';
+                  }
+                  y = this.parentNode.getElementsByClassName("same-as-selected");
+                  yl = y.length;
+                  this.classList.add("same-as-selected");
+                  let all_variations = JSON.parse(s.parentNode.parentNode.parentNode.parentNode.parentNode.getAttribute('data-product_variations'))
+                  let id_variation = all_variations[i-1].variation_id
+                  let valueCart = document.getElementsByClassName('variation_id')
+                  valueCart[0].value = id_variation.toString()
+                  document.getElementsByClassName('single_add_to_cart_button')[0].classList.remove('disabled')
+                  break;
+                }
+              }
+              h.click();
+          });
+          b.appendChild(c);
+        }
+        x[i].appendChild(b);
+      }
+
+      function hideOutOfStockSize() {
+        const tableau1 = []
+        const tableau2 = []
+        const firstSelect = JSON.parse(document.querySelector('form.variations_form').getAttribute('data-product_variations'))
+        
+        for (option of firstSelect) {
+          console.log(option)
+          if (option.is_in_stock) {
+            tableau1.push(option.attributes.attribute_size)
+            tableau2.push(option.attributes.attribute_pa_frcolor)
+            console.log(tableau1)
+            console.log(tableau2)
+          }
+        }
+
+        const lastSelect = document.querySelector('.select-items')
+        const lastOptions = lastSelect.querySelectorAll('.dropdown-item')
+        if (document.getElementById('size')) {
+          for (option of lastOptions) {
+            console.log(option.textContent)
+            let bool = tableau1.includes(option.textContent)
+            if (!bool) {
+              option.classList.add('disabled')
+            }
+          }
+        }
+      }
+      hideOutOfStockSize()
+
+      function closeAllSelect(elmnt) {
+        /* A function that will close all select boxes in the document,
+        except the current select box: */
+        var x, y, i, xl, yl, arrNo = [];
+        x = document.getElementsByClassName("select-items");
+        y = document.getElementsByClassName("select-selected");
+        xl = x.length;
+        yl = y.length;
+        for (i = 0; i < yl; i++) {
+          if (elmnt == y[i]) {
+            arrNo.push(i)
+          } else {
+            y[i].classList.remove("select-arrow-active");
+          }
+        }
+        for (i = 0; i < xl; i++) {
+          if (arrNo.indexOf(i)) {
+            x[i].classList.add("select-hide");
+          }
+        }
+      }
+
+      /* If the user clicks anywhere outside the select box,
+      then close all select boxes: */
+      document.addEventListener("click", closeAllSelect);
+    }
+
+    // CUSTOM SELECT PRODUCT PAGE 2
+    function customSelect2() {
+      var x, i, j, l, ll, selElmnt, a, b, c;
+      /* Look for any elements with the class "custom-select": */
+      x = document.getElementsByClassName("value");
+      console.log('x = ', x) 
+      l = x.length;
+      for (i = 0; i < l; i++) {
+        selElmnt = x[i].getElementsByTagName("select")[0];
+        ll = selElmnt.length;
+        /* For each element, create a new DIV that will act as the selected item: */
+        a = document.createElement("button");
+        a.setAttribute("class", "select-selected btn btn-secondary dropdown-toggle");
+        a.setAttribute("id", "dropdownSelect");
+        a.setAttribute("data-toggle", "dropdown");
+        a.setAttribute("aria-haspopup", "true");
+        a.setAttribute("aria-expanded", "false");
+        a.innerHTML = 'Color';
+        x[i].appendChild(a);
+        /* For each element, create a new DIV that will contain the option list: */
+        b = document.createElement("DIV");
+        b.setAttribute("class", "select-items select-hide dropdown-menu");
+        b.setAttribute("aria-labelledby", "dropdownSelect");
+        for (j = 1; j < ll; j++) {
+          /* For each option in the original select element,
+          create a new DIV that will act as an option item: */
+          c = document.createElement("DIV");
+          c.setAttribute("class", "dropdown-item");
+          c.setAttribute("variation_id", selElmnt.options[j].variation_id);
+          c.innerHTML = selElmnt.options[j].innerHTML;
+          c.addEventListener("click", function(e) {
+              /* When an item is clicked, update the original select box,
+              and the selected item: */
+              var y, i, k, s, h, sl, yl;
+              s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+              sl = s.length;
+              h = this.parentNode.previousSibling;
+              for (i = 0; i < sl; i++) {
+                if (s.options[i].innerHTML == this.innerHTML) {
+                  s.selectedIndex = i;
+                  h.innerHTML = '<b>' + this.innerHTML + '</b>';
                   y = this.parentNode.getElementsByClassName("same-as-selected");
                   yl = y.length;
                   this.classList.add("same-as-selected");
@@ -1137,103 +1271,6 @@ ready(function() {
 
         let timeline = anime.timeline()
 
-        // if (window.innerWidth <= 425) {
-
-        //     timeline
-        //     .add({
-        //         targets: cta,
-        //         borderRadius: '100px',
-        //         easing: 'easeOutQuart',
-        //         duration: 250
-        //     })
-        //     .add({
-        //         targets: cta,
-        //         borderRadius: '100px',
-        //         width: '40px',
-        //         height: '40px',
-        //         easing: 'easeOutQuart',
-        //         borderWidth: '2px',
-        //         duration: 250
-        //     }, '-=250')
-        //     .add({
-        //         targets: cta,
-        //         easing: 'easeOutQuart',
-        //         opacity: [1, 0],
-        //         duration: 250
-        //     }, '+=250')
-        //     .add({
-        //         targets: faceCta,
-        //         easing: 'easeOutQuart',
-        //         opacity: [0, 1],
-        //         duration: 250
-        //     }, '-=500')
-        //     .add({
-        //         targets: faceCta,
-        //         easing: 'easeOutQuart',
-        //         translateX: { 
-        //             value: -toY, 
-        //             easing: 'easeOutQuart', 
-        //             duration: 1500
-        //         },
-        //         translateY: { 
-        //             value: -toX,
-        //             easing: 'easeOutBack', 
-        //             duration: 1500
-        //         },
-        //         scale: .5
-        //     })
-        //     .add({
-        //         targets: '#faceSmile g',
-        //         easing: 'easeOutQuart',
-        //         translateX: '-50%',
-        //         translateY: '-50%',
-        //         duration: 250
-        //     }, '-=500')
-        //     .add({
-        //         targets: faceCta,
-        //         easing: 'easeOutQuart',
-        //         opacity: [1, 0],
-        //         duration: 500
-        //     }, '+=250')
-        //     .add({
-        //         targets: faceCta,
-        //         translateX: { 
-        //             value: 0, 
-        //             easing: 'linear', 
-        //             duration: 500
-        //         },
-        //         translateY: { 
-        //             value: 0,
-        //             easing: 'linear', 
-        //             duration: 500
-        //         },
-        //         scale: 1
-        //     })
-        //     .add({
-        //         targets: '#faceSmile g',
-        //         easing: 'easeOutQuart',
-        //         translateX: '0%',
-        //         translateY: '0%',
-        //         duration: 250
-        //     }, '-=500')
-        //     .add({
-        //         targets: cta,
-        //         borderRadius: '0',
-        //         width: '50%',
-        //         height: '40px',
-        //         easing: 'easeOutQuart',
-        //         borderWidth: '1px',
-        //         duration: 250
-        //     })
-        //     .add({
-        //         targets: cta,
-        //         easing: 'easeOutQuart',
-        //         opacity: [0, 1],
-        //         duration: 250
-        //     })
-
-        // } else {
-
             timeline
             .add({
                 targets: heartPage,
@@ -1275,7 +1312,6 @@ ready(function() {
                 opacity: [0, 1],
                 duration: 250
             })
-        // }
       })
     }
 
@@ -1293,5 +1329,17 @@ ready(function() {
       console.log('wishlist page')
       wishlistPage()
       removeWishlist()
+    }
+
+    if (document.querySelector('body.woocommerce-checkout')) {
+      console.log('checkout page :)')
+      var eventsURL = "https://encre-atelier.com/wp-json/wc/v3/products/id";
+
+      fetch(eventsURL)
+        .then((response) => response.json())
+        .then(data => console.log(JSON.stringify(data)))
+        .catch(function (error) {
+          console.log('Error during fetch: ' + error.message);
+        });
     }
 });// end ready function

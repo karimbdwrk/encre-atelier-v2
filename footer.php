@@ -30,8 +30,8 @@ if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-12 reseaux-sociaux">
-					<a href="https://www.facebook.com/encreclothes" target="blank_"><i class="fab fa-facebook-f"></i></a>
-					<a href="https://www.instagram.com/encre_atelier" target="blank_"><i class="fab fa-instagram"></i></a>
+					<a href="https://www.facebook.com/encreclothes" target="_blank"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://www.instagram.com/encre_atelier" target="_blank"><i class="fab fa-instagram"></i></a>
 				</div>
 				<a class="cart-contents d-none" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf ( _n( '%d item', '%d items', WC()->cart->get_cart_contents_count() ), WC()->cart->get_cart_contents_count() ); ?></a>
 			</div>
